@@ -1,0 +1,5174 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api-documentation for
+    <a
+        
+        href="http://karma-runner.github.io/"
+        
+    >karma (v1.5.0)</a>
+</h1>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.karma">module karma</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.Server">
+            function <span class="apidocSignatureSpan">karma.</span>Server
+            <span class="apidocSignatureSpan">(cliOptions, done)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.Server.super_">
+            function <span class="apidocSignatureSpan">karma.</span>Server.super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.emitter_wrapper">
+            function <span class="apidocSignatureSpan">karma.</span>emitter_wrapper
+            <span class="apidocSignatureSpan">(emitter)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.file">
+            function <span class="apidocSignatureSpan">karma.</span>file
+            <span class="apidocSignatureSpan">(path, mtime, doNotCache)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.file_list">
+            function <span class="apidocSignatureSpan">karma.</span>file_list
+            <span class="apidocSignatureSpan">(patterns, excludes, emitter, preprocess, batchInterval)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.launcher.Launcher">
+            function <span class="apidocSignatureSpan">karma.</span>launcher.Launcher
+            <span class="apidocSignatureSpan">(server, emitter, injector)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.url">
+            function <span class="apidocSignatureSpan">karma.</span>url
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>Server.prototype</span>
+            
+        </li>
+        
+        <li>
+            
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>cli</span>
+            
+        </li>
+        
+        <li>
+            
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>completion</span>
+            
+        </li>
+        
+        <li>
+            
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>config</span>
+            
+        </li>
+        
+        <li>
+            
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>constants</span>
+            
+        </li>
+        
+        <li>
+            
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>emitter_wrapper.prototype</span>
+            
+        </li>
+        
+        <li>
+            
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>events</span>
+            
+        </li>
+        
+        <li>
+            
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>file.prototype</span>
+            
+        </li>
+        
+        <li>
+            
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>file_list.prototype</span>
+            
+        </li>
+        
+        <li>
+            
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>helper</span>
+            
+        </li>
+        
+        <li>
+            
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>init</span>
+            
+        </li>
+        
+        <li>
+            
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>launcher</span>
+            
+        </li>
+        
+        <li>
+            
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>logger</span>
+            
+        </li>
+        
+        <li>
+            
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>plugin</span>
+            
+        </li>
+        
+        <li>
+            
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>preprocessor</span>
+            
+        </li>
+        
+        <li>
+            
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>reporter</span>
+            
+        </li>
+        
+        <li>
+            
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>runner</span>
+            
+        </li>
+        
+        <li>
+            
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>server</span>
+            
+        </li>
+        
+        <li>
+            
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>stopper</span>
+            
+        </li>
+        
+        <li>
+            
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>temp_dir</span>
+            
+        </li>
+        
+        <li>
+            
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>url.prototype</span>
+            
+        </li>
+        
+        <li>
+            
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>watcher</span>
+            
+        </li>
+        
+        <li>
+            
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>web_server</span>
+            
+        </li>
+        
+        <li>
+            
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">karma.</span>VERSION</span>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.karma.Server">module karma.Server</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.Server.Server">
+            function <span class="apidocSignatureSpan">karma.</span>Server
+            <span class="apidocSignatureSpan">(cliOptions, done)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.Server.start">
+            function <span class="apidocSignatureSpan">karma.Server.</span>start
+            <span class="apidocSignatureSpan">(cliOptions, done)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.Server.super_">
+            function <span class="apidocSignatureSpan">karma.Server.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.karma.Server.prototype">module karma.Server.prototype</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.Server.prototype._detach">
+            function <span class="apidocSignatureSpan">karma.Server.prototype.</span>_detach
+            <span class="apidocSignatureSpan">(config, done)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.Server.prototype._setUpLoadErrorListener">
+            function <span class="apidocSignatureSpan">karma.Server.prototype.</span>_setUpLoadErrorListener
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.Server.prototype._start">
+            function <span class="apidocSignatureSpan">karma.Server.prototype.</span>_start
+            <span class="apidocSignatureSpan">(config, launcher, preprocess, fileList, capturedBrowsers, executor, done)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.Server.prototype.get">
+            function <span class="apidocSignatureSpan">karma.Server.prototype.</span>get
+            <span class="apidocSignatureSpan">(token)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.Server.prototype.refreshFiles">
+            function <span class="apidocSignatureSpan">karma.Server.prototype.</span>refreshFiles
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.Server.prototype.start">
+            function <span class="apidocSignatureSpan">karma.Server.prototype.</span>start
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.karma.Server.super_">module karma.Server.super_</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.Server.super_.super_">
+            function <span class="apidocSignatureSpan">karma.Server.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.karma.cli">module karma.cli</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.cli.argsBeforeDoubleDash">
+            function <span class="apidocSignatureSpan">karma.cli.</span>argsBeforeDoubleDash
+            <span class="apidocSignatureSpan">(argv)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.cli.parseClientArgs">
+            function <span class="apidocSignatureSpan">karma.cli.</span>parseClientArgs
+            <span class="apidocSignatureSpan">(argv)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.cli.process">
+            function <span class="apidocSignatureSpan">karma.cli.</span>process
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.cli.processArgs">
+            function <span class="apidocSignatureSpan">karma.cli.</span>processArgs
+            <span class="apidocSignatureSpan">(argv, options, fs, path)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.cli.run">
+            function <span class="apidocSignatureSpan">karma.cli.</span>run
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.karma.completion">module karma.completion</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.completion.completion">
+            function <span class="apidocSignatureSpan">karma.</span>completion
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.completion.complete">
+            function <span class="apidocSignatureSpan">karma.completion.</span>complete
+            <span class="apidocSignatureSpan">(env)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.completion.opositeWord">
+            function <span class="apidocSignatureSpan">karma.completion.</span>opositeWord
+            <span class="apidocSignatureSpan">(word)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.completion.sendCompletion">
+            function <span class="apidocSignatureSpan">karma.completion.</span>sendCompletion
+            <span class="apidocSignatureSpan">(possibleWords, env)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.karma.config">module karma.config</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.config.parseConfig">
+            function <span class="apidocSignatureSpan">karma.config.</span>parseConfig
+            <span class="apidocSignatureSpan">(configFilePath, cliOptions)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.karma.emitter_wrapper">module karma.emitter_wrapper</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.emitter_wrapper.emitter_wrapper">
+            function <span class="apidocSignatureSpan">karma.</span>emitter_wrapper
+            <span class="apidocSignatureSpan">(emitter)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.karma.emitter_wrapper.prototype">module karma.emitter_wrapper.prototype</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.emitter_wrapper.prototype.addListener">
+            function <span class="apidocSignatureSpan">karma.emitter_wrapper.prototype.</span>addListener
+            <span class="apidocSignatureSpan">(event, listener)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.emitter_wrapper.prototype.on">
+            function <span class="apidocSignatureSpan">karma.emitter_wrapper.prototype.</span>on
+            <span class="apidocSignatureSpan">(event, listener)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.emitter_wrapper.prototype.removeAllListeners">
+            function <span class="apidocSignatureSpan">karma.emitter_wrapper.prototype.</span>removeAllListeners
+            <span class="apidocSignatureSpan">(event)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.karma.events">module karma.events</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.events.EventEmitter">
+            function <span class="apidocSignatureSpan">karma.events.</span>EventEmitter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.events.bindAll">
+            function <span class="apidocSignatureSpan">karma.events.</span>bindAll
+            <span class="apidocSignatureSpan">(object, context)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.events.bufferEvents">
+            function <span class="apidocSignatureSpan">karma.events.</span>bufferEvents
+            <span class="apidocSignatureSpan">(emitter, eventsToBuffer)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.karma.file">module karma.file</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.file.file">
+            function <span class="apidocSignatureSpan">karma.</span>file
+            <span class="apidocSignatureSpan">(path, mtime, doNotCache)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.karma.file.prototype">module karma.file.prototype</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.file.prototype.toString">
+            function <span class="apidocSignatureSpan">karma.file.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.karma.file_list">module karma.file_list</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.file_list.file_list">
+            function <span class="apidocSignatureSpan">karma.</span>file_list
+            <span class="apidocSignatureSpan">(patterns, excludes, emitter, preprocess, batchInterval)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.karma.file_list.prototype">module karma.file_list.prototype</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.file_list.prototype._exists">
+            function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>_exists
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.file_list.prototype._findFile">
+            function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>_findFile
+            <span class="apidocSignatureSpan">(path, pattern)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.file_list.prototype._isExcluded">
+            function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>_isExcluded
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.file_list.prototype._isIncluded">
+            function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>_isIncluded
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.file_list.prototype._isRefreshing">
+            function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>_isRefreshing
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.file_list.prototype._refresh">
+            function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>_refresh
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.file_list.prototype.addFile">
+            function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>addFile
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.file_list.prototype.changeFile">
+            function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>changeFile
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.file_list.prototype.refresh">
+            function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>refresh
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.file_list.prototype.reload">
+            function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>reload
+            <span class="apidocSignatureSpan">(patterns, excludes)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.file_list.prototype.removeFile">
+            function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>removeFile
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.karma.helper">module karma.helper</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.helper.arrayRemove">
+            function <span class="apidocSignatureSpan">karma.helper.</span>arrayRemove
+            <span class="apidocSignatureSpan">(collection, item)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.helper.browserFullNameToShort">
+            function <span class="apidocSignatureSpan">karma.helper.</span>browserFullNameToShort
+            <span class="apidocSignatureSpan">(fullName)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.helper.camelToSnake">
+            function <span class="apidocSignatureSpan">karma.helper.</span>camelToSnake
+            <span class="apidocSignatureSpan">(camelCase)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.helper.dashToCamel">
+            function <span class="apidocSignatureSpan">karma.helper.</span>dashToCamel
+            <span class="apidocSignatureSpan">(dash)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.helper.defer">
+            function <span class="apidocSignatureSpan">karma.helper.</span>defer
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.helper.formatTimeInterval">
+            function <span class="apidocSignatureSpan">karma.helper.</span>formatTimeInterval
+            <span class="apidocSignatureSpan">(time)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.helper.isArray">
+            function <span class="apidocSignatureSpan">karma.helper.</span>isArray
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.helper.isDefined">
+            function <span class="apidocSignatureSpan">karma.helper.</span>isDefined
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.helper.isFunction">
+            function <span class="apidocSignatureSpan">karma.helper.</span>isFunction
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.helper.isNumber">
+            function <span class="apidocSignatureSpan">karma.helper.</span>isNumber
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.helper.isObject">
+            function <span class="apidocSignatureSpan">karma.helper.</span>isObject
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.helper.isString">
+            function <span class="apidocSignatureSpan">karma.helper.</span>isString
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.helper.isUrlAbsolute">
+            function <span class="apidocSignatureSpan">karma.helper.</span>isUrlAbsolute
+            <span class="apidocSignatureSpan">(url)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.helper.merge">
+            function <span class="apidocSignatureSpan">karma.helper.</span>merge
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.helper.mkdirIfNotExists">
+            function <span class="apidocSignatureSpan">karma.helper.</span>mkdirIfNotExists
+            <span class="apidocSignatureSpan">(directory, done)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.helper.mmComparePatternWeights">
+            function <span class="apidocSignatureSpan">karma.helper.</span>mmComparePatternWeights
+            <span class="apidocSignatureSpan">(weight1, weight2)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.helper.mmPatternWeight">
+            function <span class="apidocSignatureSpan">karma.helper.</span>mmPatternWeight
+            <span class="apidocSignatureSpan">(pattern)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.helper.normalizeWinPath">
+            function <span class="apidocSignatureSpan">karma.helper.</span>normalizeWinPath
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.helper.ucFirst">
+            function <span class="apidocSignatureSpan">karma.helper.</span>ucFirst
+            <span class="apidocSignatureSpan">(word)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.karma.init">module karma.init</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.init.init">
+            function <span class="apidocSignatureSpan">karma.</span>init
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.karma.launcher">module karma.launcher</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.launcher.Launcher">
+            function <span class="apidocSignatureSpan">karma.launcher.</span>Launcher
+            <span class="apidocSignatureSpan">(server, emitter, injector)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.karma.launcher.Launcher">module karma.launcher.Launcher</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.launcher.Launcher.Launcher">
+            function <span class="apidocSignatureSpan">karma.launcher.</span>Launcher
+            <span class="apidocSignatureSpan">(server, emitter, injector)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.launcher.Launcher.generateId">
+            function <span class="apidocSignatureSpan">karma.launcher.Launcher.</span>generateId
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.karma.logger">module karma.logger</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.logger.create">
+            function <span class="apidocSignatureSpan">karma.logger.</span>create
+            <span class="apidocSignatureSpan">(name, level)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.logger.setup">
+            function <span class="apidocSignatureSpan">karma.logger.</span>setup
+            <span class="apidocSignatureSpan">(level, colors, appenders)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.logger.setupFromConfig">
+            function <span class="apidocSignatureSpan">karma.logger.</span>setupFromConfig
+            <span class="apidocSignatureSpan">(config, appenders)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.karma.plugin">module karma.plugin</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.plugin.resolve">
+            function <span class="apidocSignatureSpan">karma.plugin.</span>resolve
+            <span class="apidocSignatureSpan">(plugins, emitter)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.karma.preprocessor">module karma.preprocessor</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.preprocessor.createPreprocessor">
+            function <span class="apidocSignatureSpan">karma.preprocessor.</span>createPreprocessor
+            <span class="apidocSignatureSpan">(config, basePath, injector)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.karma.reporter">module karma.reporter</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.reporter.createReporters">
+            function <span class="apidocSignatureSpan">karma.reporter.</span>createReporters
+            <span class="apidocSignatureSpan">(names, config, emitter, injector)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.karma.runner">module karma.runner</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.runner.run">
+            function <span class="apidocSignatureSpan">karma.runner.</span>run
+            <span class="apidocSignatureSpan">(config, done)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.karma.server">module karma.server</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.server.start">
+            function <span class="apidocSignatureSpan">karma.server.</span>start
+            <span class="apidocSignatureSpan">(cliOptions, done)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.karma.stopper">module karma.stopper</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.stopper.stop">
+            function <span class="apidocSignatureSpan">karma.stopper.</span>stop
+            <span class="apidocSignatureSpan">(config, done)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.karma.temp_dir">module karma.temp_dir</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.temp_dir.create">
+            function <span class="apidocSignatureSpan">karma.temp_dir.</span>create
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.temp_dir.getPath">
+            function <span class="apidocSignatureSpan">karma.temp_dir.</span>getPath
+            <span class="apidocSignatureSpan">(suffix)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.temp_dir.remove">
+            function <span class="apidocSignatureSpan">karma.temp_dir.</span>remove
+            <span class="apidocSignatureSpan">(path, done)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.karma.url">module karma.url</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.url.url">
+            function <span class="apidocSignatureSpan">karma.</span>url
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.karma.url.prototype">module karma.url.prototype</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.url.prototype.toString">
+            function <span class="apidocSignatureSpan">karma.url.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.karma.watcher">module karma.watcher</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.watcher.watch">
+            function <span class="apidocSignatureSpan">karma.watcher.</span>watch
+            <span class="apidocSignatureSpan">(patterns, excludes, fileList, usePolling, emitter)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.karma.web_server">module karma.web_server</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.karma.web_server.create">
+            function <span class="apidocSignatureSpan">karma.web_server.</span>create
+            <span class="apidocSignatureSpan">(injector, emitter, fileList)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.karma" id="apidoc.module.karma">module karma</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.Server" id="apidoc.element.karma.Server">
+        function <span class="apidocSignatureSpan">karma.</span>Server
+        <span class="apidocSignatureSpan">(cliOptions, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Server = function (cliOptions, done) {
+  EventEmitter.call(this)
+
+  logger.setupFromConfig(cliOptions)
+
+  this.log = logger.create()
+
+  this.loadErrors = []
+
+  var config = cfg.parseConfig(cliOptions.configFile, cliOptions)
+
+  var modules = [{
+    helper: [&#x27;value&#x27;, helper],
+    logger: [&#x27;value&#x27;, logger],
+    done: [&#x27;value&#x27;, done || process.exit],
+    emitter: [&#x27;value&#x27;, this],
+    server: [&#x27;value&#x27;, this],
+    launcher: [&#x27;type&#x27;, Launcher],
+    config: [&#x27;value&#x27;, config],
+    preprocess: [&#x27;factory&#x27;, preprocessor.createPreprocessor],
+    fileList: [&#x27;type&#x27;, FileList],
+    webServer: [&#x27;factory&#x27;, ws.create],
+    socketServer: [&#x27;factory&#x27;, createSocketIoServer],
+    executor: [&#x27;type&#x27;, Executor],
+    // TODO(vojta): remove
+    customFileHandlers: [&#x27;value&#x27;, []],
+    // TODO(vojta): remove, once karma-dart does not rely on it
+    customScriptTypes: [&#x27;value&#x27;, []],
+    reporter: [&#x27;factory&#x27;, reporter.createReporters],
+    capturedBrowsers: [&#x27;type&#x27;, BrowserCollection],
+    args: [&#x27;value&#x27;, {}],
+    timer: [&#x27;value&#x27;, {
+      setTimeout: function () {
+        return setTimeout.apply(root, arguments)
+      },
+      clearTimeout: function (timeoutId) {
+        clearTimeout(timeoutId)
+      }
+    }]
+  }]
+
+  this._setUpLoadErrorListener()
+  // Load the plugins
+  modules = modules.concat(plugin.resolve(config.plugins, this))
+
+  this._injector = new di.Injector(modules)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.Server.super_" id="apidoc.element.karma.Server.super_">
+        function <span class="apidocSignatureSpan">karma.</span>Server.super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Server.super_ = function () {
+  this.bind = bindAllEvents
+
+  this.emitAsync = function (name) {
+    // TODO(vojta): allow passing args
+    // TODO(vojta): ignore/throw if listener call done() multiple times
+    var pending = this.listeners(name).length
+    var deferred = helper.defer()
+    var done = function () {
+      if (!--pending) {
+        deferred.resolve()
+      }
+    }
+
+    this.emit(name, done)
+
+    if (!pending) {
+      deferred.resolve()
+    }
+
+    return deferred.promise
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.emitter_wrapper" id="apidoc.element.karma.emitter_wrapper">
+        function <span class="apidocSignatureSpan">karma.</span>emitter_wrapper
+        <span class="apidocSignatureSpan">(emitter)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EmitterWrapper(emitter) {
+  this.listeners = {}
+  this.emitter = emitter
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.file" id="apidoc.element.karma.file">
+        function <span class="apidocSignatureSpan">karma.</span>file
+        <span class="apidocSignatureSpan">(path, mtime, doNotCache)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">file = function (path, mtime, doNotCache) {
+  // used for serving (processed path, eg some/file.coffee -&#x3e; some/file.coffee.js)
+  this.path = path
+
+  // original absolute path, id of the file
+  this.originalPath = path
+
+  // where the content is stored (processed)
+  this.contentPath = path
+
+  this.mtime = mtime
+  this.isUrl = false
+
+  this.doNotCache = _.isUndefined(doNotCache) ? false : doNotCache
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.file_list" id="apidoc.element.karma.file_list">
+        function <span class="apidocSignatureSpan">karma.</span>file_list
+        <span class="apidocSignatureSpan">(patterns, excludes, emitter, preprocess, batchInterval)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">file_list = function (patterns, excludes, emitter, preprocess, batchInterval) {
+  // Store options
+  this._patterns = patterns
+  this._excludes = excludes
+  this._emitter = emitter
+  this._preprocess = Promise.promisify(preprocess)
+  this._batchInterval = batchInterval
+
+  // The actual list of files
+  this.buckets = new Map()
+
+  // Internal tracker if we are refreshing.
+  // When a refresh is triggered this gets set
+  // to the promise that `this._refresh` returns.
+  // So we know we are refreshing when this promise
+  // is still pending, and we are done when it&#x27;s either
+  // resolved or rejected.
+  this._refreshing = Promise.resolve()
+
+  var self = this
+
+  // Emit the `file_list_modified` event.
+  // This function is throttled to the value of `batchInterval`
+  // to avoid spamming the listener.
+  function emit () {
+    self._emitter.emit(&#x27;file_list_modified&#x27;, self.files)
+  }
+  var throttledEmit = _.throttle(emit, self._batchInterval, {leading: false})
+  self._emitModified = function (immediate) {
+    immediate ? emit() : throttledEmit()
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.launcher.Launcher" id="apidoc.element.karma.launcher.Launcher">
+        function <span class="apidocSignatureSpan">karma.</span>launcher.Launcher
+        <span class="apidocSignatureSpan">(server, emitter, injector)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">launcher.Launcher = function (server, emitter, injector) {
+  this._browsers = []
+  var lastStartTime
+  var self = this
+
+  var getBrowserById = function (id) {
+    for (var i = 0; i &#x3c; self._browsers.length; i++) {
+      if (self._browsers[i].id === id) {
+        return self._browsers[i]
+      }
+    }
+
+    return null
+  }
+
+  this.launchSingle = function (protocol, hostname, port, urlRoot, upstreamProxy, processKillTimeout) {
+    var self = this
+    return function (name) {
+      if (upstreamProxy) {
+        protocol = upstreamProxy.protocol
+        hostname = upstreamProxy.hostname
+        port = upstreamProxy.port
+        urlRoot = upstreamProxy.path + urlRoot.substr(1)
+      }
+      var url = protocol + &#x27;//&#x27; + hostname + &#x27;:&#x27; + port + urlRoot
+
+      var locals = {
+        id: [&#x27;value&#x27;, Launcher.generateId()],
+        name: [&#x27;value&#x27;, name],
+        processKillTimeout: [&#x27;value&#x27;, processKillTimeout],
+        baseLauncherDecorator: [&#x27;factory&#x27;, baseDecorator],
+        captureTimeoutLauncherDecorator: [&#x27;factory&#x27;, captureTimeoutDecorator],
+        retryLauncherDecorator: [&#x27;factory&#x27;, retryDecorator],
+        processLauncherDecorator: [&#x27;factory&#x27;, processDecorator],
+        baseBrowserDecorator: [&#x27;factory&#x27;, baseBrowserDecoratorFactory]
+      }
+
+      // TODO(vojta): determine script from name
+      if (name.indexOf(&#x27;/&#x27;) !== -1) {
+        name = &#x27;Script&#x27;
+      }
+
+      try {
+        var browser = injector.createChild([locals], [&#x27;launcher:&#x27; + name]).get(&#x27;launcher:&#x27; + name)
+      } catch (e) {
+        if (e.message.indexOf(&#x27;No provider for &#x22;launcher:&#x27; + name + &#x27;&#x22;&#x27;) !== -1) {
+          log.error(&#x27;Cannot load browser &#x22;%s&#x22;: it is not registered! &#x27; +
+            &#x27;Perhaps you are missing some plugin?&#x27;, name)
+        } else {
+          log.error(&#x27;Cannot load browser &#x22;%s&#x22;!\n  &#x27; + e.stack, name)
+        }
+
+        emitter.emit(&#x27;load_error&#x27;, &#x27;launcher&#x27;, name)
+        return
+      }
+
+      // TODO(vojta): remove in v1.0 (BC for old launchers)
+      if (!browser.forceKill) {
+        browser.forceKill = function () {
+          var me = this
+          return new Promise(function (resolve) {
+            me.kill(resolve)
+          })
+        }
+
+        browser.restart = function () {
+          var me = this
+          this.kill(function () {
+            me.start(url)
+          })
+        }
+      }
+
+      self.jobs.add(function (args, done) {
+        log.info(&#x27;Starting browser %s&#x27;, helper.isDefined(browser.displayName) ? browser.displayName : browser.name)
+
+        browser.on(&#x27;browser_process_failure&#x27;, function () {
+          done(browser.error)
+        })
+
+        browser.on(&#x27;done&#x27;, function () {
+          // We are not done if there was an error as first the retry takes
+          // place which we catch with `browser_process_failure` if it fails
+          if (browser.error || browser.state === browser.STATE_RESTARTING) return
+
+          done(null, browser)
+        })
+
+        browser.start(url)
+      }, [])
+
+      self.jobs.run()
+      self._browsers.push(browser)
+    }
+  }
+
+  this.launch = function (names, concurrency) {
+    log.info(
+      &#x27;Launching browser%s %s with %s&#x27;,
+      names.length &#x3e; 1 ? &#x27;s&#x27; : &#x27;&#x27;,
+      names.join(&#x27;, &#x27;),
+      concurrency === Infinity ? &#x27;unlimited concurrency&#x27; : &#x27;concurrency &#x27; + concurrency
+    )
+    this.jobs = new Jobs({maxConcurrency: concurrency})
+
+    var self = this
+    lastStartTime = Date.now()
+
+    if (server.loadErrors.length === 0) {
+      names.forEach(function (name) {
+        injector.invoke(self.launchSingle, self)(name)
+      })
+    } else {
+      // Empty task to ensure `end` is emitted
+      this.jobs.add(function (args, done) {
+        done()
+      }, [])
+    }
+
+    this.jobs.on(&#x27;end&#x27;, function (err) {
+      log.debug(&#x27;Finished all browsers&#x27;)
+
+      if (err) {
+        log.error(err)
+      }
+    })
+
+    this.jobs.run()
+
+    return self._browsers
+  }
+
+  this.launch.$inject = [
+    &#x27;config.browsers&#x27;,
+    &#x27;config.concurrency&#x27;,
+    &#x27;config.processKillTimeout&#x27;
+  ]
+
+  this.launchSingle.$inject = [
+    &#x27;config.protocol&#x27;,
+    &#x27;config.hostname&#x27;,
+    &#x27;config.port&#x27;,
+    &#x27;config.urlRoot&#x27;,
+    &#x27;config.upstreamProxy&#x27;,
+    &#x27;config.proces ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.url" id="apidoc.element.karma.url">
+        function <span class="apidocSignatureSpan">karma.</span>url
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">url = function (path) {
+  this.path = path
+  this.isUrl = true
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.karma.Server" id="apidoc.module.karma.Server">module karma.Server</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.Server.Server" id="apidoc.element.karma.Server.Server">
+        function <span class="apidocSignatureSpan">karma.</span>Server
+        <span class="apidocSignatureSpan">(cliOptions, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Server = function (cliOptions, done) {
+  EventEmitter.call(this)
+
+  logger.setupFromConfig(cliOptions)
+
+  this.log = logger.create()
+
+  this.loadErrors = []
+
+  var config = cfg.parseConfig(cliOptions.configFile, cliOptions)
+
+  var modules = [{
+    helper: [&#x27;value&#x27;, helper],
+    logger: [&#x27;value&#x27;, logger],
+    done: [&#x27;value&#x27;, done || process.exit],
+    emitter: [&#x27;value&#x27;, this],
+    server: [&#x27;value&#x27;, this],
+    launcher: [&#x27;type&#x27;, Launcher],
+    config: [&#x27;value&#x27;, config],
+    preprocess: [&#x27;factory&#x27;, preprocessor.createPreprocessor],
+    fileList: [&#x27;type&#x27;, FileList],
+    webServer: [&#x27;factory&#x27;, ws.create],
+    socketServer: [&#x27;factory&#x27;, createSocketIoServer],
+    executor: [&#x27;type&#x27;, Executor],
+    // TODO(vojta): remove
+    customFileHandlers: [&#x27;value&#x27;, []],
+    // TODO(vojta): remove, once karma-dart does not rely on it
+    customScriptTypes: [&#x27;value&#x27;, []],
+    reporter: [&#x27;factory&#x27;, reporter.createReporters],
+    capturedBrowsers: [&#x27;type&#x27;, BrowserCollection],
+    args: [&#x27;value&#x27;, {}],
+    timer: [&#x27;value&#x27;, {
+      setTimeout: function () {
+        return setTimeout.apply(root, arguments)
+      },
+      clearTimeout: function (timeoutId) {
+        clearTimeout(timeoutId)
+      }
+    }]
+  }]
+
+  this._setUpLoadErrorListener()
+  // Load the plugins
+  modules = modules.concat(plugin.resolve(config.plugins, this))
+
+  this._injector = new di.Injector(modules)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.Server.start" id="apidoc.element.karma.Server.start">
+        function <span class="apidocSignatureSpan">karma.Server.</span>start
+        <span class="apidocSignatureSpan">(cliOptions, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function (cliOptions, done) {
+  var server = new Server(cliOptions, done)
+  server.start()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+exports.run = function () {
+var config = exports.process()
+
+switch (config.cmd) {
+  case &#x27;start&#x27;:
+    new Server(config).<span class="apidocCodeKeywordSpan">start</span>()
+    break
+  case &#x27;run&#x27;:
+    require(&#x27;./runner&#x27;).run(config)
+    break
+  case &#x27;stop&#x27;:
+    require(&#x27;./stopper&#x27;).stop(config)
+    break
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.Server.super_" id="apidoc.element.karma.Server.super_">
+        function <span class="apidocSignatureSpan">karma.Server.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">super_ = function () {
+  this.bind = bindAllEvents
+
+  this.emitAsync = function (name) {
+    // TODO(vojta): allow passing args
+    // TODO(vojta): ignore/throw if listener call done() multiple times
+    var pending = this.listeners(name).length
+    var deferred = helper.defer()
+    var done = function () {
+      if (!--pending) {
+        deferred.resolve()
+      }
+    }
+
+    this.emit(name, done)
+
+    if (!pending) {
+      deferred.resolve()
+    }
+
+    return deferred.promise
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.karma.Server.prototype" id="apidoc.module.karma.Server.prototype">module karma.Server.prototype</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.Server.prototype._detach" id="apidoc.element.karma.Server.prototype._detach">
+        function <span class="apidocSignatureSpan">karma.Server.prototype.</span>_detach
+        <span class="apidocSignatureSpan">(config, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_detach = function (config, done) {
+  var log = this.log
+  var tmpFile = tmp.fileSync({keep: true})
+  log.info(&#x27;Starting karma detached&#x27;)
+  log.info(&#x27;Run &#x22;karma stop&#x22; to stop the server.&#x27;)
+  log.debug(&#x27;Writing config to tmp-file %s&#x27;, tmpFile.name)
+  config.detached = false
+  try {
+    fs.writeFileSync(tmpFile.name, JSON.stringify(config), &#x27;utf8&#x27;)
+  } catch (e) {
+    log.error(&#x22;Couldn&#x27;t write temporary configuration file&#x22;)
+    done(1)
+    return
+  }
+  var child = spawn(process.argv[0], [path.resolve(__dirname, &#x27;../lib/detached.js&#x27;), tmpFile.name], {
+    detached: true,
+    stdio: &#x27;ignore&#x27;
+  })
+  child.unref()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.Server.prototype._setUpLoadErrorListener" id="apidoc.element.karma.Server.prototype._setUpLoadErrorListener">
+        function <span class="apidocSignatureSpan">karma.Server.prototype.</span>_setUpLoadErrorListener
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_setUpLoadErrorListener = function () {
+  var self = this
+  self.on(&#x27;load_error&#x27;, function (type, name) {
+    self.log.debug(&#x27;Registered a load error of type %s with name %s&#x27;, type, name)
+    self.loadErrors.push([type, name])
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.Server.prototype._start" id="apidoc.element.karma.Server.prototype._start">
+        function <span class="apidocSignatureSpan">karma.Server.prototype.</span>_start
+        <span class="apidocSignatureSpan">(config, launcher, preprocess, fileList, capturedBrowsers, executor, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_start = function (config, launcher, preprocess, fileList, capturedBrowsers, executor, done) {
+  var self = this
+  if (config.detached) {
+    this._detach(config, done)
+    return
+  }
+
+  self._fileList = fileList
+
+  config.frameworks.forEach(function (framework) {
+    self._injector.get(&#x27;framework:&#x27; + framework)
+  })
+
+  var webServer = self._injector.get(&#x27;webServer&#x27;)
+  var socketServer = self._injector.get(&#x27;socketServer&#x27;)
+
+  // A map of launched browsers.
+  var singleRunDoneBrowsers = Object.create(null)
+
+  // Passing fake event emitter, so that it does not emit on the global,
+  // we don&#x27;t care about these changes.
+  var singleRunBrowsers = new BrowserCollection(new EventEmitter())
+
+  // Some browsers did not get captured.
+  var singleRunBrowserNotCaptured = false
+
+  webServer.on(&#x27;error&#x27;, function (e) {
+    if (e.code === &#x27;EADDRINUSE&#x27;) {
+      self.log.warn(&#x27;Port %d in use&#x27;, config.port)
+      config.port++
+      webServer.listen(config.port, config.listenAddress)
+    } else {
+      throw e
+    }
+  })
+
+  var afterPreprocess = function () {
+    if (config.autoWatch) {
+      self._injector.invoke(watcher.watch)
+    }
+
+    webServer.listen(config.port, config.listenAddress, function () {
+      self.log.info(&#x27;Karma v%s server started at %s//%s:%s%s&#x27;, constant.VERSION,
+        config.protocol, config.listenAddress, config.port, config.urlRoot)
+
+      self.emit(&#x27;listening&#x27;, config.port)
+      if (config.browsers &#x26;&#x26; config.browsers.length) {
+        self._injector.invoke(launcher.launch, launcher).forEach(function (browserLauncher) {
+          singleRunDoneBrowsers[browserLauncher.id] = false
+        })
+      }
+      var noLoadErrors = self.loadErrors.length
+      if (noLoadErrors &#x3e; 0) {
+        self.log.error(&#x27;Found %d load error%s&#x27;, noLoadErrors, noLoadErrors === 1 ? &#x27;&#x27; : &#x27;s&#x27;)
+        process.exitCode = 1
+        process.kill(process.pid, &#x27;SIGINT&#x27;)
+      }
+    })
+  }
+
+  fileList.refresh().then(afterPreprocess, afterPreprocess)
+
+  self.on(&#x27;browsers_change&#x27;, function () {
+    // TODO(vojta): send only to interested browsers
+    socketServer.sockets.emit(&#x27;info&#x27;, capturedBrowsers.serialize())
+  })
+
+  self.on(&#x27;browser_register&#x27;, function (browser) {
+    launcher.markCaptured(browser.id)
+
+    // TODO(vojta): This is lame, browser can get captured and then
+    // crash (before other browsers get captured).
+    if (launcher.areAllCaptured()) {
+      self.emit(&#x27;browsers_ready&#x27;)
+
+      if (config.autoWatch) {
+        executor.schedule()
+      }
+    }
+  })
+
+  if (config.browserConsoleLogOptions &#x26;&#x26; config.browserConsoleLogOptions.path) {
+    var configLevel = config.browserConsoleLogOptions.level || &#x27;debug&#x27;
+    var configFormat = config.browserConsoleLogOptions.format || &#x27;%b %T: %m&#x27;
+    var configPath = config.browserConsoleLogOptions.path
+    self.log.info(&#x27;Writing browser console to file: %s&#x27;, configPath)
+    var browserLogFile = fs.openSync(configPath, &#x27;w+&#x27;)
+    var levels = [&#x27;log&#x27;, &#x27;error&#x27;, &#x27;warn&#x27;, &#x27;info&#x27;, &#x27;debug&#x27;]
+    self.on(&#x27;browser_log&#x27;, function (browser, message, level) {
+      if (levels.indexOf(level.toLowerCase()) &#x3e; levels.indexOf(configLevel)) return
+      if (!helper.isString(message)) {
+        message = util.inspect(message, {showHidden: false, colors: false})
+      }
+      var logMap = {&#x27;%m&#x27;: message, &#x27;%t&#x27;: level.toLowerCase(), &#x27;%T&#x27;: level.toUpperCase(), &#x27;%b&#x27;: browser}
+      var logString = configFormat.replace(/%[mtTb]/g, function (m) {
+        return logMap[m]
+      })
+      self.log.debug(&#x27;Writing browser console line: %s&#x27;, logString)
+      fs.write(browserLogFile, logString + &#x27;\n&#x27;)
+    })
+  }
+
+  var EVENTS_TO_REPLY = [&#x27;start&#x27;, &#x27;info&#x27;, &#x27;karma_error&#x27;, &#x27;result&#x27;, &#x27;complete&#x27;]
+  socketServer.sockets.on(&#x27;connection&#x27;, function (socket) {
+    self.log.debug(&#x27;A browser has connected on socket &#x27; + socket.id)
+
+    var replySocketEvents = events.bufferEvents(socket, EVENTS_TO_REPLY)
+
+    socket.on(&#x27;complete&#x27;, function (data, ack) {
+      ack()
+    })
+
+    socket.on(&#x27;register&#x27;, function (info) {
+      var newBrowser
+      var isRestart
+
+      if (info.id) {
+        newBrowser = capturedBrowsers.getById ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.Server.prototype.get" id="apidoc.element.karma.Server.prototype.get">
+        function <span class="apidocSignatureSpan">karma.Server.prototype.</span>get
+        <span class="apidocSignatureSpan">(token)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (token) {
+  return this._injector.get(token)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  var token = type + &#x27;:&#x27; + definition.base
+  var locals = {
+    args: [&#x27;value&#x27;, definition]
+  }
+
+  module[type + &#x27;:&#x27; + name] = [&#x27;factory&#x27;, function (injector) {
+    var plugin = injector.createChild([locals], [token]).<span class="apidocCodeKeywordSpan">get</span>(token)
+    if (type === &#x27;launcher&#x27; &#x26;&#x26; helper.isDefined(definition.displayName)) {
+      plugin.displayName = definition.displayName
+    }
+    return plugin
+  }]
+  hasSomeInlinedPlugin = true
+})
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.Server.prototype.refreshFiles" id="apidoc.element.karma.Server.prototype.refreshFiles">
+        function <span class="apidocSignatureSpan">karma.Server.prototype.</span>refreshFiles
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">refreshFiles = function () {
+  if (!this._fileList) return Promise.resolve()
+
+  return this._fileList.refresh()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.Server.prototype.start" id="apidoc.element.karma.Server.prototype.start">
+        function <span class="apidocSignatureSpan">karma.Server.prototype.</span>start
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function () {
+  this._injector.invoke(this._start, this)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+exports.run = function () {
+var config = exports.process()
+
+switch (config.cmd) {
+  case &#x27;start&#x27;:
+    new Server(config).<span class="apidocCodeKeywordSpan">start</span>()
+    break
+  case &#x27;run&#x27;:
+    require(&#x27;./runner&#x27;).run(config)
+    break
+  case &#x27;stop&#x27;:
+    require(&#x27;./stopper&#x27;).stop(config)
+    break
+...</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.karma.Server.super_" id="apidoc.module.karma.Server.super_">module karma.Server.super_</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.Server.super_.super_" id="apidoc.element.karma.Server.super_.super_">
+        function <span class="apidocSignatureSpan">karma.Server.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.karma.cli" id="apidoc.module.karma.cli">module karma.cli</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.cli.argsBeforeDoubleDash" id="apidoc.element.karma.cli.argsBeforeDoubleDash">
+        function <span class="apidocSignatureSpan">karma.cli.</span>argsBeforeDoubleDash
+        <span class="apidocSignatureSpan">(argv)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">argsBeforeDoubleDash = function (argv) {
+  var idx = argv.indexOf(&#x27;--&#x27;)
+
+  return idx === -1 ? argv : argv.slice(0, idx)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.cli.parseClientArgs" id="apidoc.element.karma.cli.parseClientArgs">
+        function <span class="apidocSignatureSpan">karma.cli.</span>parseClientArgs
+        <span class="apidocSignatureSpan">(argv)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseClientArgs = function (argv) {
+  // extract any args after &#x27;--&#x27; as clientArgs
+  var clientArgs = []
+  argv = argv.slice(2)
+  var idx = argv.indexOf(&#x27;--&#x27;)
+  if (idx !== -1) {
+    clientArgs = argv.slice(idx + 1)
+  }
+  return clientArgs
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.cli.process" id="apidoc.element.karma.cli.process">
+        function <span class="apidocSignatureSpan">karma.cli.</span>process
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">process = function () {
+  var argv = optimist.parse(argsBeforeDoubleDash(process.argv.slice(2)))
+  var options = {
+    cmd: argv._.shift()
+  }
+
+  switch (options.cmd) {
+    case &#x27;start&#x27;:
+      describeStart()
+      break
+
+    case &#x27;run&#x27;:
+      describeRun()
+      options.clientArgs = parseClientArgs(process.argv)
+      break
+
+    case &#x27;stop&#x27;:
+      describeStop()
+      break
+
+    case &#x27;init&#x27;:
+      describeInit()
+      break
+
+    case &#x27;completion&#x27;:
+      describeCompletion()
+      break
+
+    default:
+      describeShared()
+      if (!options.cmd) {
+        processArgs(argv, options, fs, path)
+        console.error(&#x27;Command not specified.&#x27;)
+      } else {
+        console.error(&#x27;Unknown command &#x22;&#x27; + options.cmd + &#x27;&#x22;.&#x27;)
+      }
+      optimist.showHelp()
+      process.exit(1)
+  }
+
+  return processArgs(argv, options, fs, path)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    process.exit(1)
+}
+
+return processArgs(argv, options, fs, path)
+}
+
+exports.run = function () {
+var config = exports.<span class="apidocCodeKeywordSpan">process</span>()
+
+switch (config.cmd) {
+  case &#x27;start&#x27;:
+    new Server(config).start()
+    break
+  case &#x27;run&#x27;:
+    require(&#x27;./runner&#x27;).run(config)
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.cli.processArgs" id="apidoc.element.karma.cli.processArgs">
+        function <span class="apidocSignatureSpan">karma.cli.</span>processArgs
+        <span class="apidocSignatureSpan">(argv, options, fs, path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">processArgs = function (argv, options, fs, path) {
+  if (argv.help) {
+    console.log(optimist.help())
+    process.exit(0)
+  }
+
+  if (argv.version) {
+    console.log(&#x27;Karma version: &#x27; + constant.VERSION)
+    process.exit(0)
+  }
+
+  // TODO(vojta): warn/throw when unknown argument (probably mispelled)
+  Object.getOwnPropertyNames(argv).forEach(function (name) {
+    var argumentValue = argv[name]
+    if (name !== &#x27;_&#x27; &#x26;&#x26; name !== &#x27;$0&#x27;) {
+      if (Array.isArray(argumentValue)) {
+        // If the same argument is defined multiple times, override.
+        argumentValue = argumentValue.pop()
+      }
+      options[helper.dashToCamel(name)] = argumentValue
+    }
+  })
+
+  if (helper.isString(options.autoWatch)) {
+    options.autoWatch = options.autoWatch === &#x27;true&#x27;
+  }
+
+  if (helper.isString(options.colors)) {
+    options.colors = options.colors === &#x27;true&#x27;
+  }
+
+  if (helper.isString(options.failOnEmptyTestSuite)) {
+    options.failOnEmptyTestSuite = options.failOnEmptyTestSuite === &#x27;true&#x27;
+  }
+
+  if (helper.isString(options.formatError)) {
+    try {
+      var required = require(options.formatError)
+    } catch (err) {
+      console.error(&#x27;Could not require formatError: &#x27; + options.formatError, err)
+    }
+    // support exports.formatError and module.exports = function
+    options.formatError = required.formatError || required
+    if (!helper.isFunction(options.formatError)) {
+      console.error(&#x27;Format error must be a function, got: &#x27; + typeof options.formatError)
+      process.exit(1)
+    }
+  }
+
+  if (helper.isString(options.logLevel)) {
+    var logConstant = constant[&#x27;LOG_&#x27; + options.logLevel.toUpperCase()]
+    if (helper.isDefined(logConstant)) {
+      options.logLevel = logConstant
+    } else {
+      console.error(&#x27;Log level must be one of disable, error, warn, info, or debug.&#x27;)
+      process.exit(1)
+    }
+  } else if (helper.isDefined(options.logLevel)) {
+    console.error(&#x27;Log level must be one of disable, error, warn, info, or debug.&#x27;)
+    process.exit(1)
+  }
+
+  if (helper.isString(options.singleRun)) {
+    options.singleRun = options.singleRun === &#x27;true&#x27;
+  }
+
+  if (helper.isString(options.browsers)) {
+    options.browsers = options.browsers.split(&#x27;,&#x27;)
+  }
+
+  if (options.reportSlowerThan === false) {
+    options.reportSlowerThan = 0
+  }
+
+  if (helper.isString(options.reporters)) {
+    options.reporters = options.reporters.split(&#x27;,&#x27;)
+  }
+
+  if (helper.isString(options.removedFiles)) {
+    options.removedFiles = options.removedFiles.split(&#x27;,&#x27;)
+  }
+
+  if (helper.isString(options.addedFiles)) {
+    options.addedFiles = options.addedFiles.split(&#x27;,&#x27;)
+  }
+
+  if (helper.isString(options.changedFiles)) {
+    options.changedFiles = options.changedFiles.split(&#x27;,&#x27;)
+  }
+
+  if (helper.isString(options.refresh)) {
+    options.refresh = options.refresh === &#x27;true&#x27;
+  }
+
+  var configFile = argv._.shift()
+
+  if (!configFile) {
+    // default config file (if exists)
+    if (fs.existsSync(&#x27;./karma.conf.js&#x27;)) {
+      configFile = &#x27;./karma.conf.js&#x27;
+    } else if (fs.existsSync(&#x27;./karma.conf.coffee&#x27;)) {
+      configFile = &#x27;./karma.conf.coffee&#x27;
+    } else if (fs.existsSync(&#x27;./karma.conf.ts&#x27;)) {
+      configFile = &#x27;./karma.conf.ts&#x27;
+    } else if (fs.existsSync(&#x27;./.config/karma.conf.js&#x27;)) {
+      configFile = &#x27;./.config/karma.conf.js&#x27;
+    } else if (fs.existsSync(&#x27;./.config/karma.conf.coffee&#x27;)) {
+      configFile = &#x27;./.config/karma.conf.coffee&#x27;
+    } else if (fs.existsSync(&#x27;./.config/karma.conf.ts&#x27;)) {
+      configFile = &#x27;./.config/karma.conf.ts&#x27;
+    }
+  }
+
+  options.configFile = configFile ? path.resolve(configFile) : null
+
+  return options
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.cli.run" id="apidoc.element.karma.cli.run">
+        function <span class="apidocSignatureSpan">karma.cli.</span>run
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">run = function () {
+  var config = exports.process()
+
+  switch (config.cmd) {
+    case &#x27;start&#x27;:
+      new Server(config).start()
+      break
+    case &#x27;run&#x27;:
+      require(&#x27;./runner&#x27;).run(config)
+      break
+    case &#x27;stop&#x27;:
+      require(&#x27;./stopper&#x27;).stop(config)
+      break
+    case &#x27;init&#x27;:
+      require(&#x27;./init&#x27;).init(config)
+      break
+    case &#x27;completion&#x27;:
+      require(&#x27;./completion&#x27;).completion(config)
+      break
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var config = exports.process()
+
+switch (config.cmd) {
+  case &#x27;start&#x27;:
+    new Server(config).start()
+    break
+  case &#x27;run&#x27;:
+    require(&#x27;./runner&#x27;).<span class="apidocCodeKeywordSpan">run</span>(config)
+    break
+  case &#x27;stop&#x27;:
+    require(&#x27;./stopper&#x27;).stop(config)
+    break
+  case &#x27;init&#x27;:
+    require(&#x27;./init&#x27;).init(config)
+    break
+...</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.karma.completion" id="apidoc.module.karma.completion">module karma.completion</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.completion.completion" id="apidoc.element.karma.completion.completion">
+        function <span class="apidocSignatureSpan">karma.</span>completion
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">completion = function () {
+  if (process.argv[3] === &#x27;--&#x27;) {
+    return complete(parseEnv(process.argv, process.env))
+  }
+
+  // just print out the karma-completion.sh
+  var fs = require(&#x27;graceful-fs&#x27;)
+  var path = require(&#x27;path&#x27;)
+
+  fs.readFile(path.resolve(__dirname, &#x27;../scripts/karma-completion.sh&#x27;), &#x27;utf8&#x27;, function (err, data) {
+    if (err) return console.error(err)
+
+    process.stdout.write(data)
+    process.stdout.on(&#x27;error&#x27;, function (error) {
+      // Darwin is a real dick sometimes.
+      //
+      // This is necessary because the &#x22;source&#x22; or &#x22;.&#x22; program in
+      // bash on OS X closes its file argument before reading
+      // from it, meaning that you get exactly 1 write, which will
+      // work most of the time, and will always raise an EPIPE.
+      //
+      // Really, one should not be tossing away EPIPE errors, or any
+      // errors, so casually.  But, without this, `. &#x3c;(karma completion)`
+      // can never ever work on OS X.
+      if (error.errno === &#x27;EPIPE&#x27;) {
+        error = null
+      }
+    })
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    case &#x27;stop&#x27;:
+      require(&#x27;./stopper&#x27;).stop(config)
+      break
+    case &#x27;init&#x27;:
+      require(&#x27;./init&#x27;).init(config)
+      break
+    case &#x27;completion&#x27;:
+      require(&#x27;./completion&#x27;).<span class="apidocCodeKeywordSpan">completion</span>(config)
+      break
+  }
+}
+
+// just for testing
+exports.processArgs = processArgs
+exports.parseClientArgs = parseClientArgs
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.completion.complete" id="apidoc.element.karma.completion.complete">
+        function <span class="apidocSignatureSpan">karma.completion.</span>complete
+        <span class="apidocSignatureSpan">(env)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">complete = function (env) {
+  if (env.count === 1) {
+    if (env.words[0].charAt(0) === &#x27;-&#x27;) {
+      return sendCompletion([&#x27;--help&#x27;, &#x27;--version&#x27;], env)
+    }
+
+    return sendCompletion(Object.keys(options), env)
+  }
+
+  if (env.count === 2 &#x26;&#x26; env.words[1].charAt(0) !== &#x27;-&#x27;) {
+    // complete files (probably karma.conf.js)
+    return sendCompletionFiles(env)
+  }
+
+  var cmdOptions = options[env.words[0]]
+  var previousOption = cmdOptions[env.prev]
+
+  if (!cmdOptions) {
+    // no completion, wrong command
+    return sendCompletionNoOptions()
+  }
+
+  if (previousOption === CUSTOM &#x26;&#x26; env.last) {
+    // custom value with already filled something
+    return sendCompletionConfirmLast(env)
+  }
+
+  if (previousOption) {
+    // custom options
+    return sendCompletion(previousOption, env)
+  }
+
+  return sendCompletion(Object.keys(cmdOptions), env)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.completion.opositeWord" id="apidoc.element.karma.completion.opositeWord">
+        function <span class="apidocSignatureSpan">karma.completion.</span>opositeWord
+        <span class="apidocSignatureSpan">(word)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">opositeWord = function (word) {
+  if (word.charAt(0) !== &#x27;-&#x27;) {
+    return null
+  }
+
+  return word.substr(0, 5) === &#x27;--no-&#x27; ? &#x27;--&#x27; + word.substr(5) : &#x27;--no-&#x27; + word.substr(2)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.completion.sendCompletion" id="apidoc.element.karma.completion.sendCompletion">
+        function <span class="apidocSignatureSpan">karma.completion.</span>sendCompletion
+        <span class="apidocSignatureSpan">(possibleWords, env)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendCompletion = function (possibleWords, env) {
+  var regexp = new RegExp(&#x27;^&#x27; + env.last)
+  var filteredWords = possibleWords.filter(function (word) {
+    return regexp.test(word) &#x26;&#x26; env.words.indexOf(word) === -1 &#x26;&#x26;
+      env.words.indexOf(opositeWord(word)) === -1
+  })
+
+  if (!filteredWords.length) {
+    return sendCompletionNoOptions(env)
+  }
+
+  filteredWords.forEach(function (word) {
+    console.log(word)
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.karma.config" id="apidoc.module.karma.config">module karma.config</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.config.parseConfig" id="apidoc.element.karma.config.parseConfig">
+        function <span class="apidocSignatureSpan">karma.config.</span>parseConfig
+        <span class="apidocSignatureSpan">(configFilePath, cliOptions)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseConfig = function (configFilePath, cliOptions) {
+  var configModule
+  if (configFilePath) {
+    log.debug(&#x27;Loading config %s&#x27;, configFilePath)
+
+    try {
+      configModule = require(configFilePath)
+      if (typeof configModule === &#x27;object&#x27; &#x26;&#x26; typeof configModule.default !== &#x27;undefined&#x27;) {
+        configModule = configModule.default
+      }
+    } catch (e) {
+      if (e.code === &#x27;MODULE_NOT_FOUND&#x27; &#x26;&#x26; e.message.indexOf(configFilePath) !== -1) {
+        log.error(&#x27;File %s does not exist!&#x27;, configFilePath)
+      } else {
+        log.error(&#x27;Invalid config file!\n  &#x27; + e.stack)
+
+        var extension = path.extname(configFilePath)
+        if (extension === &#x27;.coffee&#x27; &#x26;&#x26; !COFFEE_SCRIPT_AVAILABLE) {
+          log.error(&#x27;You need to install CoffeeScript.\n&#x27; +
+            &#x27;  npm install coffee-script --save-dev&#x27;)
+        } else if (extension === &#x27;.ls&#x27; &#x26;&#x26; !LIVE_SCRIPT_AVAILABLE) {
+          log.error(&#x27;You need to install LiveScript.\n&#x27; +
+            &#x27;  npm install LiveScript --save-dev&#x27;)
+        } else if (extension === &#x27;.ts&#x27; &#x26;&#x26; !TYPE_SCRIPT_AVAILABLE) {
+          log.error(&#x27;You need to install TypeScript.\n&#x27; +
+            &#x27;  npm install typescript ts-node --save-dev&#x27;)
+        }
+      }
+      return process.exit(1)
+    }
+    if (!helper.isFunction(configModule)) {
+      log.error(&#x27;Config file must export a function!\n&#x27; + CONFIG_SYNTAX_HELP)
+      return process.exit(1)
+    }
+  } else {
+    log.debug(&#x27;No config file specified.&#x27;)
+    // if no config file path is passed, we define a dummy config module.
+    configModule = function () {}
+  }
+
+  var config = new Config()
+
+  // save and reset hostname and listenAddress so we can detect if the user
+  // changed them
+  var defaultHostname = config.hostname
+  config.hostname = null
+  var defaultListenAddress = config.listenAddress
+  config.listenAddress = null
+
+  // add the user&#x27;s configuration in
+  config.set(cliOptions)
+
+  try {
+    configModule(config)
+  } catch (e) {
+    log.error(&#x27;Error in config file!\n&#x27;, e)
+    return process.exit(1)
+  }
+
+  // merge the config from config file and cliOptions (precedence)
+  config.set(cliOptions)
+
+  // if the user changed listenAddress, but didn&#x27;t set a hostname, warn them
+  if (config.hostname === null &#x26;&#x26; config.listenAddress !== null) {
+    log.warn(&#x27;ListenAddress was set to %s but hostname was left as the default: &#x27; +
+      &#x27;%s. If your browsers fail to connect, consider changing the hostname option.&#x27;,
+      config.listenAddress, defaultHostname)
+  }
+  // restore values that weren&#x27;t overwritten by the user
+  if (config.hostname === null) {
+    config.hostname = defaultHostname
+  }
+  if (config.listenAddress === null) {
+    config.listenAddress = defaultListenAddress
+  }
+
+  // configure the logger as soon as we can
+  logger.setup(config.logLevel, config.colors, config.loggers)
+
+  return normalizeConfig(config, configFilePath)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.karma.emitter_wrapper" id="apidoc.module.karma.emitter_wrapper">module karma.emitter_wrapper</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.emitter_wrapper.emitter_wrapper" id="apidoc.element.karma.emitter_wrapper.emitter_wrapper">
+        function <span class="apidocSignatureSpan">karma.</span>emitter_wrapper
+        <span class="apidocSignatureSpan">(emitter)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EmitterWrapper(emitter) {
+  this.listeners = {}
+  this.emitter = emitter
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.karma.emitter_wrapper.prototype" id="apidoc.module.karma.emitter_wrapper.prototype">module karma.emitter_wrapper.prototype</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.emitter_wrapper.prototype.addListener" id="apidoc.element.karma.emitter_wrapper.prototype.addListener">
+        function <span class="apidocSignatureSpan">karma.emitter_wrapper.prototype.</span>addListener
+        <span class="apidocSignatureSpan">(event, listener)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addListener = function (event, listener) {
+  this.emitter.addListener(event, listener)
+
+  if (!this.listeners.hasOwnProperty(event)) {
+    this.listeners[event] = []
+  }
+
+  this.listeners[event].push(listener)
+
+  return this
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+function EmitterWrapper (emitter) {
+this.listeners = {}
+this.emitter = emitter
+}
+
+EmitterWrapper.prototype.addListener = EmitterWrapper.prototype.on = function (event, listener) {
+this.emitter.<span class="apidocCodeKeywordSpan">addListener</span>(event, listener)
+
+if (!this.listeners.hasOwnProperty(event)) {
+  this.listeners[event] = []
+}
+
+this.listeners[event].push(listener)
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.emitter_wrapper.prototype.on" id="apidoc.element.karma.emitter_wrapper.prototype.on">
+        function <span class="apidocSignatureSpan">karma.emitter_wrapper.prototype.</span>on
+        <span class="apidocSignatureSpan">(event, listener)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">on = function (event, listener) {
+  this.emitter.addListener(event, listener)
+
+  if (!this.listeners.hasOwnProperty(event)) {
+    this.listeners[event] = []
+  }
+
+  this.listeners[event].push(listener)
+
+  return this
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var fs = require(&#x27;graceful-fs&#x27;)
+  var path = require(&#x27;path&#x27;)
+
+  fs.readFile(path.resolve(__dirname, &#x27;../scripts/karma-completion.sh&#x27;), &#x27;utf8&#x27;, function (err, data) {
+if (err) return console.error(err)
+
+process.stdout.write(data)
+process.stdout.<span class="apidocCodeKeywordSpan">on</span>(&#x27;error&#x27;, function (error) {
+  // Darwin is a real dick sometimes.
+  //
+  // This is necessary because the &#x22;source&#x22; or &#x22;.&#x22; program in
+  // bash on OS X closes its file argument before reading
+  // from it, meaning that you get exactly 1 write, which will
+  // work most of the time, and will always raise an EPIPE.
+  //
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.emitter_wrapper.prototype.removeAllListeners" id="apidoc.element.karma.emitter_wrapper.prototype.removeAllListeners">
+        function <span class="apidocSignatureSpan">karma.emitter_wrapper.prototype.</span>removeAllListeners
+        <span class="apidocSignatureSpan">(event)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeAllListeners = function (event) {
+  var events = event ? [event] : Object.keys(this.listeners)
+  var self = this
+  events.forEach(function (event) {
+    self.listeners[event].forEach(function (listener) {
+      self.emitter.removeListener(event, listener)
+    })
+    delete self.listeners[event]
+  })
+
+  return this
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.karma.events" id="apidoc.module.karma.events">module karma.events</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.events.EventEmitter" id="apidoc.element.karma.events.EventEmitter">
+        function <span class="apidocSignatureSpan">karma.events.</span>EventEmitter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">EventEmitter = function () {
+  this.bind = bindAllEvents
+
+  this.emitAsync = function (name) {
+    // TODO(vojta): allow passing args
+    // TODO(vojta): ignore/throw if listener call done() multiple times
+    var pending = this.listeners(name).length
+    var deferred = helper.defer()
+    var done = function () {
+      if (!--pending) {
+        deferred.resolve()
+      }
+    }
+
+    this.emit(name, done)
+
+    if (!pending) {
+      deferred.resolve()
+    }
+
+    return deferred.promise
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.events.bindAll" id="apidoc.element.karma.events.bindAll">
+        function <span class="apidocSignatureSpan">karma.events.</span>bindAll
+        <span class="apidocSignatureSpan">(object, context)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bindAll = function (object, context) {
+  context = context || this
+
+  var bindMethod = function (method) {
+    context.on(helper.camelToSnake(method.substr(2)), function () {
+      var args = Array.prototype.slice.call(arguments, 0)
+      args.push(context)
+      object[method].apply(object, args)
+    })
+  }
+
+  for (var method in object) {
+    if (helper.isFunction(object[method]) &#x26;&#x26; method.substr(0, 2) === &#x27;on&#x27;) {
+      bindMethod(method)
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  this.state = READY
+  this.lastResult = new Result()
+  this.disconnectsCount = 0
+
+  this.init = function () {
+collection.add(this)
+
+events.<span class="apidocCodeKeywordSpan">bindAll</span>(this, socket)
+
+log.info(&#x27;Connected on socket %s with id %s&#x27;, socket.id, id)
+
+// TODO(vojta): move to collection
+emitter.emit(&#x27;browsers_change&#x27;, collection)
+
+emitter.emit(&#x27;browser_register&#x27;, this)
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.events.bufferEvents" id="apidoc.element.karma.events.bufferEvents">
+        function <span class="apidocSignatureSpan">karma.events.</span>bufferEvents
+        <span class="apidocSignatureSpan">(emitter, eventsToBuffer)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bufferEvents = function (emitter, eventsToBuffer) {
+  var listeners = []
+  var eventsToReply = []
+  var genericListener = function () {
+    eventsToReply.push(Array.prototype.slice.call(arguments))
+  }
+
+  eventsToBuffer.forEach(function (eventName) {
+    var listener = genericListener.bind(null, eventName)
+    listeners.push(listener)
+    emitter.on(eventName, listener)
+  })
+
+  return function () {
+    if (!eventsToReply) {
+      return
+    }
+
+    // remove all buffering listeners
+    listeners.forEach(function (listener, i) {
+      emitter.removeListener(eventsToBuffer[i], listener)
+    })
+
+    // reply
+    eventsToReply.forEach(function (args) {
+      events.EventEmitter.prototype.emit.apply(emitter, args)
+    })
+
+    // free-up
+    listeners = eventsToReply = null
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.karma.file" id="apidoc.module.karma.file">module karma.file</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.file.file" id="apidoc.element.karma.file.file">
+        function <span class="apidocSignatureSpan">karma.</span>file
+        <span class="apidocSignatureSpan">(path, mtime, doNotCache)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">file = function (path, mtime, doNotCache) {
+  // used for serving (processed path, eg some/file.coffee -&#x3e; some/file.coffee.js)
+  this.path = path
+
+  // original absolute path, id of the file
+  this.originalPath = path
+
+  // where the content is stored (processed)
+  this.contentPath = path
+
+  this.mtime = mtime
+  this.isUrl = false
+
+  this.doNotCache = _.isUndefined(doNotCache) ? false : doNotCache
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.karma.file.prototype" id="apidoc.module.karma.file.prototype">module karma.file.prototype</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.file.prototype.toString" id="apidoc.element.karma.file.prototype.toString">
+        function <span class="apidocSignatureSpan">karma.file.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+  return this.path
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+
+var fs = require(&#x27;graceful-fs&#x27;)
+var path = require(&#x27;path&#x27;)
+
+var pkg = JSON.parse(fs.readFileSync(path.join(__dirname, &#x27;/../package.json&#x27;)).<span class="apidocCodeKeywordSpan">toS\
+tring</span>())
+
+exports.VERSION = pkg.version
+
+exports.DEFAULT_PORT = process.env.PORT || 9876
+exports.DEFAULT_HOSTNAME = process.env.IP || &#x27;localhost&#x27;
+exports.DEFAULT_LISTEN_ADDR = process.env.LISTEN_ADDR || &#x27;0.0.0.0&#x27;
+...</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.karma.file_list" id="apidoc.module.karma.file_list">module karma.file_list</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.file_list.file_list" id="apidoc.element.karma.file_list.file_list">
+        function <span class="apidocSignatureSpan">karma.</span>file_list
+        <span class="apidocSignatureSpan">(patterns, excludes, emitter, preprocess, batchInterval)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">file_list = function (patterns, excludes, emitter, preprocess, batchInterval) {
+  // Store options
+  this._patterns = patterns
+  this._excludes = excludes
+  this._emitter = emitter
+  this._preprocess = Promise.promisify(preprocess)
+  this._batchInterval = batchInterval
+
+  // The actual list of files
+  this.buckets = new Map()
+
+  // Internal tracker if we are refreshing.
+  // When a refresh is triggered this gets set
+  // to the promise that `this._refresh` returns.
+  // So we know we are refreshing when this promise
+  // is still pending, and we are done when it&#x27;s either
+  // resolved or rejected.
+  this._refreshing = Promise.resolve()
+
+  var self = this
+
+  // Emit the `file_list_modified` event.
+  // This function is throttled to the value of `batchInterval`
+  // to avoid spamming the listener.
+  function emit () {
+    self._emitter.emit(&#x27;file_list_modified&#x27;, self.files)
+  }
+  var throttledEmit = _.throttle(emit, self._batchInterval, {leading: false})
+  self._emitModified = function (immediate) {
+    immediate ? emit() : throttledEmit()
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.karma.file_list.prototype" id="apidoc.module.karma.file_list.prototype">module karma.file_list.prototype</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.file_list.prototype._exists" id="apidoc.element.karma.file_list.prototype._exists">
+        function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>_exists
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_exists = function (path) {
+  var self = this
+
+  var patterns = this._patterns.filter(function (pattern) {
+    return mm(path, pattern.pattern)
+  })
+
+  return !!_.find(patterns, function (pattern) {
+    return self._findFile(path, pattern)
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var pattern = this._isIncluded(path)
+
+if (!pattern) {
+  log.debug(&#x27;Add file &#x22;%s&#x22; ignored. Does not match any pattern.&#x27;, path)
+  return Promise.resolve(this.files)
+}
+
+if (this.<span class="apidocCodeKeywordSpan">_exists</span>(path)) {
+  log.debug(&#x27;Add file &#x22;%s&#x22; ignored. Already in the list.&#x27;, path)
+  return Promise.resolve(this.files)
+}
+
+var file = new File(path)
+this.buckets.get(pattern.pattern).add(file)
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.file_list.prototype._findFile" id="apidoc.element.karma.file_list.prototype._findFile">
+        function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>_findFile
+        <span class="apidocSignatureSpan">(path, pattern)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_findFile = function (path, pattern) {
+  if (!path || !pattern) return
+  if (!this.buckets.has(pattern.pattern)) return
+
+  return _.find(from(this.buckets.get(pattern.pattern)), function (file) {
+    return file.originalPath === path
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var self = this
+
+  var patterns = this._patterns.filter(function (pattern) {
+    return mm(path, pattern.pattern)
+  })
+
+  return !!_.find(patterns, function (pattern) {
+    return self.<span class="apidocCodeKeywordSpan">_findFile</span>(path, pattern)
+  })
+}
+
+// Check if we are currently refreshing
+List.prototype._isRefreshing = function () {
+  return this._refreshing.isPending()
+}
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.file_list.prototype._isExcluded" id="apidoc.element.karma.file_list.prototype._isExcluded">
+        function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>_isExcluded
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_isExcluded = function (path) {
+  return _.find(this._excludes, function (pattern) {
+    return mm(path, pattern)
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    if (_.isEmpty(files)) {
+log.warn(&#x27;Pattern &#x22;%s&#x22; does not match any file.&#x27;, pattern)
+return
+    }
+
+    return Promise.map(files, function (path) {
+if (self.<span class="apidocCodeKeywordSpan">_isExcluded</span>(path)) {
+  log.debug(&#x27;Excluded file &#x22;%s&#x22;&#x27;, path)
+  return Promise.resolve()
+}
+
+var mtime = mg.statCache[path].mtime
+var doNotCache = patternObject.nocache
+var file = new File(path, mtime, doNotCache)
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.file_list.prototype._isIncluded" id="apidoc.element.karma.file_list.prototype._isIncluded">
+        function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>_isIncluded
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_isIncluded = function (path) {
+  return _.find(this._patterns, function (pattern) {
+    return mm(path, pattern.pattern)
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var excluded = this._isExcluded(path)
+if (excluded) {
+  log.debug(&#x27;Add file &#x22;%s&#x22; ignored. Excluded by &#x22;%s&#x22;.&#x27;, path, excluded)
+
+  return Promise.resolve(this.files)
+}
+
+var pattern = this.<span class="apidocCodeKeywordSpan">_isIncluded</span>(path)
+
+if (!pattern) {
+  log.debug(&#x27;Add file &#x22;%s&#x22; ignored. Does not match any pattern.&#x27;, path)
+  return Promise.resolve(this.files)
+}
+
+if (this._exists(path)) {
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.file_list.prototype._isRefreshing" id="apidoc.element.karma.file_list.prototype._isRefreshing">
+        function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>_isRefreshing
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_isRefreshing = function () {
+  return this._refreshing.isPending()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.file_list.prototype._refresh" id="apidoc.element.karma.file_list.prototype._refresh">
+        function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>_refresh
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_refresh = function () {
+  var self = this
+  var buckets = this.buckets
+
+  var promise = Promise.map(this._patterns, function (patternObject) {
+    var pattern = patternObject.pattern
+
+    if (helper.isUrlAbsolute(pattern)) {
+      buckets.set(pattern, new Set([new Url(pattern)]))
+      return Promise.resolve()
+    }
+
+    var mg = new Glob(pathLib.normalize(pattern), GLOB_OPTS)
+    var files = mg.found
+    buckets.set(pattern, new Set())
+
+    if (_.isEmpty(files)) {
+      log.warn(&#x27;Pattern &#x22;%s&#x22; does not match any file.&#x27;, pattern)
+      return
+    }
+
+    return Promise.map(files, function (path) {
+      if (self._isExcluded(path)) {
+        log.debug(&#x27;Excluded file &#x22;%s&#x22;&#x27;, path)
+        return Promise.resolve()
+      }
+
+      var mtime = mg.statCache[path].mtime
+      var doNotCache = patternObject.nocache
+      var file = new File(path, mtime, doNotCache)
+
+      if (file.doNotCache) {
+        log.debug(&#x27;Not preprocessing &#x22;%s&#x22; due to nocache&#x27;)
+        return Promise.resolve(file)
+      }
+
+      return self._preprocess(file).then(function () {
+        return file
+      })
+    })
+    .then(function (files) {
+      files = _.compact(files)
+
+      if (_.isEmpty(files)) {
+        log.warn(&#x27;All files matched by &#x22;%s&#x22; were excluded.&#x27;, pattern)
+      } else {
+        buckets.set(pattern, new Set(files))
+      }
+    })
+  })
+  .then(function () {
+    if (self._refreshing !== promise) {
+      return self._refreshing
+    }
+    self.buckets = buckets
+    self._emitModified(true)
+    return self.files
+  })
+
+  return promise
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+})
+
+// Reglob all patterns to update the list.
+//
+// Returns a promise that is resolved when the refresh
+// is completed.
+List.prototype.refresh = function () {
+  this._refreshing = this.<span class="apidocCodeKeywordSpan">_refresh</span>()
+  return this._refreshing
+}
+
+// Set new patterns and excludes and update
+// the list accordingly
+//
+// patterns - Array, the new patterns.
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.file_list.prototype.addFile" id="apidoc.element.karma.file_list.prototype.addFile">
+        function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>addFile
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addFile = function (path) {
+  var self = this
+
+  // Ensure we are not adding a file that should be excluded
+  var excluded = this._isExcluded(path)
+  if (excluded) {
+    log.debug(&#x27;Add file &#x22;%s&#x22; ignored. Excluded by &#x22;%s&#x22;.&#x27;, path, excluded)
+
+    return Promise.resolve(this.files)
+  }
+
+  var pattern = this._isIncluded(path)
+
+  if (!pattern) {
+    log.debug(&#x27;Add file &#x22;%s&#x22; ignored. Does not match any pattern.&#x27;, path)
+    return Promise.resolve(this.files)
+  }
+
+  if (this._exists(path)) {
+    log.debug(&#x27;Add file &#x22;%s&#x22; ignored. Already in the list.&#x27;, path)
+    return Promise.resolve(this.files)
+  }
+
+  var file = new File(path)
+  this.buckets.get(pattern.pattern).add(file)
+
+  return Promise.all([
+    fs.statAsync(path),
+    this._refreshing
+  ]).spread(function (stat) {
+    file.mtime = stat.mtime
+    return self._preprocess(file)
+  })
+  .then(function () {
+    log.info(&#x27;Added file &#x22;%s&#x22;.&#x27;, path)
+    self._emitModified()
+    return self.files
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.file_list.prototype.changeFile" id="apidoc.element.karma.file_list.prototype.changeFile">
+        function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>changeFile
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">changeFile = function (path) {
+  var self = this
+
+  var pattern = this._isIncluded(path)
+  var file = this._findFile(path, pattern)
+
+  if (!pattern || !file) {
+    log.debug(&#x27;Changed file &#x22;%s&#x22; ignored. Does not match any file in the list.&#x27;, path)
+    return Promise.resolve(this.files)
+  }
+
+  return Promise.all([
+    fs.statAsync(path),
+    this._refreshing
+  ]).spread(function (stat) {
+    if (stat.mtime &#x3c;= file.mtime) throw new Promise.CancellationError()
+
+    file.mtime = stat.mtime
+    return self._preprocess(file)
+  })
+  .then(function () {
+    log.info(&#x27;Changed file &#x22;%s&#x22;.&#x27;, path)
+    self._emitModified()
+    return self.files
+  })
+  .catch(Promise.CancellationError, function () {
+    return self.files
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.file_list.prototype.refresh" id="apidoc.element.karma.file_list.prototype.refresh">
+        function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>refresh
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">refresh = function () {
+  this._refreshing = this._refresh()
+  return this._refreshing
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// is completed.
+List.prototype.reload = function (patterns, excludes) {
+  this._patterns = patterns
+  this._excludes = excludes
+
+  // Wait until the current refresh is done and then do a
+  // refresh to ensure a refresh actually happens
+  return this.<span class="apidocCodeKeywordSpan">refresh</span>()
+}
+
+// Add a new file from the list.
+// This is called by the watcher
+//
+// path - String, the path of the file to update.
+//
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.file_list.prototype.reload" id="apidoc.element.karma.file_list.prototype.reload">
+        function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>reload
+        <span class="apidocSignatureSpan">(patterns, excludes)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reload = function (patterns, excludes) {
+  this._patterns = patterns
+  this._excludes = excludes
+
+  // Wait until the current refresh is done and then do a
+  // refresh to ensure a refresh actually happens
+  return this.refresh()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.file_list.prototype.removeFile" id="apidoc.element.karma.file_list.prototype.removeFile">
+        function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>removeFile
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeFile = function (path) {
+  var self = this
+
+  return Promise.try(function () {
+    var pattern = self._isIncluded(path)
+    var file = self._findFile(path, pattern)
+
+    if (!pattern || !file) {
+      log.debug(&#x27;Removed file &#x22;%s&#x22; ignored. Does not match any file in the list.&#x27;, path)
+      return self.files
+    }
+
+    self.buckets.get(pattern.pattern).delete(file)
+
+    log.info(&#x27;Removed file &#x22;%s&#x22;.&#x27;, path)
+    self._emitModified()
+    return self.files
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.karma.helper" id="apidoc.module.karma.helper">module karma.helper</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.helper.arrayRemove" id="apidoc.element.karma.helper.arrayRemove">
+        function <span class="apidocSignatureSpan">karma.helper.</span>arrayRemove
+        <span class="apidocSignatureSpan">(collection, item)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">arrayRemove = function (collection, item) {
+  var idx = collection.indexOf(item)
+
+  if (idx !== -1) {
+    collection.splice(idx, 1)
+    return true
+  }
+
+  return false
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.helper.browserFullNameToShort" id="apidoc.element.karma.helper.browserFullNameToShort">
+        function <span class="apidocSignatureSpan">karma.helper.</span>browserFullNameToShort
+        <span class="apidocSignatureSpan">(fullName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">browserFullNameToShort = function (fullName) {
+  var agent = useragent.parse(fullName)
+  var isKnown = agent.family !== &#x27;Other&#x27; &#x26;&#x26; agent.os.family !== &#x27;Other&#x27;
+  return isKnown ? agent.toAgent() + &#x27; (&#x27; + agent.os + &#x27;)&#x27; : fullName
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// The browser got permanently disconnected (being removed from the collection and destroyed).
+var DISCONNECTED = 5
+
+var Browser = function (id, fullName, /* capturedBrowsers */ collection, emitter, socket, timer,
+/* config.browserDisconnectTimeout */ disconnectDelay,
+/* config.browserNoActivityTimeout */ noActivityTimeout) {
+var name = helper.<span class="apidocCodeKeywordSpan">browserFullNameToShort</span>(fullName)
+var log = logger.create(name)
+var activeSockets = [socket]
+var activeSocketsIds = function () {
+  return activeSockets.map(function (s) {
+    return s.id
+  }).join(&#x27;, &#x27;)
+}
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.helper.camelToSnake" id="apidoc.element.karma.helper.camelToSnake">
+        function <span class="apidocSignatureSpan">karma.helper.</span>camelToSnake
+        <span class="apidocSignatureSpan">(camelCase)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">camelToSnake = function (camelCase) {
+  return camelCase.replace(/[A-Z]/g, function (match, pos) {
+    return (pos &#x3e; 0 ? &#x27;_&#x27; : &#x27;&#x27;) + match.toLowerCase()
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var helper = require(&#x27;./helper&#x27;)
+
+var bindAllEvents = function (object, context) {
+context = context || this
+
+var bindMethod = function (method) {
+  context.on(helper.<span class="apidocCodeKeywordSpan">camelToSnake</span>(method.substr(2)), function () {
+    var args = Array.prototype.slice.call(arguments, 0)
+    args.push(context)
+    object[method].apply(object, args)
+  })
+}
+
+for (var method in object) {
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.helper.dashToCamel" id="apidoc.element.karma.helper.dashToCamel">
+        function <span class="apidocSignatureSpan">karma.helper.</span>dashToCamel
+        <span class="apidocSignatureSpan">(dash)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dashToCamel = function (dash) {
+  var words = dash.split(&#x27;-&#x27;)
+  return words.shift() + words.map(exports.ucFirst).join(&#x27;&#x27;)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Object.getOwnPropertyNames(argv).forEach(function (name) {
+  var argumentValue = argv[name]
+  if (name !== &#x27;_&#x27; &#x26;&#x26; name !== &#x27;$0&#x27;) {
+    if (Array.isArray(argumentValue)) {
+      // If the same argument is defined multiple times, override.
+      argumentValue = argumentValue.pop()
+    }
+    options[helper.<span class="apidocCodeKeywordSpan">dashToCamel</span>(name)] = argumentValue
+  }
+})
+
+if (helper.isString(options.autoWatch)) {
+  options.autoWatch = options.autoWatch === &#x27;true&#x27;
+}
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.helper.defer" id="apidoc.element.karma.helper.defer">
+        function <span class="apidocSignatureSpan">karma.helper.</span>defer
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">defer = function () {
+  var resolve
+  var reject
+  var promise = new Promise(function () {
+    resolve = arguments[0]
+    reject = arguments[1]
+  })
+
+  return {
+    resolve: resolve,
+    reject: reject,
+    promise: promise
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var EventEmitter = function () {
+  this.bind = bindAllEvents
+
+  this.emitAsync = function (name) {
+// TODO(vojta): allow passing args
+// TODO(vojta): ignore/throw if listener call done() multiple times
+var pending = this.listeners(name).length
+var deferred = helper.<span class="apidocCodeKeywordSpan">defer</span>()
+var done = function () {
+  if (!--pending) {
+    deferred.resolve()
+  }
+}
+
+this.emit(name, done)
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.helper.formatTimeInterval" id="apidoc.element.karma.helper.formatTimeInterval">
+        function <span class="apidocSignatureSpan">karma.helper.</span>formatTimeInterval
+        <span class="apidocSignatureSpan">(time)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">formatTimeInterval = function (time) {
+  var mins = Math.floor(time / 60000)
+  var secs = (time - mins * 60000) / 1000
+  var str = secs + (secs === 1 ? &#x27; sec&#x27; : &#x27; secs&#x27;)
+
+  if (mins) {
+    str = mins + (mins === 1 ? &#x27; min &#x27; : &#x27; mins &#x27;) + str
+  }
+
+  return str
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.helper.isArray" id="apidoc.element.karma.helper.isArray">
+        function <span class="apidocSignatureSpan">karma.helper.</span>isArray
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isArray() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  process.exit(0)
+}
+
+// TODO(vojta): warn/throw when unknown argument (probably mispelled)
+Object.getOwnPropertyNames(argv).forEach(function (name) {
+  var argumentValue = argv[name]
+  if (name !== &#x27;_&#x27; &#x26;&#x26; name !== &#x27;$0&#x27;) {
+    if (Array.<span class="apidocCodeKeywordSpan">isArray</span>(argumentValue)) {
+      // If the same argument is defined multiple times, override.
+      argumentValue = argumentValue.pop()
+    }
+    options[helper.dashToCamel(name)] = argumentValue
+  }
+})
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.helper.isDefined" id="apidoc.element.karma.helper.isDefined">
+        function <span class="apidocSignatureSpan">karma.helper.</span>isDefined
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isDefined = function (value) {
+  return !_.isUndefined(value)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  this.onInfo = function (info) {
+if (this.isReady()) {
+  return
+}
+
+// TODO(vojta): remove
+if (helper.<span class="apidocCodeKeywordSpan">isDefined</span>(info.dump)) {
+  emitter.emit(&#x27;browser_log&#x27;, this, info.dump, &#x27;dump&#x27;)
+}
+
+if (helper.isDefined(info.log)) {
+  emitter.emit(&#x27;browser_log&#x27;, this, info.log, info.type)
+}
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.helper.isFunction" id="apidoc.element.karma.helper.isFunction">
+        function <span class="apidocSignatureSpan">karma.helper.</span>isFunction
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isFunction(value) {
+  // The use of `Object#toString` avoids issues with the `typeof` operator
+  // in older versions of Chrome and Safari which return &#x27;function&#x27; for regexes
+  // and Safari 8 equivalents which return &#x27;object&#x27; for typed array constructors.
+  return isObject(value) &#x26;&#x26; objToString.call(value) == funcTag;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  try {
+    var required = require(options.formatError)
+  } catch (err) {
+    console.error(&#x27;Could not require formatError: &#x27; + options.formatError, err)
+  }
+  // support exports.formatError and module.exports = function
+  options.formatError = required.formatError || required
+  if (!helper.<span class="apidocCodeKeywordSpan">isFunction</span>(options.formatError)) {
+    console.error(&#x27;Format error must be a function, got: &#x27; + typeof options.formatError)
+    process.exit(1)
+  }
+}
+
+if (helper.isString(options.logLevel)) {
+  var logConstant = constant[&#x27;LOG_&#x27; + options.logLevel.toUpperCase()]
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.helper.isNumber" id="apidoc.element.karma.helper.isNumber">
+        function <span class="apidocSignatureSpan">karma.helper.</span>isNumber
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isNumber(value) {
+  return typeof value == &#x27;number&#x27; || (isObjectLike(value) &#x26;&#x26; objToString.call(value) == numberTag);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  throw new TypeError(&#x27;Invalid configuration: browsers option must be an array&#x27;)
+}
+
+if (config.formatError &#x26;&#x26; !helper.isFunction(config.formatError)) {
+  throw new TypeError(&#x27;Invalid configuration: formatError option must be a function.&#x27;)
+}
+
+if (config.processKillTimeout &#x26;&#x26; !helper.<span class="apidocCodeKeywordSpan">isNumber</span>(config.processKillTimeout\
+)) {
+  throw new TypeError(&#x27;Invalid configuration: processKillTimeout option must be a number.&#x27;)
+}
+
+var defaultClient = config.defaultClient || {}
+Object.keys(defaultClient).forEach(function (key) {
+  var option = config.client[key]
+  config.client[key] = helper.isDefined(option) ? option : defaultClient[key]
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.helper.isObject" id="apidoc.element.karma.helper.isObject">
+        function <span class="apidocSignatureSpan">karma.helper.</span>isObject
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isObject(value) {
+  // Avoid a V8 JIT bug in Chrome 19-20.
+  // See https://code.google.com/p/v8/issues/detail?id=2291 for more details.
+  var type = typeof value;
+  return !!value &#x26;&#x26; (type == &#x27;object&#x27; || type == &#x27;function&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+var createPatternObject = function (pattern) {
+if (pattern &#x26;&#x26; helper.isString(pattern)) {
+  return helper.isUrlAbsolute(pattern) ? new UrlPattern(pattern) : new Pattern(pattern)
+}
+
+if (helper.<span class="apidocCodeKeywordSpan">isObject</span>(pattern)) {
+  if (pattern.pattern &#x26;&#x26; helper.isString(pattern.pattern)) {
+    return helper.isUrlAbsolute(pattern.pattern)
+      ? new UrlPattern(pattern.pattern)
+      : new Pattern(
+        pattern.pattern,
+        pattern.served,
+        pattern.included,
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.helper.isString" id="apidoc.element.karma.helper.isString">
+        function <span class="apidocSignatureSpan">karma.helper.</span>isString
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isString(value) {
+  return typeof value == &#x27;string&#x27; || (isObjectLike(value) &#x26;&#x26; objToString.call(value) == stringTag);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      // If the same argument is defined multiple times, override.
+      argumentValue = argumentValue.pop()
+    }
+    options[helper.dashToCamel(name)] = argumentValue
+  }
+})
+
+if (helper.<span class="apidocCodeKeywordSpan">isString</span>(options.autoWatch)) {
+  options.autoWatch = options.autoWatch === &#x27;true&#x27;
+}
+
+if (helper.isString(options.colors)) {
+  options.colors = options.colors === &#x27;true&#x27;
+}
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.helper.isUrlAbsolute" id="apidoc.element.karma.helper.isUrlAbsolute">
+        function <span class="apidocSignatureSpan">karma.helper.</span>isUrlAbsolute
+        <span class="apidocSignatureSpan">(url)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isUrlAbsolute = function (url) {
+  return ABS_URL.test(url)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var UrlPattern = function (url) {
+Pattern.call(this, url, false, true, false, false)
+}
+
+var createPatternObject = function (pattern) {
+if (pattern &#x26;&#x26; helper.isString(pattern)) {
+  return helper.<span class="apidocCodeKeywordSpan">isUrlAbsolute</span>(pattern) ? new UrlPattern(pattern) : new Pattern(patter\
+n)
+}
+
+if (helper.isObject(pattern)) {
+  if (pattern.pattern &#x26;&#x26; helper.isString(pattern.pattern)) {
+    return helper.isUrlAbsolute(pattern.pattern)
+      ? new UrlPattern(pattern.pattern)
+      : new Pattern(
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.helper.merge" id="apidoc.element.karma.helper.merge">
+        function <span class="apidocSignatureSpan">karma.helper.</span>merge
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">merge = function () {
+  var args = Array.prototype.slice.call(arguments, 0)
+  args.unshift({})
+  return _.merge.apply({}, args)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this.LOG_DISABLE = constant.LOG_DISABLE
+this.LOG_ERROR = constant.LOG_ERROR
+this.LOG_WARN = constant.LOG_WARN
+this.LOG_INFO = constant.LOG_INFO
+this.LOG_DEBUG = constant.LOG_DEBUG
+
+this.set = function (newConfig) {
+  _.<span class="apidocCodeKeywordSpan">merge</span>(config, newConfig, function (obj, src) {
+    // Overwrite arrays to keep consistent with #283
+    if (_.isArray(src)) {
+      return src
+    }
+  })
+}
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.helper.mkdirIfNotExists" id="apidoc.element.karma.helper.mkdirIfNotExists">
+        function <span class="apidocSignatureSpan">karma.helper.</span>mkdirIfNotExists
+        <span class="apidocSignatureSpan">(directory, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function mkdir(directory, done) {
+  // TODO(vojta): handle if it&#x27;s a file
+<span class="apidocCodeCommentSpan">  /* eslint-disable handle-callback-err */
+</span>  fs.stat(directory, function (err, stat) {
+    if (stat &#x26;&#x26; stat.isDirectory()) {
+      done()
+    } else {
+      mkdir(path.dirname(directory), function () {
+        fs.mkdir(directory, done)
+      })
+    }
+  })
+  /* eslint-enable handle-callback-err */
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.helper.mmComparePatternWeights" id="apidoc.element.karma.helper.mmComparePatternWeights">
+        function <span class="apidocSignatureSpan">karma.helper.</span>mmComparePatternWeights
+        <span class="apidocSignatureSpan">(weight1, weight2)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mmComparePatternWeights = function (weight1, weight2) {
+  var n1, n2, diff
+  n1 = weight1[0]
+  n2 = weight2[0]
+  diff = n1 - n2
+  if (diff !== 0) return diff / Math.abs(diff)
+  return weight1.length &#x3e; 1 ? exports.mmComparePatternWeights(weight1.slice(1), weight2.slice(1)) : 0
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  this.included = helper.isDefined(included) ? included : true
+  this.watched = helper.isDefined(watched) ? watched : true
+  this.nocache = helper.isDefined(nocache) ? nocache : false
+  this.weight = helper.mmPatternWeight(pattern)
+}
+
+Pattern.prototype.compare = function (other) {
+  return helper.<span class="apidocCodeKeywordSpan">mmComparePatternWeights</span>(this.weight, other.weight)
+}
+
+var UrlPattern = function (url) {
+  Pattern.call(this, url, false, true, false, false)
+}
+
+var createPatternObject = function (pattern) {
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.helper.mmPatternWeight" id="apidoc.element.karma.helper.mmPatternWeight">
+        function <span class="apidocSignatureSpan">karma.helper.</span>mmPatternWeight
+        <span class="apidocSignatureSpan">(pattern)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mmPatternWeight = function (pattern) {
+  var m = new mm.Minimatch(pattern)
+  if (!m.globParts) return [0, 0, 0, 0, 0, 0]
+  var result = m.globParts.reduce(function (prev, p) {
+    var r = p.reduce(function (prev, p) {
+      return gsParser(p, prev)
+    }, {glob_star: 0, ext_glob: 0, word: 0, star: 0, optional: 0, range: 0})
+    if (prev === undefined) return r
+    return compareWeightObject(r, prev) &#x3e; 0 ? r : prev
+  }, undefined)
+  result.glob_sets = m.set.length
+  return [result.glob_sets, result.glob_star, result.star, result.ext_glob, result.range, result.optional]
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var Pattern = function (pattern, served, included, watched, nocache) {
+  this.pattern = pattern
+  this.served = helper.isDefined(served) ? served : true
+  this.included = helper.isDefined(included) ? included : true
+  this.watched = helper.isDefined(watched) ? watched : true
+  this.nocache = helper.isDefined(nocache) ? nocache : false
+  this.weight = helper.<span class="apidocCodeKeywordSpan">mmPatternWeight</span>(pattern)
+}
+
+Pattern.prototype.compare = function (other) {
+  return helper.mmComparePatternWeights(this.weight, other.weight)
+}
+
+var UrlPattern = function (url) {
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.helper.normalizeWinPath" id="apidoc.element.karma.helper.normalizeWinPath">
+        function <span class="apidocSignatureSpan">karma.helper.</span>normalizeWinPath
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function identity(value) {
+  return value;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+config.files = config.files.map(createPatternObject).map(createPatternMapper(basePathResolve))
+config.exclude = config.exclude.map(basePathResolve)
+config.customContextFile = config.customContextFile &#x26;&#x26; basePathResolve(config.customContextFile)
+config.customDebugFile = config.customDebugFile &#x26;&#x26; basePathResolve(config.customDebugFile)
+config.customClientContextFile = config.customClientContextFile &#x26;&#x26; basePathResolve(config.customClientContextFile)
+
+// normalize paths on windows
+config.basePath = helper.<span class="apidocCodeKeywordSpan">normalizeWinPath</span>(config.basePath)
+config.files = config.files.map(createPatternMapper(helper.normalizeWinPath))
+config.exclude = config.exclude.map(helper.normalizeWinPath)
+config.customContextFile = helper.normalizeWinPath(config.customContextFile)
+config.customDebugFile = helper.normalizeWinPath(config.customDebugFile)
+config.customClientContextFile = helper.normalizeWinPath(config.customClientContextFile)
+
+// normalize urlRoot
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.helper.ucFirst" id="apidoc.element.karma.helper.ucFirst">
+        function <span class="apidocSignatureSpan">karma.helper.</span>ucFirst
+        <span class="apidocSignatureSpan">(word)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ucFirst = function (word) {
+  return word.charAt(0).toUpperCase() + word.substr(1)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  // define custom launchers/preprocessors/reporters - create an inlined plugin
+  var module = Object.create(null)
+  var hasSomeInlinedPlugin = false
+  var types = [&#x27;launcher&#x27;, &#x27;preprocessor&#x27;, &#x27;reporter&#x27;]
+
+  types.forEach(function (type) {
+    var definitions = config[&#x27;custom&#x27; + helper.<span class="apidocCodeKeywordSpan">ucFirst</span>(type) + &#x27;s&#x27\
+;] || {}
+
+    Object.keys(definitions).forEach(function (name) {
+var definition = definitions[name]
+
+if (!helper.isObject(definition)) {
+  return log.warn(&#x27;Can not define %s %s. Definition has to be an object.&#x27;, type, name)
+}
+...</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.karma.init" id="apidoc.module.karma.init">module karma.init</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.init.init" id="apidoc.element.karma.init.init">
+        function <span class="apidocSignatureSpan">karma.</span>init
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function (config) {
+  logger.setupFromConfig(config)
+
+  var colorScheme = COLOR_SCHEME.ON
+
+  if (helper.isDefined(config.colors)) {
+    colorScheme = config.colors ? COLOR_SCHEME.ON : COLOR_SCHEME.OFF
+  }
+  // need to be registered before creating readlineInterface
+  process.stdin.on(&#x27;keypress&#x27;, function (s, key) {
+    sm.onKeypress(key)
+  })
+
+  var rli = readline.createInterface(process.stdin, process.stdout)
+  var sm = new StateMachine(rli, colorScheme)
+
+  rli.on(&#x27;line&#x27;, sm.onLine.bind(sm))
+
+  // clean colors
+  rli.on(&#x27;SIGINT&#x27;, function () {
+    sm.kill()
+    process.exit(0)
+  })
+
+  sm.on(&#x27;next_question&#x27;, printLogQueue)
+
+  sm.process(questions, function (answers) {
+    var cwd = process.cwd()
+    var configFile = config.configFile || &#x27;karma.conf.js&#x27;
+    var isCoffee = path.extname(configFile) === &#x27;.coffee&#x27;
+    var testMainFile = isCoffee ? &#x27;test-main.coffee&#x27; : &#x27;test-main.js&#x27;
+    var formatter = formatters.createForPath(configFile)
+    var processedAnswers = processAnswers(answers, getBasePath(configFile, cwd), testMainFile)
+    var configFilePath = path.resolve(cwd, configFile)
+    var testMainFilePath = path.resolve(cwd, testMainFile)
+
+    if (isCoffee) {
+      installPackage(&#x27;coffee-script&#x27;)
+    }
+
+    if (processedAnswers.generateTestMain) {
+      formatter.writeRequirejsConfigFile(testMainFilePath)
+      console.log(colorScheme.success(
+        &#x27;RequireJS bootstrap file generated at &#x22;&#x27; + testMainFilePath + &#x27;&#x22;.\n&#x27;
+      ))
+    }
+
+    formatter.writeConfigFile(configFilePath, processedAnswers)
+    console.log(colorScheme.success(&#x27;Config file generated at &#x22;&#x27; + configFilePath + &#x27;&#x22;.\n&#x27;))
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    case &#x27;run&#x27;:
+      require(&#x27;./runner&#x27;).run(config)
+      break
+    case &#x27;stop&#x27;:
+      require(&#x27;./stopper&#x27;).stop(config)
+      break
+    case &#x27;init&#x27;:
+      require(&#x27;./init&#x27;).<span class="apidocCodeKeywordSpan">init</span>(config)
+      break
+    case &#x27;completion&#x27;:
+      require(&#x27;./completion&#x27;).completion(config)
+      break
+  }
+}
+...</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.karma.launcher" id="apidoc.module.karma.launcher">module karma.launcher</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.launcher.Launcher" id="apidoc.element.karma.launcher.Launcher">
+        function <span class="apidocSignatureSpan">karma.launcher.</span>Launcher
+        <span class="apidocSignatureSpan">(server, emitter, injector)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Launcher = function (server, emitter, injector) {
+  this._browsers = []
+  var lastStartTime
+  var self = this
+
+  var getBrowserById = function (id) {
+    for (var i = 0; i &#x3c; self._browsers.length; i++) {
+      if (self._browsers[i].id === id) {
+        return self._browsers[i]
+      }
+    }
+
+    return null
+  }
+
+  this.launchSingle = function (protocol, hostname, port, urlRoot, upstreamProxy, processKillTimeout) {
+    var self = this
+    return function (name) {
+      if (upstreamProxy) {
+        protocol = upstreamProxy.protocol
+        hostname = upstreamProxy.hostname
+        port = upstreamProxy.port
+        urlRoot = upstreamProxy.path + urlRoot.substr(1)
+      }
+      var url = protocol + &#x27;//&#x27; + hostname + &#x27;:&#x27; + port + urlRoot
+
+      var locals = {
+        id: [&#x27;value&#x27;, Launcher.generateId()],
+        name: [&#x27;value&#x27;, name],
+        processKillTimeout: [&#x27;value&#x27;, processKillTimeout],
+        baseLauncherDecorator: [&#x27;factory&#x27;, baseDecorator],
+        captureTimeoutLauncherDecorator: [&#x27;factory&#x27;, captureTimeoutDecorator],
+        retryLauncherDecorator: [&#x27;factory&#x27;, retryDecorator],
+        processLauncherDecorator: [&#x27;factory&#x27;, processDecorator],
+        baseBrowserDecorator: [&#x27;factory&#x27;, baseBrowserDecoratorFactory]
+      }
+
+      // TODO(vojta): determine script from name
+      if (name.indexOf(&#x27;/&#x27;) !== -1) {
+        name = &#x27;Script&#x27;
+      }
+
+      try {
+        var browser = injector.createChild([locals], [&#x27;launcher:&#x27; + name]).get(&#x27;launcher:&#x27; + name)
+      } catch (e) {
+        if (e.message.indexOf(&#x27;No provider for &#x22;launcher:&#x27; + name + &#x27;&#x22;&#x27;) !== -1) {
+          log.error(&#x27;Cannot load browser &#x22;%s&#x22;: it is not registered! &#x27; +
+            &#x27;Perhaps you are missing some plugin?&#x27;, name)
+        } else {
+          log.error(&#x27;Cannot load browser &#x22;%s&#x22;!\n  &#x27; + e.stack, name)
+        }
+
+        emitter.emit(&#x27;load_error&#x27;, &#x27;launcher&#x27;, name)
+        return
+      }
+
+      // TODO(vojta): remove in v1.0 (BC for old launchers)
+      if (!browser.forceKill) {
+        browser.forceKill = function () {
+          var me = this
+          return new Promise(function (resolve) {
+            me.kill(resolve)
+          })
+        }
+
+        browser.restart = function () {
+          var me = this
+          this.kill(function () {
+            me.start(url)
+          })
+        }
+      }
+
+      self.jobs.add(function (args, done) {
+        log.info(&#x27;Starting browser %s&#x27;, helper.isDefined(browser.displayName) ? browser.displayName : browser.name)
+
+        browser.on(&#x27;browser_process_failure&#x27;, function () {
+          done(browser.error)
+        })
+
+        browser.on(&#x27;done&#x27;, function () {
+          // We are not done if there was an error as first the retry takes
+          // place which we catch with `browser_process_failure` if it fails
+          if (browser.error || browser.state === browser.STATE_RESTARTING) return
+
+          done(null, browser)
+        })
+
+        browser.start(url)
+      }, [])
+
+      self.jobs.run()
+      self._browsers.push(browser)
+    }
+  }
+
+  this.launch = function (names, concurrency) {
+    log.info(
+      &#x27;Launching browser%s %s with %s&#x27;,
+      names.length &#x3e; 1 ? &#x27;s&#x27; : &#x27;&#x27;,
+      names.join(&#x27;, &#x27;),
+      concurrency === Infinity ? &#x27;unlimited concurrency&#x27; : &#x27;concurrency &#x27; + concurrency
+    )
+    this.jobs = new Jobs({maxConcurrency: concurrency})
+
+    var self = this
+    lastStartTime = Date.now()
+
+    if (server.loadErrors.length === 0) {
+      names.forEach(function (name) {
+        injector.invoke(self.launchSingle, self)(name)
+      })
+    } else {
+      // Empty task to ensure `end` is emitted
+      this.jobs.add(function (args, done) {
+        done()
+      }, [])
+    }
+
+    this.jobs.on(&#x27;end&#x27;, function (err) {
+      log.debug(&#x27;Finished all browsers&#x27;)
+
+      if (err) {
+        log.error(err)
+      }
+    })
+
+    this.jobs.run()
+
+    return self._browsers
+  }
+
+  this.launch.$inject = [
+    &#x27;config.browsers&#x27;,
+    &#x27;config.concurrency&#x27;,
+    &#x27;config.processKillTimeout&#x27;
+  ]
+
+  this.launchSingle.$inject = [
+    &#x27;config.protocol&#x27;,
+    &#x27;config.hostname&#x27;,
+    &#x27;config.port&#x27;,
+    &#x27;config.urlRoot&#x27;,
+    &#x27;config.upstreamProxy&#x27;,
+    &#x27;config.proces ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.karma.launcher.Launcher" id="apidoc.module.karma.launcher.Launcher">module karma.launcher.Launcher</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.launcher.Launcher.Launcher" id="apidoc.element.karma.launcher.Launcher.Launcher">
+        function <span class="apidocSignatureSpan">karma.launcher.</span>Launcher
+        <span class="apidocSignatureSpan">(server, emitter, injector)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Launcher = function (server, emitter, injector) {
+  this._browsers = []
+  var lastStartTime
+  var self = this
+
+  var getBrowserById = function (id) {
+    for (var i = 0; i &#x3c; self._browsers.length; i++) {
+      if (self._browsers[i].id === id) {
+        return self._browsers[i]
+      }
+    }
+
+    return null
+  }
+
+  this.launchSingle = function (protocol, hostname, port, urlRoot, upstreamProxy, processKillTimeout) {
+    var self = this
+    return function (name) {
+      if (upstreamProxy) {
+        protocol = upstreamProxy.protocol
+        hostname = upstreamProxy.hostname
+        port = upstreamProxy.port
+        urlRoot = upstreamProxy.path + urlRoot.substr(1)
+      }
+      var url = protocol + &#x27;//&#x27; + hostname + &#x27;:&#x27; + port + urlRoot
+
+      var locals = {
+        id: [&#x27;value&#x27;, Launcher.generateId()],
+        name: [&#x27;value&#x27;, name],
+        processKillTimeout: [&#x27;value&#x27;, processKillTimeout],
+        baseLauncherDecorator: [&#x27;factory&#x27;, baseDecorator],
+        captureTimeoutLauncherDecorator: [&#x27;factory&#x27;, captureTimeoutDecorator],
+        retryLauncherDecorator: [&#x27;factory&#x27;, retryDecorator],
+        processLauncherDecorator: [&#x27;factory&#x27;, processDecorator],
+        baseBrowserDecorator: [&#x27;factory&#x27;, baseBrowserDecoratorFactory]
+      }
+
+      // TODO(vojta): determine script from name
+      if (name.indexOf(&#x27;/&#x27;) !== -1) {
+        name = &#x27;Script&#x27;
+      }
+
+      try {
+        var browser = injector.createChild([locals], [&#x27;launcher:&#x27; + name]).get(&#x27;launcher:&#x27; + name)
+      } catch (e) {
+        if (e.message.indexOf(&#x27;No provider for &#x22;launcher:&#x27; + name + &#x27;&#x22;&#x27;) !== -1) {
+          log.error(&#x27;Cannot load browser &#x22;%s&#x22;: it is not registered! &#x27; +
+            &#x27;Perhaps you are missing some plugin?&#x27;, name)
+        } else {
+          log.error(&#x27;Cannot load browser &#x22;%s&#x22;!\n  &#x27; + e.stack, name)
+        }
+
+        emitter.emit(&#x27;load_error&#x27;, &#x27;launcher&#x27;, name)
+        return
+      }
+
+      // TODO(vojta): remove in v1.0 (BC for old launchers)
+      if (!browser.forceKill) {
+        browser.forceKill = function () {
+          var me = this
+          return new Promise(function (resolve) {
+            me.kill(resolve)
+          })
+        }
+
+        browser.restart = function () {
+          var me = this
+          this.kill(function () {
+            me.start(url)
+          })
+        }
+      }
+
+      self.jobs.add(function (args, done) {
+        log.info(&#x27;Starting browser %s&#x27;, helper.isDefined(browser.displayName) ? browser.displayName : browser.name)
+
+        browser.on(&#x27;browser_process_failure&#x27;, function () {
+          done(browser.error)
+        })
+
+        browser.on(&#x27;done&#x27;, function () {
+          // We are not done if there was an error as first the retry takes
+          // place which we catch with `browser_process_failure` if it fails
+          if (browser.error || browser.state === browser.STATE_RESTARTING) return
+
+          done(null, browser)
+        })
+
+        browser.start(url)
+      }, [])
+
+      self.jobs.run()
+      self._browsers.push(browser)
+    }
+  }
+
+  this.launch = function (names, concurrency) {
+    log.info(
+      &#x27;Launching browser%s %s with %s&#x27;,
+      names.length &#x3e; 1 ? &#x27;s&#x27; : &#x27;&#x27;,
+      names.join(&#x27;, &#x27;),
+      concurrency === Infinity ? &#x27;unlimited concurrency&#x27; : &#x27;concurrency &#x27; + concurrency
+    )
+    this.jobs = new Jobs({maxConcurrency: concurrency})
+
+    var self = this
+    lastStartTime = Date.now()
+
+    if (server.loadErrors.length === 0) {
+      names.forEach(function (name) {
+        injector.invoke(self.launchSingle, self)(name)
+      })
+    } else {
+      // Empty task to ensure `end` is emitted
+      this.jobs.add(function (args, done) {
+        done()
+      }, [])
+    }
+
+    this.jobs.on(&#x27;end&#x27;, function (err) {
+      log.debug(&#x27;Finished all browsers&#x27;)
+
+      if (err) {
+        log.error(err)
+      }
+    })
+
+    this.jobs.run()
+
+    return self._browsers
+  }
+
+  this.launch.$inject = [
+    &#x27;config.browsers&#x27;,
+    &#x27;config.concurrency&#x27;,
+    &#x27;config.processKillTimeout&#x27;
+  ]
+
+  this.launchSingle.$inject = [
+    &#x27;config.protocol&#x27;,
+    &#x27;config.hostname&#x27;,
+    &#x27;config.port&#x27;,
+    &#x27;config.urlRoot&#x27;,
+    &#x27;config.upstreamProxy&#x27;,
+    &#x27;config.proces ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.launcher.Launcher.generateId" id="apidoc.element.karma.launcher.Launcher.generateId">
+        function <span class="apidocSignatureSpan">karma.launcher.Launcher.</span>generateId
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">generateId = function () {
+  return &#x27;&#x27; + Math.floor(Math.random() * 100000000)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.karma.logger" id="apidoc.module.karma.logger">module karma.logger</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.logger.create" id="apidoc.element.karma.logger.create">
+        function <span class="apidocSignatureSpan">karma.logger.</span>create
+        <span class="apidocSignatureSpan">(name, level)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function (name, level) {
+  var logger = log4js.getLogger(name || &#x27;karma&#x27;)
+  if (helper.isDefined(level)) {
+    logger.setLevel(level)
+  }
+  return logger
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// The browser got permanently disconnected (being removed from the collection and destroyed).
+var DISCONNECTED = 5
+
+var Browser = function (id, fullName, /* capturedBrowsers */ collection, emitter, socket, timer,
+/* config.browserDisconnectTimeout */ disconnectDelay,
+/* config.browserNoActivityTimeout */ noActivityTimeout) {
+var name = helper.browserFullNameToShort(fullName)
+var log = logger.<span class="apidocCodeKeywordSpan">create</span>(name)
+var activeSockets = [socket]
+var activeSocketsIds = function () {
+  return activeSockets.map(function (s) {
+    return s.id
+  }).join(&#x27;, &#x27;)
+}
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.logger.setup" id="apidoc.element.karma.logger.setup">
+        function <span class="apidocSignatureSpan">karma.logger.</span>setup
+        <span class="apidocSignatureSpan">(level, colors, appenders)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setup = function (level, colors, appenders) {
+  // Turn color on/off on the console appenders with pattern layout
+  var pattern = colors ? constant.COLOR_PATTERN : constant.NO_COLOR_PATTERN
+
+  // If there are no appenders use the default one
+  appenders = helper.isDefined(appenders) ? appenders : [constant.CONSOLE_APPENDER]
+
+  appenders = appenders.map(function (appender) {
+    if (appender.type === &#x27;console&#x27;) {
+      if (helper.isDefined(appender.layout) &#x26;&#x26; appender.layout.type === &#x27;pattern&#x27;) {
+        appender.layout.pattern = pattern
+      }
+    }
+    return appender
+  })
+
+  // Pass the values to log4js
+  log4js.setGlobalLogLevel(level)
+  log4js.configure({
+    appenders: appenders
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    config.hostname = defaultHostname
+  }
+  if (config.listenAddress === null) {
+    config.listenAddress = defaultListenAddress
+  }
+
+  // configure the logger as soon as we can
+  logger.<span class="apidocCodeKeywordSpan">setup</span>(config.logLevel, config.colors, config.loggers)
+
+  return normalizeConfig(config, configFilePath)
+}
+
+// PUBLIC API
+exports.parseConfig = parseConfig
+exports.Pattern = Pattern
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.logger.setupFromConfig" id="apidoc.element.karma.logger.setupFromConfig">
+        function <span class="apidocSignatureSpan">karma.logger.</span>setupFromConfig
+        <span class="apidocSignatureSpan">(config, appenders)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setupFromConfig = function (config, appenders) {
+  var useColors = true
+  var logLevel = constant.LOG_INFO
+
+  if (helper.isDefined(config.colors)) {
+    useColors = config.colors
+  }
+
+  if (helper.isDefined(config.logLevel)) {
+    logLevel = config.logLevel
+  }
+  setup(logLevel, useColors, appenders)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.karma.plugin" id="apidoc.module.karma.plugin">module karma.plugin</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.plugin.resolve" id="apidoc.element.karma.plugin.resolve">
+        function <span class="apidocSignatureSpan">karma.plugin.</span>resolve
+        <span class="apidocSignatureSpan">(plugins, emitter)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resolve = function (plugins, emitter) {
+  var modules = []
+
+  var requirePlugin = function (name) {
+    log.debug(&#x27;Loading plugin %s.&#x27;, name)
+    try {
+      modules.push(require(name))
+    } catch (e) {
+      if (e.code === &#x27;MODULE_NOT_FOUND&#x27; &#x26;&#x26; e.message.indexOf(name) !== -1) {
+        log.error(&#x27;Cannot find plugin &#x22;%s&#x22;.\n  Did you forget to install it?\n&#x27; +
+          &#x27;  npm install %s --save-dev&#x27;, name, name)
+      } else {
+        log.error(&#x27;Error during loading &#x22;%s&#x22; plugin:\n  %s&#x27;, name, e.message)
+      }
+      emitter.emit(&#x27;load_error&#x27;, &#x27;plug_in&#x27;, name)
+    }
+  }
+
+  plugins.forEach(function (plugin) {
+    if (helper.isString(plugin)) {
+      if (plugin.indexOf(&#x27;*&#x27;) === -1) {
+        requirePlugin(plugin)
+        return
+      }
+      var pluginDirectory = path.normalize(path.join(__dirname, &#x27;/../..&#x27;))
+      var regexp = new RegExp(&#x27;^&#x27; + plugin.replace(&#x27;*&#x27;, &#x27;.*&#x27;))
+
+      log.debug(&#x27;Loading %s from %s&#x27;, plugin, pluginDirectory)
+      fs.readdirSync(pluginDirectory).filter(function (pluginName) {
+        return IGNORED_PACKAGES.indexOf(pluginName) === -1 &#x26;&#x26; regexp.test(pluginName)
+      }).forEach(function (pluginName) {
+        requirePlugin(pluginDirectory + &#x27;/&#x27; + pluginName)
+      })
+      return
+    }
+    if (helper.isObject(plugin)) {
+      log.debug(&#x27;Loading inlined plugin (defining %s).&#x27;, Object.keys(plugin).join(&#x27;, &#x27;))
+      modules.push(plugin)
+      return
+    }
+    log.error(&#x27;Invalid plugin %s&#x27;, plugin)
+    emitter.emit(&#x27;load_error&#x27;, &#x27;plug_in&#x27;, plugin)
+  })
+
+  return modules
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  } else if (fs.existsSync(&#x27;./.config/karma.conf.coffee&#x27;)) {
+    configFile = &#x27;./.config/karma.conf.coffee&#x27;
+  } else if (fs.existsSync(&#x27;./.config/karma.conf.ts&#x27;)) {
+    configFile = &#x27;./.config/karma.conf.ts&#x27;
+  }
+}
+
+options.configFile = configFile ? path.<span class="apidocCodeKeywordSpan">resolve</span>(configFile) : null
+
+return options
+}
+
+var parseClientArgs = function (argv) {
+// extract any args after &#x27;--&#x27; as clientArgs
+var clientArgs = []
+...</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.karma.preprocessor" id="apidoc.module.karma.preprocessor">module karma.preprocessor</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.preprocessor.createPreprocessor" id="apidoc.element.karma.preprocessor.createPreprocessor">
+        function <span class="apidocSignatureSpan">karma.preprocessor.</span>createPreprocessor
+        <span class="apidocSignatureSpan">(config, basePath, injector)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createPreprocessor = function (config, basePath, injector) {
+  var alreadyDisplayedErrors = {}
+  var instances = {}
+  var patterns = Object.keys(config)
+
+  var emitter = injector.get(&#x27;emitter&#x27;)
+
+  var instantiatePreprocessor = function (name) {
+    if (alreadyDisplayedErrors[name]) {
+      return
+    }
+
+    var p
+
+    try {
+      p = injector.get(&#x27;preprocessor:&#x27; + name)
+    } catch (e) {
+      if (e.message.indexOf(&#x27;No provider for &#x22;preprocessor:&#x27; + name + &#x27;&#x22;&#x27;) !== -1) {
+        log.error(&#x27;Can not load &#x22;%s&#x22;, it is not registered!\n  &#x27; +
+          &#x27;Perhaps you are missing some plugin?&#x27;, name)
+      } else {
+        log.error(&#x27;Can not load &#x22;%s&#x22;!\n  &#x27; + e.stack, name)
+      }
+      alreadyDisplayedErrors[name] = true
+      emitter.emit(&#x27;load_error&#x27;, &#x27;preprocessor&#x27;, name)
+    }
+
+    return p
+  }
+
+  var allPreprocessors = []
+  patterns.forEach(function (pattern) {
+    allPreprocessors = combineLists(allPreprocessors, config[pattern])
+  })
+  allPreprocessors.forEach(instantiatePreprocessor)
+
+  return function preprocess (file, done) {
+    patterns = Object.keys(config)
+
+    return fs.readFile(file.originalPath, function (err, buffer) {
+      if (err) {
+        throw err
+      }
+
+      isBinaryFile(buffer, buffer.length, function (err, thisFileIsBinary) {
+        if (err) {
+          throw err
+        }
+
+        var preprocessorNames = []
+        for (var i = 0; i &#x3c; patterns.length; i++) {
+          if (mm(file.originalPath, patterns[i], {dot: true})) {
+            if (thisFileIsBinary) {
+              log.warn(&#x27;Ignoring preprocessing (%s) %s because it is a binary file.&#x27;,
+                config[patterns[i]].join(&#x27;, &#x27;), file.originalPath)
+            } else {
+              preprocessorNames = combineLists(preprocessorNames, config[patterns[i]])
+            }
+          }
+        }
+
+        var preprocessors = []
+        var nextPreprocessor = createNextProcessor(preprocessors, file, done)
+        preprocessorNames.forEach(function (name) {
+          var p = instances[name]
+          if (p == null) {
+            p = instantiatePreprocessor(name)
+          }
+
+          if (p == null) {
+            if (!alreadyDisplayedErrors[name]) {
+              alreadyDisplayedErrors[name] = true
+              log.error(&#x27;Failed to instantiate preprocessor %s&#x27;, name)
+              emitter.emit(&#x27;load_error&#x27;, &#x27;preprocessor&#x27;, name)
+            }
+            return
+          }
+
+          instances[name] = p
+          preprocessors.push(p)
+        })
+
+        nextPreprocessor(null, thisFileIsBinary ? buffer : buffer.toString())
+      })
+    })
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.karma.reporter" id="apidoc.module.karma.reporter">module karma.reporter</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.reporter.createReporters" id="apidoc.element.karma.reporter.createReporters">
+        function <span class="apidocSignatureSpan">karma.reporter.</span>createReporters
+        <span class="apidocSignatureSpan">(names, config, emitter, injector)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createReporters = function (names, config, emitter, injector) {
+  var errorFormatter = createErrorFormatter(config, emitter, SourceMapConsumer)
+  var reporters = []
+
+  // TODO(vojta): instantiate all reporters through DI
+  names.forEach(function (name) {
+    if ([&#x27;dots&#x27;, &#x27;progress&#x27;].indexOf(name) !== -1) {
+      var Cls = require(&#x27;./reporters/&#x27; + name)
+      var ClsColor = require(&#x27;./reporters/&#x27; + name + &#x27;_color&#x27;)
+      reporters.push(new Cls(errorFormatter, config.reportSlowerThan, config.colors, config.browserConsoleLogOptions))
+      return reporters.push(new ClsColor(errorFormatter, config.reportSlowerThan, config.colors, config.browserConsoleLogOptions\
+))
+    }
+
+    var locals = {
+      baseReporterDecorator: [&#x27;factory&#x27;, baseReporterDecoratorFactory],
+      formatError: [&#x27;value&#x27;, errorFormatter]
+    }
+
+    try {
+      log.debug(&#x27;Trying to load reporter: %s&#x27;, name)
+      reporters.push(injector.createChild([locals], [&#x27;reporter:&#x27; + name]).get(&#x27;reporter:&#x27; + name))
+    } catch (e) {
+      if (e.message.indexOf(&#x27;No provider for &#x22;reporter:&#x27; + name + &#x27;&#x22;&#x27;) !== -1) {
+        log.error(&#x27;Can not load reporter &#x22;%s&#x22;, it is not registered!\n  &#x27; +
+          &#x27;Perhaps you are missing some plugin?&#x27;, name)
+      } else {
+        log.error(&#x27;Can not load &#x22;%s&#x22;!\n  &#x27; + e.stack, name)
+      }
+      emitter.emit(&#x27;load_error&#x27;, &#x27;reporter&#x27;, name)
+      return
+    }
+    var colorName = name + &#x27;_color&#x27;
+    if (names.indexOf(colorName) !== -1) {
+      return
+    }
+    try {
+      log.debug(&#x27;Trying to load color-version of reporter: %s (%s)&#x27;, name, colorName)
+      reporters.push(injector.createChild([locals], [&#x27;reporter:&#x27; + name + &#x27;_color&#x27;]).get(&#x27;reporter:&#x27; + name))
+    } catch (e) {
+      log.debug(&#x27;Couldn\&#x27;t load color-version.&#x27;)
+    }
+  })
+
+  // bind all reporters
+  reporters.forEach(function (reporter) {
+    emitter.bind(reporter)
+  })
+
+  return new MultiReporter(reporters)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.karma.runner" id="apidoc.module.karma.runner">module karma.runner</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.runner.run" id="apidoc.element.karma.runner.run">
+        function <span class="apidocSignatureSpan">karma.runner.</span>run
+        <span class="apidocSignatureSpan">(config, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">run = function (config, done) {
+  config = config || {}
+
+  logger.setupFromConfig(config)
+
+  done = helper.isFunction(done) ? done : process.exit
+  config = cfg.parseConfig(config.configFile, config)
+
+  var exitCode = 1
+  var options = {
+    hostname: config.hostname,
+    path: config.urlRoot + &#x27;run&#x27;,
+    port: config.port,
+    method: &#x27;POST&#x27;,
+    headers: {
+      &#x27;Content-Type&#x27;: &#x27;application/json&#x27;
+    }
+  }
+
+  var request = http.request(options, function (response) {
+    response.on(&#x27;data&#x27;, function (buffer) {
+      var parsedResult = parseExitCode(buffer, exitCode, config.failOnEmptyTestSuite)
+      exitCode = parsedResult.exitCode
+      process.stdout.write(parsedResult.buffer)
+    })
+
+    response.on(&#x27;end&#x27;, function () {
+      done(exitCode)
+    })
+  })
+
+  request.on(&#x27;error&#x27;, function (e) {
+    if (e.code === &#x27;ECONNREFUSED&#x27;) {
+      log.error(&#x27;There is no server listening on port %d&#x27;, options.port)
+      done(1, e.code)
+    } else {
+      throw e
+    }
+  })
+
+  request.end(JSON.stringify({
+    args: config.clientArgs,
+    removedFiles: config.removedFiles,
+    changedFiles: config.changedFiles,
+    addedFiles: config.addedFiles,
+    refresh: config.refresh,
+    colors: config.colors
+  }))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var config = exports.process()
+
+switch (config.cmd) {
+  case &#x27;start&#x27;:
+    new Server(config).start()
+    break
+  case &#x27;run&#x27;:
+    require(&#x27;./runner&#x27;).<span class="apidocCodeKeywordSpan">run</span>(config)
+    break
+  case &#x27;stop&#x27;:
+    require(&#x27;./stopper&#x27;).stop(config)
+    break
+  case &#x27;init&#x27;:
+    require(&#x27;./init&#x27;).init(config)
+    break
+...</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.karma.server" id="apidoc.module.karma.server">module karma.server</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.server.start" id="apidoc.element.karma.server.start">
+        function <span class="apidocSignatureSpan">karma.server.</span>start
+        <span class="apidocSignatureSpan">(cliOptions, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function (cliOptions, done) {
+  console.error(&#x27;WARN `start` method is deprecated since 0.13. It will be removed in 0.14. Please use \n&#x27; +
+    &#x27;  server = new Server(config, [done])\n&#x27; +
+    &#x27;  server.start()\n&#x27; +
+    &#x27;instead.&#x27;)
+  var server = new Server(cliOptions, done)
+  server.start()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+exports.run = function () {
+var config = exports.process()
+
+switch (config.cmd) {
+  case &#x27;start&#x27;:
+    new Server(config).<span class="apidocCodeKeywordSpan">start</span>()
+    break
+  case &#x27;run&#x27;:
+    require(&#x27;./runner&#x27;).run(config)
+    break
+  case &#x27;stop&#x27;:
+    require(&#x27;./stopper&#x27;).stop(config)
+    break
+...</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.karma.stopper" id="apidoc.module.karma.stopper">module karma.stopper</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.stopper.stop" id="apidoc.element.karma.stopper.stop">
+        function <span class="apidocSignatureSpan">karma.stopper.</span>stop
+        <span class="apidocSignatureSpan">(config, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stop = function (config, done) {
+  config = config || {}
+  logger.setupFromConfig(config)
+  done = helper.isFunction(done) ? done : process.exit
+  var log = logger.create(&#x27;stopper&#x27;)
+  config = cfg.parseConfig(config.configFile, config)
+
+  var options = {
+    hostname: config.hostname,
+    path: config.urlRoot + &#x27;stop&#x27;,
+    port: config.port,
+    method: &#x27;GET&#x27;
+  }
+
+  var request = http.request(options)
+
+  request.on(&#x27;response&#x27;, function (response) {
+    if (response.statusCode !== 200) {
+      log.error(&#x27;Server returned status code: &#x27; + response.statusCode)
+      done(1)
+      return
+    }
+
+    log.info(&#x27;Server stopped.&#x27;)
+    done(0)
+  })
+
+  request.on(&#x27;error&#x27;, function (e) {
+    if (e.code === &#x27;ECONNREFUSED&#x27;) {
+      log.error(&#x27;There is no server listening on port %d&#x27;, options.port)
+      done(1, e.code)
+    } else {
+      throw e
+    }
+  })
+  request.end()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+case &#x27;start&#x27;:
+  new Server(config).start()
+  break
+case &#x27;run&#x27;:
+  require(&#x27;./runner&#x27;).run(config)
+  break
+case &#x27;stop&#x27;:
+  require(&#x27;./stopper&#x27;).<span class="apidocCodeKeywordSpan">stop</span>(config)
+  break
+case &#x27;init&#x27;:
+  require(&#x27;./init&#x27;).init(config)
+  break
+case &#x27;completion&#x27;:
+  require(&#x27;./completion&#x27;).completion(config)
+  break
+...</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.karma.temp_dir" id="apidoc.module.karma.temp_dir">module karma.temp_dir</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.temp_dir.create" id="apidoc.element.karma.temp_dir.create">
+        function <span class="apidocSignatureSpan">karma.temp_dir.</span>create
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function (path) {
+  log.debug(&#x27;Creating temp dir at %s&#x27;, path)
+
+  try {
+    fs.mkdirSync(path)
+  } catch (e) {
+    log.warn(&#x27;Failed to create a temp dir at %s&#x27;, path)
+  }
+
+  return path
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// The browser got permanently disconnected (being removed from the collection and destroyed).
+var DISCONNECTED = 5
+
+var Browser = function (id, fullName, /* capturedBrowsers */ collection, emitter, socket, timer,
+/* config.browserDisconnectTimeout */ disconnectDelay,
+/* config.browserNoActivityTimeout */ noActivityTimeout) {
+var name = helper.browserFullNameToShort(fullName)
+var log = logger.<span class="apidocCodeKeywordSpan">create</span>(name)
+var activeSockets = [socket]
+var activeSocketsIds = function () {
+  return activeSockets.map(function (s) {
+    return s.id
+  }).join(&#x27;, &#x27;)
+}
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.temp_dir.getPath" id="apidoc.element.karma.temp_dir.getPath">
+        function <span class="apidocSignatureSpan">karma.temp_dir.</span>getPath
+        <span class="apidocSignatureSpan">(suffix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getPath = function (suffix) {
+  return path.normalize(TEMP_DIR + suffix)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.temp_dir.remove" id="apidoc.element.karma.temp_dir.remove">
+        function <span class="apidocSignatureSpan">karma.temp_dir.</span>remove
+        <span class="apidocSignatureSpan">(path, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">remove = function (path, done) {
+  log.debug(&#x27;Cleaning temp dir %s&#x27;, path)
+  rimraf(path, done)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var self = this
+var pendingDisconnect
+var disconnect = function (reason) {
+  self.state = DISCONNECTED
+  self.disconnectsCount++
+  log.warn(&#x27;Disconnected (%d times)&#x27; + (reason || &#x27;&#x27;), self.disconnectsCount)
+  emitter.emit(&#x27;browser_error&#x27;, self, &#x27;Disconnected&#x27; + reason)
+  collection.<span class="apidocCodeKeywordSpan">remove</span>(self)
+}
+
+var noActivityTimeoutId
+var refreshNoActivityTimeout = noActivityTimeout ? function () {
+  clearNoActivityTimeout()
+  noActivityTimeoutId = timer.setTimeout(function () {
+    self.lastResult.totalTimeEnd()
+...</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.karma.url" id="apidoc.module.karma.url">module karma.url</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.url.url" id="apidoc.element.karma.url.url">
+        function <span class="apidocSignatureSpan">karma.</span>url
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">url = function (path) {
+  this.path = path
+  this.isUrl = true
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.karma.url.prototype" id="apidoc.module.karma.url.prototype">module karma.url.prototype</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.url.prototype.toString" id="apidoc.element.karma.url.prototype.toString">
+        function <span class="apidocSignatureSpan">karma.url.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+  return this.path
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+
+var fs = require(&#x27;graceful-fs&#x27;)
+var path = require(&#x27;path&#x27;)
+
+var pkg = JSON.parse(fs.readFileSync(path.join(__dirname, &#x27;/../package.json&#x27;)).<span class="apidocCodeKeywordSpan">toS\
+tring</span>())
+
+exports.VERSION = pkg.version
+
+exports.DEFAULT_PORT = process.env.PORT || 9876
+exports.DEFAULT_HOSTNAME = process.env.IP || &#x27;localhost&#x27;
+exports.DEFAULT_LISTEN_ADDR = process.env.LISTEN_ADDR || &#x27;0.0.0.0&#x27;
+...</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.karma.watcher" id="apidoc.module.karma.watcher">module karma.watcher</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.watcher.watch" id="apidoc.element.karma.watcher.watch">
+        function <span class="apidocSignatureSpan">karma.watcher.</span>watch
+        <span class="apidocSignatureSpan">(patterns, excludes, fileList, usePolling, emitter)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">watch = function (patterns, excludes, fileList, usePolling, emitter) {
+  var watchedPatterns = getWatchedPatterns(patterns)
+  var options = {
+    usePolling: usePolling,
+    ignorePermissionErrors: true,
+    ignoreInitial: true,
+    ignored: createIgnore(watchedPatterns, excludes)
+  }
+  var chokidarWatcher = new chokidar.FSWatcher(options)
+
+  watchPatterns(watchedPatterns, chokidarWatcher)
+
+  var bind = function (fn) {
+    return function (path) {
+      return fn.call(fileList, helper.normalizeWinPath(path))
+    }
+  }
+
+  // register events
+  chokidarWatcher.on(&#x27;add&#x27;, bind(fileList.addFile))
+    .on(&#x27;change&#x27;, bind(fileList.changeFile))
+    .on(&#x27;unlink&#x27;, bind(fileList.removeFile))
+    // If we don&#x27;t subscribe; unhandled errors from Chokidar will bring Karma down
+    // (see GH Issue #959)
+    .on(&#x27;error&#x27;, function (e) {
+      log.debug(e)
+    })
+
+  emitter.on(&#x27;exit&#x27;, function (done) {
+    chokidarWatcher.close()
+    done()
+  })
+
+  return chokidarWatcher
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.karma.web_server" id="apidoc.module.karma.web_server">module karma.web_server</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.karma.web_server.create" id="apidoc.element.karma.web_server.create">
+        function <span class="apidocSignatureSpan">karma.web_server.</span>create
+        <span class="apidocSignatureSpan">(injector, emitter, fileList)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function (injector, emitter, fileList) {
+  var config = injector.get(&#x27;config&#x27;)
+  common.initializeMimeTypes(config)
+  var serveStaticFile = common.createServeFile(fs, path.normalize(path.join(__dirname, &#x27;/../static&#x27;)), config)
+  var serveFile = common.createServeFile(fs, null, config)
+  var filesPromise = new common.PromiseContainer()
+
+  // Set an empty list of files to avoid race issues with
+  // file_list_modified not having been emitted yet
+  filesPromise.set(Promise.resolve(fileList.files))
+
+  emitter.on(&#x27;file_list_modified&#x27;, function (files) {
+    filesPromise.set(Promise.resolve(files))
+  })
+
+  // locals for webserver module
+  // NOTE(vojta): figure out how to do this with DI
+  injector = injector.createChild([{
+    serveFile: [&#x27;value&#x27;, serveFile],
+    serveStaticFile: [&#x27;value&#x27;, serveStaticFile],
+    filesPromise: [&#x27;value&#x27;, filesPromise]
+  }])
+
+  var proxyMiddlewareInstance = injector.invoke(proxyMiddleware.create)
+
+  log.debug(&#x27;Instantiating middleware&#x27;)
+  var handler = connect()
+
+  if (config.beforeMiddleware) {
+    config.beforeMiddleware.forEach(function (middleware) {
+      handler.use(injector.get(&#x27;middleware:&#x27; + middleware))
+    })
+  }
+
+  handler.use(injector.invoke(runnerMiddleware.create))
+  handler.use(injector.invoke(stopperMiddleware.create))
+  handler.use(injector.invoke(stripHostMiddleware.create))
+  handler.use(injector.invoke(karmaMiddleware.create))
+  handler.use(injector.invoke(sourceFilesMiddleware.create))
+  // TODO(vojta): extract the proxy into a plugin
+  handler.use(proxyMiddlewareInstance)
+  // TODO(vojta): remove, this is only here because of karma-dart
+  // we need a better way of custom handlers
+  handler.use(injector.invoke(createCustomHandler))
+
+  if (config.middleware) {
+    config.middleware.forEach(function (middleware) {
+      handler.use(injector.get(&#x27;middleware:&#x27; + middleware))
+    })
+  }
+
+  handler.use(function (request, response) {
+    common.serve404(response, request.url)
+  })
+
+  var serverClass = http
+  var serverArguments = [handler]
+
+  if (config.protocol === &#x27;https:&#x27;) {
+    serverClass = https
+    serverArguments.unshift(config.httpsServerOptions || {})
+  }
+
+  if (config.httpModule) {
+    serverClass = config.httpModule
+  }
+
+  var server = serverClass.createServer.apply(null, serverArguments)
+
+  server.on(&#x27;upgrade&#x27;, function (req, socket, head) {
+    log.debug(&#x27;upgrade %s&#x27;, req.url)
+    proxyMiddlewareInstance.upgrade(req, socket, head)
+  })
+
+  return server
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// The browser got permanently disconnected (being removed from the collection and destroyed).
+var DISCONNECTED = 5
+
+var Browser = function (id, fullName, /* capturedBrowsers */ collection, emitter, socket, timer,
+/* config.browserDisconnectTimeout */ disconnectDelay,
+/* config.browserNoActivityTimeout */ noActivityTimeout) {
+var name = helper.browserFullNameToShort(fullName)
+var log = logger.<span class="apidocCodeKeywordSpan">create</span>(name)
+var activeSockets = [socket]
+var activeSocketsIds = function () {
+  return activeSockets.map(function (s) {
+    return s.id
+  }).join(&#x27;, &#x27;)
+}
+...</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
