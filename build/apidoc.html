@@ -46,1071 +46,1072 @@
     font-weight: bold;
 }
 </style>
-<h1>api-documentation for
+<h1>api documentation for
     <a
-        
+
         href="http://karma-runner.github.io/"
-        
+
     >karma (v1.5.0)</a>
 </h1>
+<h4>Spectacular Test Runner for JavaScript.</h4>
 <div class="apidocSectionDiv"><a
     href="#apidoc.tableOfContents"
     id="apidoc.tableOfContents"
 ><h1>table of contents</h1></a><ol>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.karma">module karma</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.Server">
             function <span class="apidocSignatureSpan">karma.</span>Server
             <span class="apidocSignatureSpan">(cliOptions, done)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.Server.super_">
             function <span class="apidocSignatureSpan">karma.</span>Server.super_
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.emitter_wrapper">
             function <span class="apidocSignatureSpan">karma.</span>emitter_wrapper
             <span class="apidocSignatureSpan">(emitter)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.file">
             function <span class="apidocSignatureSpan">karma.</span>file
             <span class="apidocSignatureSpan">(path, mtime, doNotCache)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.file_list">
             function <span class="apidocSignatureSpan">karma.</span>file_list
             <span class="apidocSignatureSpan">(patterns, excludes, emitter, preprocess, batchInterval)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.launcher.Launcher">
             function <span class="apidocSignatureSpan">karma.</span>launcher.Launcher
             <span class="apidocSignatureSpan">(server, emitter, injector)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.url">
             function <span class="apidocSignatureSpan">karma.</span>url
             <span class="apidocSignatureSpan">(path)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>Server.prototype</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>cli</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>completion</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>config</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>constants</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>emitter_wrapper.prototype</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>events</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>file.prototype</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>file_list.prototype</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>helper</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>init</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>launcher</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>logger</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>plugin</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>preprocessor</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>reporter</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>runner</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>server</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>stopper</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>temp_dir</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>url.prototype</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>watcher</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">karma.</span>web_server</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">karma.</span>VERSION</span>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.karma.Server">module karma.Server</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.Server.Server">
             function <span class="apidocSignatureSpan">karma.</span>Server
             <span class="apidocSignatureSpan">(cliOptions, done)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.Server.start">
             function <span class="apidocSignatureSpan">karma.Server.</span>start
             <span class="apidocSignatureSpan">(cliOptions, done)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.Server.super_">
             function <span class="apidocSignatureSpan">karma.Server.</span>super_
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.karma.Server.prototype">module karma.Server.prototype</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.Server.prototype._detach">
             function <span class="apidocSignatureSpan">karma.Server.prototype.</span>_detach
             <span class="apidocSignatureSpan">(config, done)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.Server.prototype._setUpLoadErrorListener">
             function <span class="apidocSignatureSpan">karma.Server.prototype.</span>_setUpLoadErrorListener
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.Server.prototype._start">
             function <span class="apidocSignatureSpan">karma.Server.prototype.</span>_start
             <span class="apidocSignatureSpan">(config, launcher, preprocess, fileList, capturedBrowsers, executor, done)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.Server.prototype.get">
             function <span class="apidocSignatureSpan">karma.Server.prototype.</span>get
             <span class="apidocSignatureSpan">(token)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.Server.prototype.refreshFiles">
             function <span class="apidocSignatureSpan">karma.Server.prototype.</span>refreshFiles
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.Server.prototype.start">
             function <span class="apidocSignatureSpan">karma.Server.prototype.</span>start
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.karma.Server.super_">module karma.Server.super_</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.Server.super_.super_">
             function <span class="apidocSignatureSpan">karma.Server.</span>super_
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.karma.cli">module karma.cli</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.cli.argsBeforeDoubleDash">
             function <span class="apidocSignatureSpan">karma.cli.</span>argsBeforeDoubleDash
             <span class="apidocSignatureSpan">(argv)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.cli.parseClientArgs">
             function <span class="apidocSignatureSpan">karma.cli.</span>parseClientArgs
             <span class="apidocSignatureSpan">(argv)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.cli.process">
             function <span class="apidocSignatureSpan">karma.cli.</span>process
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.cli.processArgs">
             function <span class="apidocSignatureSpan">karma.cli.</span>processArgs
             <span class="apidocSignatureSpan">(argv, options, fs, path)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.cli.run">
             function <span class="apidocSignatureSpan">karma.cli.</span>run
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.karma.completion">module karma.completion</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.completion.completion">
             function <span class="apidocSignatureSpan">karma.</span>completion
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.completion.complete">
             function <span class="apidocSignatureSpan">karma.completion.</span>complete
             <span class="apidocSignatureSpan">(env)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.completion.opositeWord">
             function <span class="apidocSignatureSpan">karma.completion.</span>opositeWord
             <span class="apidocSignatureSpan">(word)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.completion.sendCompletion">
             function <span class="apidocSignatureSpan">karma.completion.</span>sendCompletion
             <span class="apidocSignatureSpan">(possibleWords, env)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.karma.config">module karma.config</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.config.parseConfig">
             function <span class="apidocSignatureSpan">karma.config.</span>parseConfig
             <span class="apidocSignatureSpan">(configFilePath, cliOptions)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.karma.emitter_wrapper">module karma.emitter_wrapper</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.emitter_wrapper.emitter_wrapper">
             function <span class="apidocSignatureSpan">karma.</span>emitter_wrapper
             <span class="apidocSignatureSpan">(emitter)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.karma.emitter_wrapper.prototype">module karma.emitter_wrapper.prototype</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.emitter_wrapper.prototype.addListener">
             function <span class="apidocSignatureSpan">karma.emitter_wrapper.prototype.</span>addListener
             <span class="apidocSignatureSpan">(event, listener)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.emitter_wrapper.prototype.on">
             function <span class="apidocSignatureSpan">karma.emitter_wrapper.prototype.</span>on
             <span class="apidocSignatureSpan">(event, listener)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.emitter_wrapper.prototype.removeAllListeners">
             function <span class="apidocSignatureSpan">karma.emitter_wrapper.prototype.</span>removeAllListeners
             <span class="apidocSignatureSpan">(event)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.karma.events">module karma.events</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.events.EventEmitter">
             function <span class="apidocSignatureSpan">karma.events.</span>EventEmitter
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.events.bindAll">
             function <span class="apidocSignatureSpan">karma.events.</span>bindAll
             <span class="apidocSignatureSpan">(object, context)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.events.bufferEvents">
             function <span class="apidocSignatureSpan">karma.events.</span>bufferEvents
             <span class="apidocSignatureSpan">(emitter, eventsToBuffer)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.karma.file">module karma.file</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.file.file">
             function <span class="apidocSignatureSpan">karma.</span>file
             <span class="apidocSignatureSpan">(path, mtime, doNotCache)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.karma.file.prototype">module karma.file.prototype</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.file.prototype.toString">
             function <span class="apidocSignatureSpan">karma.file.prototype.</span>toString
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.karma.file_list">module karma.file_list</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.file_list.file_list">
             function <span class="apidocSignatureSpan">karma.</span>file_list
             <span class="apidocSignatureSpan">(patterns, excludes, emitter, preprocess, batchInterval)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.karma.file_list.prototype">module karma.file_list.prototype</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.file_list.prototype._exists">
             function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>_exists
             <span class="apidocSignatureSpan">(path)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.file_list.prototype._findFile">
             function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>_findFile
             <span class="apidocSignatureSpan">(path, pattern)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.file_list.prototype._isExcluded">
             function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>_isExcluded
             <span class="apidocSignatureSpan">(path)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.file_list.prototype._isIncluded">
             function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>_isIncluded
             <span class="apidocSignatureSpan">(path)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.file_list.prototype._isRefreshing">
             function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>_isRefreshing
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.file_list.prototype._refresh">
             function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>_refresh
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.file_list.prototype.addFile">
             function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>addFile
             <span class="apidocSignatureSpan">(path)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.file_list.prototype.changeFile">
             function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>changeFile
             <span class="apidocSignatureSpan">(path)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.file_list.prototype.refresh">
             function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>refresh
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.file_list.prototype.reload">
             function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>reload
             <span class="apidocSignatureSpan">(patterns, excludes)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.file_list.prototype.removeFile">
             function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>removeFile
             <span class="apidocSignatureSpan">(path)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.karma.helper">module karma.helper</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.helper.arrayRemove">
             function <span class="apidocSignatureSpan">karma.helper.</span>arrayRemove
             <span class="apidocSignatureSpan">(collection, item)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.helper.browserFullNameToShort">
             function <span class="apidocSignatureSpan">karma.helper.</span>browserFullNameToShort
             <span class="apidocSignatureSpan">(fullName)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.helper.camelToSnake">
             function <span class="apidocSignatureSpan">karma.helper.</span>camelToSnake
             <span class="apidocSignatureSpan">(camelCase)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.helper.dashToCamel">
             function <span class="apidocSignatureSpan">karma.helper.</span>dashToCamel
             <span class="apidocSignatureSpan">(dash)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.helper.defer">
             function <span class="apidocSignatureSpan">karma.helper.</span>defer
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.helper.formatTimeInterval">
             function <span class="apidocSignatureSpan">karma.helper.</span>formatTimeInterval
             <span class="apidocSignatureSpan">(time)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.helper.isArray">
             function <span class="apidocSignatureSpan">karma.helper.</span>isArray
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.helper.isDefined">
             function <span class="apidocSignatureSpan">karma.helper.</span>isDefined
             <span class="apidocSignatureSpan">(value)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.helper.isFunction">
             function <span class="apidocSignatureSpan">karma.helper.</span>isFunction
             <span class="apidocSignatureSpan">(value)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.helper.isNumber">
             function <span class="apidocSignatureSpan">karma.helper.</span>isNumber
             <span class="apidocSignatureSpan">(value)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.helper.isObject">
             function <span class="apidocSignatureSpan">karma.helper.</span>isObject
             <span class="apidocSignatureSpan">(value)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.helper.isString">
             function <span class="apidocSignatureSpan">karma.helper.</span>isString
             <span class="apidocSignatureSpan">(value)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.helper.isUrlAbsolute">
             function <span class="apidocSignatureSpan">karma.helper.</span>isUrlAbsolute
             <span class="apidocSignatureSpan">(url)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.helper.merge">
             function <span class="apidocSignatureSpan">karma.helper.</span>merge
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.helper.mkdirIfNotExists">
             function <span class="apidocSignatureSpan">karma.helper.</span>mkdirIfNotExists
             <span class="apidocSignatureSpan">(directory, done)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.helper.mmComparePatternWeights">
             function <span class="apidocSignatureSpan">karma.helper.</span>mmComparePatternWeights
             <span class="apidocSignatureSpan">(weight1, weight2)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.helper.mmPatternWeight">
             function <span class="apidocSignatureSpan">karma.helper.</span>mmPatternWeight
             <span class="apidocSignatureSpan">(pattern)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.helper.normalizeWinPath">
             function <span class="apidocSignatureSpan">karma.helper.</span>normalizeWinPath
             <span class="apidocSignatureSpan">(value)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.helper.ucFirst">
             function <span class="apidocSignatureSpan">karma.helper.</span>ucFirst
             <span class="apidocSignatureSpan">(word)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.karma.init">module karma.init</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.init.init">
             function <span class="apidocSignatureSpan">karma.</span>init
             <span class="apidocSignatureSpan">(config)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.karma.launcher">module karma.launcher</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.launcher.Launcher">
             function <span class="apidocSignatureSpan">karma.launcher.</span>Launcher
             <span class="apidocSignatureSpan">(server, emitter, injector)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.karma.launcher.Launcher">module karma.launcher.Launcher</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.launcher.Launcher.Launcher">
             function <span class="apidocSignatureSpan">karma.launcher.</span>Launcher
             <span class="apidocSignatureSpan">(server, emitter, injector)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.launcher.Launcher.generateId">
             function <span class="apidocSignatureSpan">karma.launcher.Launcher.</span>generateId
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.karma.logger">module karma.logger</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.logger.create">
             function <span class="apidocSignatureSpan">karma.logger.</span>create
             <span class="apidocSignatureSpan">(name, level)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.logger.setup">
             function <span class="apidocSignatureSpan">karma.logger.</span>setup
             <span class="apidocSignatureSpan">(level, colors, appenders)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.logger.setupFromConfig">
             function <span class="apidocSignatureSpan">karma.logger.</span>setupFromConfig
             <span class="apidocSignatureSpan">(config, appenders)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.karma.plugin">module karma.plugin</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.plugin.resolve">
             function <span class="apidocSignatureSpan">karma.plugin.</span>resolve
             <span class="apidocSignatureSpan">(plugins, emitter)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.karma.preprocessor">module karma.preprocessor</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.preprocessor.createPreprocessor">
             function <span class="apidocSignatureSpan">karma.preprocessor.</span>createPreprocessor
             <span class="apidocSignatureSpan">(config, basePath, injector)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.karma.reporter">module karma.reporter</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.reporter.createReporters">
             function <span class="apidocSignatureSpan">karma.reporter.</span>createReporters
             <span class="apidocSignatureSpan">(names, config, emitter, injector)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.karma.runner">module karma.runner</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.runner.run">
             function <span class="apidocSignatureSpan">karma.runner.</span>run
             <span class="apidocSignatureSpan">(config, done)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.karma.server">module karma.server</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.server.start">
             function <span class="apidocSignatureSpan">karma.server.</span>start
             <span class="apidocSignatureSpan">(cliOptions, done)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.karma.stopper">module karma.stopper</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.stopper.stop">
             function <span class="apidocSignatureSpan">karma.stopper.</span>stop
             <span class="apidocSignatureSpan">(config, done)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.karma.temp_dir">module karma.temp_dir</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.temp_dir.create">
             function <span class="apidocSignatureSpan">karma.temp_dir.</span>create
             <span class="apidocSignatureSpan">(path)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.temp_dir.getPath">
             function <span class="apidocSignatureSpan">karma.temp_dir.</span>getPath
             <span class="apidocSignatureSpan">(suffix)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.temp_dir.remove">
             function <span class="apidocSignatureSpan">karma.temp_dir.</span>remove
             <span class="apidocSignatureSpan">(path, done)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.karma.url">module karma.url</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.url.url">
             function <span class="apidocSignatureSpan">karma.</span>url
             <span class="apidocSignatureSpan">(path)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.karma.url.prototype">module karma.url.prototype</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.url.prototype.toString">
             function <span class="apidocSignatureSpan">karma.url.prototype.</span>toString
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.karma.watcher">module karma.watcher</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.watcher.watch">
             function <span class="apidocSignatureSpan">karma.watcher.</span>watch
             <span class="apidocSignatureSpan">(patterns, excludes, fileList, usePolling, emitter)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.karma.web_server">module karma.web_server</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.karma.web_server.create">
             function <span class="apidocSignatureSpan">karma.web_server.</span>create
             <span class="apidocSignatureSpan">(injector, emitter, fileList)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.karma" id="apidoc.module.karma">module karma</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.karma.Server" id="apidoc.element.karma.Server">
         function <span class="apidocSignatureSpan">karma.</span>Server
@@ -1167,9 +1168,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.Server.super_" id="apidoc.element.karma.Server.super_">
         function <span class="apidocSignatureSpan">karma.</span>Server.super_
@@ -1202,9 +1203,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.emitter_wrapper" id="apidoc.element.karma.emitter_wrapper">
         function <span class="apidocSignatureSpan">karma.</span>emitter_wrapper
@@ -1218,9 +1219,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.file" id="apidoc.element.karma.file">
         function <span class="apidocSignatureSpan">karma.</span>file
@@ -1245,9 +1246,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.file_list" id="apidoc.element.karma.file_list">
         function <span class="apidocSignatureSpan">karma.</span>file_list
@@ -1289,9 +1290,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.launcher.Launcher" id="apidoc.element.karma.launcher.Launcher">
         function <span class="apidocSignatureSpan">karma.</span>launcher.Launcher
@@ -1446,9 +1447,9 @@
     &#x27;config.proces ...</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.url" id="apidoc.element.karma.url">
         function <span class="apidocSignatureSpan">karma.</span>url
@@ -1462,62 +1463,62 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.karma.Server" id="apidoc.module.karma.Server">module karma.Server</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.karma.Server.Server" id="apidoc.element.karma.Server.Server">
         function <span class="apidocSignatureSpan">karma.</span>Server
@@ -1574,9 +1575,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.Server.start" id="apidoc.element.karma.Server.start">
         function <span class="apidocSignatureSpan">karma.Server.</span>start
@@ -1606,9 +1607,9 @@ switch (config.cmd) {
     break
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.Server.super_" id="apidoc.element.karma.Server.super_">
         function <span class="apidocSignatureSpan">karma.Server.</span>super_
@@ -1641,14 +1642,14 @@ switch (config.cmd) {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.karma.Server.prototype" id="apidoc.module.karma.Server.prototype">module karma.Server.prototype</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.karma.Server.prototype._detach" id="apidoc.element.karma.Server.prototype._detach">
         function <span class="apidocSignatureSpan">karma.Server.prototype.</span>_detach
@@ -1678,9 +1679,9 @@ switch (config.cmd) {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.Server.prototype._setUpLoadErrorListener" id="apidoc.element.karma.Server.prototype._setUpLoadErrorListener">
         function <span class="apidocSignatureSpan">karma.Server.prototype.</span>_setUpLoadErrorListener
@@ -1697,9 +1698,9 @@ switch (config.cmd) {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.Server.prototype._start" id="apidoc.element.karma.Server.prototype._start">
         function <span class="apidocSignatureSpan">karma.Server.prototype.</span>_start
@@ -1827,9 +1828,9 @@ switch (config.cmd) {
         newBrowser = capturedBrowsers.getById ...</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.Server.prototype.get" id="apidoc.element.karma.Server.prototype.get">
         function <span class="apidocSignatureSpan">karma.Server.prototype.</span>get
@@ -1858,9 +1859,9 @@ switch (config.cmd) {
 })
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.Server.prototype.refreshFiles" id="apidoc.element.karma.Server.prototype.refreshFiles">
         function <span class="apidocSignatureSpan">karma.Server.prototype.</span>refreshFiles
@@ -1875,9 +1876,9 @@ switch (config.cmd) {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.Server.prototype.start" id="apidoc.element.karma.Server.prototype.start">
         function <span class="apidocSignatureSpan">karma.Server.prototype.</span>start
@@ -1906,14 +1907,14 @@ switch (config.cmd) {
     break
 ...</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.karma.Server.super_" id="apidoc.module.karma.Server.super_">module karma.Server.super_</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.karma.Server.super_.super_" id="apidoc.element.karma.Server.super_.super_">
         function <span class="apidocSignatureSpan">karma.Server.</span>super_
@@ -1926,14 +1927,14 @@ switch (config.cmd) {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.karma.cli" id="apidoc.module.karma.cli">module karma.cli</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.karma.cli.argsBeforeDoubleDash" id="apidoc.element.karma.cli.argsBeforeDoubleDash">
         function <span class="apidocSignatureSpan">karma.cli.</span>argsBeforeDoubleDash
@@ -1948,9 +1949,9 @@ switch (config.cmd) {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.cli.parseClientArgs" id="apidoc.element.karma.cli.parseClientArgs">
         function <span class="apidocSignatureSpan">karma.cli.</span>parseClientArgs
@@ -1970,9 +1971,9 @@ switch (config.cmd) {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.cli.process" id="apidoc.element.karma.cli.process">
         function <span class="apidocSignatureSpan">karma.cli.</span>process
@@ -2040,9 +2041,9 @@ switch (config.cmd) {
     require(&#x27;./runner&#x27;).run(config)
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.cli.processArgs" id="apidoc.element.karma.cli.processArgs">
         function <span class="apidocSignatureSpan">karma.cli.</span>processArgs
@@ -2169,9 +2170,9 @@ switch (config.cmd) {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.cli.run" id="apidoc.element.karma.cli.run">
         function <span class="apidocSignatureSpan">karma.cli.</span>run
@@ -2218,14 +2219,14 @@ switch (config.cmd) {
     break
 ...</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.karma.completion" id="apidoc.module.karma.completion">module karma.completion</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.karma.completion.completion" id="apidoc.element.karma.completion.completion">
         function <span class="apidocSignatureSpan">karma.</span>completion
@@ -2281,9 +2282,9 @@ exports.processArgs = processArgs
 exports.parseClientArgs = parseClientArgs
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.completion.complete" id="apidoc.element.karma.completion.complete">
         function <span class="apidocSignatureSpan">karma.completion.</span>complete
@@ -2327,9 +2328,9 @@ exports.parseClientArgs = parseClientArgs
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.completion.opositeWord" id="apidoc.element.karma.completion.opositeWord">
         function <span class="apidocSignatureSpan">karma.completion.</span>opositeWord
@@ -2346,9 +2347,9 @@ exports.parseClientArgs = parseClientArgs
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.completion.sendCompletion" id="apidoc.element.karma.completion.sendCompletion">
         function <span class="apidocSignatureSpan">karma.completion.</span>sendCompletion
@@ -2373,14 +2374,14 @@ exports.parseClientArgs = parseClientArgs
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.karma.config" id="apidoc.module.karma.config">module karma.config</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.karma.config.parseConfig" id="apidoc.element.karma.config.parseConfig">
         function <span class="apidocSignatureSpan">karma.config.</span>parseConfig
@@ -2471,14 +2472,14 @@ exports.parseClientArgs = parseClientArgs
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.karma.emitter_wrapper" id="apidoc.module.karma.emitter_wrapper">module karma.emitter_wrapper</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.karma.emitter_wrapper.emitter_wrapper" id="apidoc.element.karma.emitter_wrapper.emitter_wrapper">
         function <span class="apidocSignatureSpan">karma.</span>emitter_wrapper
@@ -2492,14 +2493,14 @@ exports.parseClientArgs = parseClientArgs
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.karma.emitter_wrapper.prototype" id="apidoc.module.karma.emitter_wrapper.prototype">module karma.emitter_wrapper.prototype</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.karma.emitter_wrapper.prototype.addListener" id="apidoc.element.karma.emitter_wrapper.prototype.addListener">
         function <span class="apidocSignatureSpan">karma.emitter_wrapper.prototype.</span>addListener
@@ -2535,9 +2536,9 @@ if (!this.listeners.hasOwnProperty(event)) {
 this.listeners[event].push(listener)
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.emitter_wrapper.prototype.on" id="apidoc.element.karma.emitter_wrapper.prototype.on">
         function <span class="apidocSignatureSpan">karma.emitter_wrapper.prototype.</span>on
@@ -2574,9 +2575,9 @@ process.stdout.<span class="apidocCodeKeywordSpan">on</span>(&#x27;error&#x27;, 
   //
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.emitter_wrapper.prototype.removeAllListeners" id="apidoc.element.karma.emitter_wrapper.prototype.removeAllListeners">
         function <span class="apidocSignatureSpan">karma.emitter_wrapper.prototype.</span>removeAllListeners
@@ -2598,14 +2599,14 @@ process.stdout.<span class="apidocCodeKeywordSpan">on</span>(&#x27;error&#x27;, 
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.karma.events" id="apidoc.module.karma.events">module karma.events</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.karma.events.EventEmitter" id="apidoc.element.karma.events.EventEmitter">
         function <span class="apidocSignatureSpan">karma.events.</span>EventEmitter
@@ -2638,9 +2639,9 @@ process.stdout.<span class="apidocCodeKeywordSpan">on</span>(&#x27;error&#x27;, 
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.events.bindAll" id="apidoc.element.karma.events.bindAll">
         function <span class="apidocSignatureSpan">karma.events.</span>bindAll
@@ -2683,9 +2684,9 @@ emitter.emit(&#x27;browsers_change&#x27;, collection)
 emitter.emit(&#x27;browser_register&#x27;, this)
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.events.bufferEvents" id="apidoc.element.karma.events.bufferEvents">
         function <span class="apidocSignatureSpan">karma.events.</span>bufferEvents
@@ -2727,14 +2728,14 @@ emitter.emit(&#x27;browser_register&#x27;, this)
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.karma.file" id="apidoc.module.karma.file">module karma.file</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.karma.file.file" id="apidoc.element.karma.file.file">
         function <span class="apidocSignatureSpan">karma.</span>file
@@ -2759,14 +2760,14 @@ emitter.emit(&#x27;browser_register&#x27;, this)
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.karma.file.prototype" id="apidoc.module.karma.file.prototype">module karma.file.prototype</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.karma.file.prototype.toString" id="apidoc.element.karma.file.prototype.toString">
         function <span class="apidocSignatureSpan">karma.file.prototype.</span>toString
@@ -2785,8 +2786,8 @@ emitter.emit(&#x27;browser_register&#x27;, this)
 var fs = require(&#x27;graceful-fs&#x27;)
 var path = require(&#x27;path&#x27;)
 
-var pkg = JSON.parse(fs.readFileSync(path.join(__dirname, &#x27;/../package.json&#x27;)).<span class="apidocCodeKeywordSpan">toS\
-tring</span>())
+var pkg = JSON.parse(fs.readFileSync(path.join(__dirname, &#x27;/../package.json&#x27;)).<span class="apidocCodeKeywordSpan">toString
+</span>())
 
 exports.VERSION = pkg.version
 
@@ -2795,14 +2796,14 @@ exports.DEFAULT_HOSTNAME = process.env.IP || &#x27;localhost&#x27;
 exports.DEFAULT_LISTEN_ADDR = process.env.LISTEN_ADDR || &#x27;0.0.0.0&#x27;
 ...</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.karma.file_list" id="apidoc.module.karma.file_list">module karma.file_list</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.karma.file_list.file_list" id="apidoc.element.karma.file_list.file_list">
         function <span class="apidocSignatureSpan">karma.</span>file_list
@@ -2844,14 +2845,14 @@ exports.DEFAULT_LISTEN_ADDR = process.env.LISTEN_ADDR || &#x27;0.0.0.0&#x27;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.karma.file_list.prototype" id="apidoc.module.karma.file_list.prototype">module karma.file_list.prototype</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.karma.file_list.prototype._exists" id="apidoc.element.karma.file_list.prototype._exists">
         function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>_exists
@@ -2887,9 +2888,9 @@ var file = new File(path)
 this.buckets.get(pattern.pattern).add(file)
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.file_list.prototype._findFile" id="apidoc.element.karma.file_list.prototype._findFile">
         function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>_findFile
@@ -2923,9 +2924,9 @@ List.prototype._isRefreshing = function () {
 }
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.file_list.prototype._isExcluded" id="apidoc.element.karma.file_list.prototype._isExcluded">
         function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>_isExcluded
@@ -2956,9 +2957,9 @@ var doNotCache = patternObject.nocache
 var file = new File(path, mtime, doNotCache)
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.file_list.prototype._isIncluded" id="apidoc.element.karma.file_list.prototype._isIncluded">
         function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>_isIncluded
@@ -2989,9 +2990,9 @@ if (!pattern) {
 if (this._exists(path)) {
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.file_list.prototype._isRefreshing" id="apidoc.element.karma.file_list.prototype._isRefreshing">
         function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>_isRefreshing
@@ -3004,9 +3005,9 @@ if (this._exists(path)) {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.file_list.prototype._refresh" id="apidoc.element.karma.file_list.prototype._refresh">
         function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>_refresh
@@ -3093,9 +3094,9 @@ List.prototype.refresh = function () {
 // patterns - Array, the new patterns.
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.file_list.prototype.addFile" id="apidoc.element.karma.file_list.prototype.addFile">
         function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>addFile
@@ -3144,9 +3145,9 @@ List.prototype.refresh = function () {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.file_list.prototype.changeFile" id="apidoc.element.karma.file_list.prototype.changeFile">
         function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>changeFile
@@ -3185,9 +3186,9 @@ List.prototype.refresh = function () {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.file_list.prototype.refresh" id="apidoc.element.karma.file_list.prototype.refresh">
         function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>refresh
@@ -3217,9 +3218,9 @@ List.prototype.reload = function (patterns, excludes) {
 //
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.file_list.prototype.reload" id="apidoc.element.karma.file_list.prototype.reload">
         function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>reload
@@ -3237,9 +3238,9 @@ List.prototype.reload = function (patterns, excludes) {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.file_list.prototype.removeFile" id="apidoc.element.karma.file_list.prototype.removeFile">
         function <span class="apidocSignatureSpan">karma.file_list.prototype.</span>removeFile
@@ -3268,14 +3269,14 @@ List.prototype.reload = function (patterns, excludes) {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.karma.helper" id="apidoc.module.karma.helper">module karma.helper</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.karma.helper.arrayRemove" id="apidoc.element.karma.helper.arrayRemove">
         function <span class="apidocSignatureSpan">karma.helper.</span>arrayRemove
@@ -3295,9 +3296,9 @@ List.prototype.reload = function (patterns, excludes) {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.helper.browserFullNameToShort" id="apidoc.element.karma.helper.browserFullNameToShort">
         function <span class="apidocSignatureSpan">karma.helper.</span>browserFullNameToShort
@@ -3328,9 +3329,9 @@ var activeSocketsIds = function () {
 }
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.helper.camelToSnake" id="apidoc.element.karma.helper.camelToSnake">
         function <span class="apidocSignatureSpan">karma.helper.</span>camelToSnake
@@ -3361,9 +3362,9 @@ var bindMethod = function (method) {
 for (var method in object) {
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.helper.dashToCamel" id="apidoc.element.karma.helper.dashToCamel">
         function <span class="apidocSignatureSpan">karma.helper.</span>dashToCamel
@@ -3392,9 +3393,9 @@ if (helper.isString(options.autoWatch)) {
 }
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.helper.defer" id="apidoc.element.karma.helper.defer">
         function <span class="apidocSignatureSpan">karma.helper.</span>defer
@@ -3434,9 +3435,9 @@ var done = function () {
 this.emit(name, done)
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.helper.formatTimeInterval" id="apidoc.element.karma.helper.formatTimeInterval">
         function <span class="apidocSignatureSpan">karma.helper.</span>formatTimeInterval
@@ -3457,9 +3458,9 @@ this.emit(name, done)
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.helper.isArray" id="apidoc.element.karma.helper.isArray">
         function <span class="apidocSignatureSpan">karma.helper.</span>isArray
@@ -3485,9 +3486,9 @@ Object.getOwnPropertyNames(argv).forEach(function (name) {
 })
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.helper.isDefined" id="apidoc.element.karma.helper.isDefined">
         function <span class="apidocSignatureSpan">karma.helper.</span>isDefined
@@ -3515,9 +3516,9 @@ if (helper.isDefined(info.log)) {
 }
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.helper.isFunction" id="apidoc.element.karma.helper.isFunction">
         function <span class="apidocSignatureSpan">karma.helper.</span>isFunction
@@ -3549,9 +3550,9 @@ if (helper.isString(options.logLevel)) {
   var logConstant = constant[&#x27;LOG_&#x27; + options.logLevel.toUpperCase()]
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.helper.isNumber" id="apidoc.element.karma.helper.isNumber">
         function <span class="apidocSignatureSpan">karma.helper.</span>isNumber
@@ -3570,7 +3571,7 @@ if (config.formatError &#x26;&#x26; !helper.isFunction(config.formatError)) {
   throw new TypeError(&#x27;Invalid configuration: formatError option must be a function.&#x27;)
 }
 
-if (config.processKillTimeout &#x26;&#x26; !helper.<span class="apidocCodeKeywordSpan">isNumber</span>(config.processKillTimeout\
+if (config.processKillTimeout &#x26;&#x26; !helper.<span class="apidocCodeKeywordSpan">isNumber</span>(config.processKillTimeout
 )) {
   throw new TypeError(&#x27;Invalid configuration: processKillTimeout option must be a number.&#x27;)
 }
@@ -3581,9 +3582,9 @@ Object.keys(defaultClient).forEach(function (key) {
   config.client[key] = helper.isDefined(option) ? option : defaultClient[key]
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.helper.isObject" id="apidoc.element.karma.helper.isObject">
         function <span class="apidocSignatureSpan">karma.helper.</span>isObject
@@ -3615,9 +3616,9 @@ if (helper.<span class="apidocCodeKeywordSpan">isObject</span>(pattern)) {
         pattern.included,
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.helper.isString" id="apidoc.element.karma.helper.isString">
         function <span class="apidocSignatureSpan">karma.helper.</span>isString
@@ -3645,9 +3646,9 @@ if (helper.isString(options.colors)) {
 }
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.helper.isUrlAbsolute" id="apidoc.element.karma.helper.isUrlAbsolute">
         function <span class="apidocSignatureSpan">karma.helper.</span>isUrlAbsolute
@@ -3666,8 +3667,8 @@ Pattern.call(this, url, false, true, false, false)
 
 var createPatternObject = function (pattern) {
 if (pattern &#x26;&#x26; helper.isString(pattern)) {
-  return helper.<span class="apidocCodeKeywordSpan">isUrlAbsolute</span>(pattern) ? new UrlPattern(pattern) : new Pattern(patter\
-n)
+  return helper.<span class="apidocCodeKeywordSpan">isUrlAbsolute</span>(pattern) ? new UrlPattern(pattern) : new Pattern(pattern
+)
 }
 
 if (helper.isObject(pattern)) {
@@ -3677,9 +3678,9 @@ if (helper.isObject(pattern)) {
       : new Pattern(
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.helper.merge" id="apidoc.element.karma.helper.merge">
         function <span class="apidocSignatureSpan">karma.helper.</span>merge
@@ -3709,9 +3710,9 @@ this.set = function (newConfig) {
 }
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.helper.mkdirIfNotExists" id="apidoc.element.karma.helper.mkdirIfNotExists">
         function <span class="apidocSignatureSpan">karma.helper.</span>mkdirIfNotExists
@@ -3735,9 +3736,9 @@ this.set = function (newConfig) {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.helper.mmComparePatternWeights" id="apidoc.element.karma.helper.mmComparePatternWeights">
         function <span class="apidocSignatureSpan">karma.helper.</span>mmComparePatternWeights
@@ -3771,9 +3772,9 @@ var UrlPattern = function (url) {
 var createPatternObject = function (pattern) {
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.helper.mmPatternWeight" id="apidoc.element.karma.helper.mmPatternWeight">
         function <span class="apidocSignatureSpan">karma.helper.</span>mmPatternWeight
@@ -3812,9 +3813,9 @@ Pattern.prototype.compare = function (other) {
 var UrlPattern = function (url) {
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.helper.normalizeWinPath" id="apidoc.element.karma.helper.normalizeWinPath">
         function <span class="apidocSignatureSpan">karma.helper.</span>normalizeWinPath
@@ -3843,9 +3844,9 @@ config.customClientContextFile = helper.normalizeWinPath(config.customClientCont
 // normalize urlRoot
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.helper.ucFirst" id="apidoc.element.karma.helper.ucFirst">
         function <span class="apidocSignatureSpan">karma.helper.</span>ucFirst
@@ -3864,7 +3865,7 @@ config.customClientContextFile = helper.normalizeWinPath(config.customClientCont
   var types = [&#x27;launcher&#x27;, &#x27;preprocessor&#x27;, &#x27;reporter&#x27;]
 
   types.forEach(function (type) {
-    var definitions = config[&#x27;custom&#x27; + helper.<span class="apidocCodeKeywordSpan">ucFirst</span>(type) + &#x27;s&#x27\
+    var definitions = config[&#x27;custom&#x27; + helper.<span class="apidocCodeKeywordSpan">ucFirst</span>(type) + &#x27;s&#x27
 ;] || {}
 
     Object.keys(definitions).forEach(function (name) {
@@ -3875,14 +3876,14 @@ if (!helper.isObject(definition)) {
 }
 ...</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.karma.init" id="apidoc.module.karma.init">module karma.init</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.karma.init.init" id="apidoc.element.karma.init.init">
         function <span class="apidocSignatureSpan">karma.</span>init
@@ -3958,14 +3959,14 @@ if (!helper.isObject(definition)) {
 }
 ...</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.karma.launcher" id="apidoc.module.karma.launcher">module karma.launcher</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.karma.launcher.Launcher" id="apidoc.element.karma.launcher.Launcher">
         function <span class="apidocSignatureSpan">karma.launcher.</span>Launcher
@@ -4120,14 +4121,14 @@ if (!helper.isObject(definition)) {
     &#x27;config.proces ...</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.karma.launcher.Launcher" id="apidoc.module.karma.launcher.Launcher">module karma.launcher.Launcher</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.karma.launcher.Launcher.Launcher" id="apidoc.element.karma.launcher.Launcher.Launcher">
         function <span class="apidocSignatureSpan">karma.launcher.</span>Launcher
@@ -4282,9 +4283,9 @@ if (!helper.isObject(definition)) {
     &#x27;config.proces ...</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.launcher.Launcher.generateId" id="apidoc.element.karma.launcher.Launcher.generateId">
         function <span class="apidocSignatureSpan">karma.launcher.Launcher.</span>generateId
@@ -4297,14 +4298,14 @@ if (!helper.isObject(definition)) {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.karma.logger" id="apidoc.module.karma.logger">module karma.logger</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.karma.logger.create" id="apidoc.element.karma.logger.create">
         function <span class="apidocSignatureSpan">karma.logger.</span>create
@@ -4336,9 +4337,9 @@ var activeSocketsIds = function () {
 }
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.logger.setup" id="apidoc.element.karma.logger.setup">
         function <span class="apidocSignatureSpan">karma.logger.</span>setup
@@ -4386,9 +4387,9 @@ exports.parseConfig = parseConfig
 exports.Pattern = Pattern
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.logger.setupFromConfig" id="apidoc.element.karma.logger.setupFromConfig">
         function <span class="apidocSignatureSpan">karma.logger.</span>setupFromConfig
@@ -4411,14 +4412,14 @@ exports.Pattern = Pattern
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.karma.plugin" id="apidoc.module.karma.plugin">module karma.plugin</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.karma.plugin.resolve" id="apidoc.element.karma.plugin.resolve">
         function <span class="apidocSignatureSpan">karma.plugin.</span>resolve
@@ -4490,14 +4491,14 @@ var parseClientArgs = function (argv) {
 var clientArgs = []
 ...</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.karma.preprocessor" id="apidoc.module.karma.preprocessor">module karma.preprocessor</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.karma.preprocessor.createPreprocessor" id="apidoc.element.karma.preprocessor.createPreprocessor">
         function <span class="apidocSignatureSpan">karma.preprocessor.</span>createPreprocessor
@@ -4594,14 +4595,14 @@ var clientArgs = []
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.karma.reporter" id="apidoc.module.karma.reporter">module karma.reporter</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.karma.reporter.createReporters" id="apidoc.element.karma.reporter.createReporters">
         function <span class="apidocSignatureSpan">karma.reporter.</span>createReporters
@@ -4619,7 +4620,7 @@ var clientArgs = []
       var Cls = require(&#x27;./reporters/&#x27; + name)
       var ClsColor = require(&#x27;./reporters/&#x27; + name + &#x27;_color&#x27;)
       reporters.push(new Cls(errorFormatter, config.reportSlowerThan, config.colors, config.browserConsoleLogOptions))
-      return reporters.push(new ClsColor(errorFormatter, config.reportSlowerThan, config.colors, config.browserConsoleLogOptions\
+      return reporters.push(new ClsColor(errorFormatter, config.reportSlowerThan, config.colors, config.browserConsoleLogOptions
 ))
     }
 
@@ -4662,14 +4663,14 @@ var clientArgs = []
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.karma.runner" id="apidoc.module.karma.runner">module karma.runner</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.karma.runner.run" id="apidoc.element.karma.runner.run">
         function <span class="apidocSignatureSpan">karma.runner.</span>run
@@ -4744,14 +4745,14 @@ switch (config.cmd) {
     break
 ...</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.karma.server" id="apidoc.module.karma.server">module karma.server</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.karma.server.start" id="apidoc.element.karma.server.start">
         function <span class="apidocSignatureSpan">karma.server.</span>start
@@ -4785,14 +4786,14 @@ switch (config.cmd) {
     break
 ...</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.karma.stopper" id="apidoc.module.karma.stopper">module karma.stopper</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.karma.stopper.stop" id="apidoc.element.karma.stopper.stop">
         function <span class="apidocSignatureSpan">karma.stopper.</span>stop
@@ -4855,14 +4856,14 @@ case &#x27;completion&#x27;:
   break
 ...</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.karma.temp_dir" id="apidoc.module.karma.temp_dir">module karma.temp_dir</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.karma.temp_dir.create" id="apidoc.element.karma.temp_dir.create">
         function <span class="apidocSignatureSpan">karma.temp_dir.</span>create
@@ -4898,9 +4899,9 @@ var activeSocketsIds = function () {
 }
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.temp_dir.getPath" id="apidoc.element.karma.temp_dir.getPath">
         function <span class="apidocSignatureSpan">karma.temp_dir.</span>getPath
@@ -4913,9 +4914,9 @@ var activeSocketsIds = function () {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.karma.temp_dir.remove" id="apidoc.element.karma.temp_dir.remove">
         function <span class="apidocSignatureSpan">karma.temp_dir.</span>remove
@@ -4945,14 +4946,14 @@ var refreshNoActivityTimeout = noActivityTimeout ? function () {
     self.lastResult.totalTimeEnd()
 ...</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.karma.url" id="apidoc.module.karma.url">module karma.url</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.karma.url.url" id="apidoc.element.karma.url.url">
         function <span class="apidocSignatureSpan">karma.</span>url
@@ -4966,14 +4967,14 @@ var refreshNoActivityTimeout = noActivityTimeout ? function () {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.karma.url.prototype" id="apidoc.module.karma.url.prototype">module karma.url.prototype</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.karma.url.prototype.toString" id="apidoc.element.karma.url.prototype.toString">
         function <span class="apidocSignatureSpan">karma.url.prototype.</span>toString
@@ -4992,8 +4993,8 @@ var refreshNoActivityTimeout = noActivityTimeout ? function () {
 var fs = require(&#x27;graceful-fs&#x27;)
 var path = require(&#x27;path&#x27;)
 
-var pkg = JSON.parse(fs.readFileSync(path.join(__dirname, &#x27;/../package.json&#x27;)).<span class="apidocCodeKeywordSpan">toS\
-tring</span>())
+var pkg = JSON.parse(fs.readFileSync(path.join(__dirname, &#x27;/../package.json&#x27;)).<span class="apidocCodeKeywordSpan">toString
+</span>())
 
 exports.VERSION = pkg.version
 
@@ -5002,14 +5003,14 @@ exports.DEFAULT_HOSTNAME = process.env.IP || &#x27;localhost&#x27;
 exports.DEFAULT_LISTEN_ADDR = process.env.LISTEN_ADDR || &#x27;0.0.0.0&#x27;
 ...</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.karma.watcher" id="apidoc.module.karma.watcher">module karma.watcher</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.karma.watcher.watch" id="apidoc.element.karma.watcher.watch">
         function <span class="apidocSignatureSpan">karma.watcher.</span>watch
@@ -5054,14 +5055,14 @@ exports.DEFAULT_LISTEN_ADDR = process.env.LISTEN_ADDR || &#x27;0.0.0.0&#x27;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.karma.web_server" id="apidoc.module.karma.web_server">module karma.web_server</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.karma.web_server.create" id="apidoc.element.karma.web_server.create">
         function <span class="apidocSignatureSpan">karma.web_server.</span>create
@@ -5162,8 +5163,8 @@ var activeSocketsIds = function () {
 }
 ...</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocFooterDiv">
