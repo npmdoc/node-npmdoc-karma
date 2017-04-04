@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="http://karma-runner.github.io/"
-
-    >karma (v1.5.0)</a>
+    <a href="http://karma-runner.github.io/">karma (v1.5.0)</a>
 </h1>
 <h4>Spectacular Test Runner for JavaScript.</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.karma">module karma</a><ol>
 
@@ -1178,11 +1171,11 @@
   this.log = function (type, args) {
     var values = []
 
-    for (var i = 0; i &#x3c; args.length; i++) {
+    for (var i = 0; i &lt; args.length; i++) {
       values.push(this.stringify(args[i], 3))
     }
 
-    this.info({log: values.join(&#x27;, &#x27;), type: type})
+    this.info({log: values.join(', '), type: type})
   }
 
   this.stringify = stringify
@@ -1191,17 +1184,17 @@
   // DEV: We require one in our context to track `hasError`
   this.error = function () {
     hasError = true
-    callParentKarmaMethod(&#x27;error&#x27;, [].slice.call(arguments))
+    callParentKarmaMethod('error', [].slice.call(arguments))
     return false
   }
 
   // Define our start handler
   var UNIMPLEMENTED_START = function () {
-    this.error(&#x27;You need to include some adapter that implements __karma__.start method!&#x27;)
+    this.error('You need to include some adapter that implements __karma__.start method!')
   }
-  // all files loaded, let&#x27;s start the execution
+  // all files loaded, let's start the execution
   this.loaded = function () {
-    // has error -&#x3e; cancel
+    // has error -&gt; cancel
     if (!hasError) {
       this.start(this.config)
     }
@@ -1215,8 +1208,8 @@
 
   // Define proxy methods
   // DEV: This is a closured `for` loop (same as a `forEach`) for IE support
-  var proxyMethods = [&#x27;complete&#x27;, &#x27;info&#x27;, &#x27;result&#x27;]
-  for (var i = 0; i &#x3c; proxyMethods.length; i++) {
+  var proxyMethods = ['complete', 'info', 'result']
+  for (var i = 0; i &lt; proxyMethods.length; i++) {
     (function bindProxyMethod (methodName) {
       self[methodName] = function boundProxyMethod () {
         callParentKarmaMethod(methodName, [].slice.call(arguments))
@@ -1228,7 +1221,7 @@
   this.setupContext = function (contextWindow) {
     // If we clear the context after every run and we already had an error
     //   then stop now. Otherwise, carry on.
-    if (self.config.clearContext &#x26;&#x26; hasError) {
+    if (self.config.clearContext &amp;&amp; hasError) {
       return
     }
 
@@ -1237,29 +1230,29 @@
     contextWindow.onerror = function () {
       return self.error.apply(self, arguments)
     }
-    // DEV: We must defined a function since we don&#x27;t want to pass the event object
+    // DEV: We must defined a function since we don't want to pass the event object
     contextWindow.onbeforeunload = function (e, b) {
-      callParentKarmaMethod(&#x27;onbeforeunload&#x27;, [])
+      callParentKarmaMethod('onbeforeunload', [])
     }
 
     contextWindow.dump = function () {
-      self.log(&#x27;dump&#x27;, arguments)
+      self.log('dump', arguments)
     }
 
     var _confirm = contextWindow.confirm
     var _prompt = contextWindow.prompt
 
     contextWindow.alert = function (msg) {
-      self.log(&#x27;alert&#x27;, [msg])
+      self.log('alert', [msg])
     }
 
     contextWindow.confirm = function (msg) {
-      self.log(&#x27;confirm&#x27;, [msg])
+      self.log('confirm', [msg])
       _confirm(msg)
     }
 
     contextWindow.prompt = function (msg, defaultVal) {
-      self.log(&#x27;prompt&#x27;, [msg, defaultVal])
+      self.log('prompt', [msg, defaultVal])
       _prompt(msg, defaultVal)
     }
 
@@ -1276,7 +1269,7 @@
     if (self.config.captureConsole) {
       // patch the console
       var localConsole = contextWindow.console = getConsole(contextWindow)
-      var logMethods = [&#x27;log&#x27;, &#x27;info&#x27;, &#x27;warn&#x27;, &#x27;error&#x27;, &#x27;debug&#x27;]
+      var logMethods = ['log', 'info', 'warn', 'error', 'debug']
       var patchConsoleMethod = function (method) {
         var orig = localConsole[method]
         if (!orig) {
@@ -1287,7 +1280,7 @@
           return Function.prototype.apply.call(orig, localConsole, arguments)
         }
       }
-      for (var i = 0; i &#x3c; logMethods.length; i++) {
+      for (var i = 0; i &lt; logMethods.length; i++) {
         patchConsoleMethod(logMethods[i])
       }
     }
@@ -1317,26 +1310,26 @@
   var config = cfg.parseConfig(cliOptions.configFile, cliOptions)
 
   var modules = [{
-    helper: [&#x27;value&#x27;, helper],
-    logger: [&#x27;value&#x27;, logger],
-    done: [&#x27;value&#x27;, done || process.exit],
-    emitter: [&#x27;value&#x27;, this],
-    server: [&#x27;value&#x27;, this],
-    launcher: [&#x27;type&#x27;, Launcher],
-    config: [&#x27;value&#x27;, config],
-    preprocess: [&#x27;factory&#x27;, preprocessor.createPreprocessor],
-    fileList: [&#x27;type&#x27;, FileList],
-    webServer: [&#x27;factory&#x27;, ws.create],
-    socketServer: [&#x27;factory&#x27;, createSocketIoServer],
-    executor: [&#x27;type&#x27;, Executor],
+    helper: ['value', helper],
+    logger: ['value', logger],
+    done: ['value', done || process.exit],
+    emitter: ['value', this],
+    server: ['value', this],
+    launcher: ['type', Launcher],
+    config: ['value', config],
+    preprocess: ['factory', preprocessor.createPreprocessor],
+    fileList: ['type', FileList],
+    webServer: ['factory', ws.create],
+    socketServer: ['factory', createSocketIoServer],
+    executor: ['type', Executor],
     // TODO(vojta): remove
-    customFileHandlers: [&#x27;value&#x27;, []],
+    customFileHandlers: ['value', []],
     // TODO(vojta): remove, once karma-dart does not rely on it
-    customScriptTypes: [&#x27;value&#x27;, []],
-    reporter: [&#x27;factory&#x27;, reporter.createReporters],
-    capturedBrowsers: [&#x27;type&#x27;, BrowserCollection],
-    args: [&#x27;value&#x27;, {}],
-    timer: [&#x27;value&#x27;, {
+    customScriptTypes: ['value', []],
+    reporter: ['factory', reporter.createReporters],
+    capturedBrowsers: ['type', BrowserCollection],
+    args: ['value', {}],
+    timer: ['value', {
       setTimeout: function () {
         return setTimeout.apply(root, arguments)
       },
@@ -1416,7 +1409,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">file = function (path, mtime, doNotCache) {
-  // used for serving (processed path, eg some/file.coffee -&#x3e; some/file.coffee.js)
+  // used for serving (processed path, eg some/file.coffee -&gt; some/file.coffee.js)
   this.path = path
 
   // original absolute path, id of the file
@@ -1457,7 +1450,7 @@
   // When a refresh is triggered this gets set
   // to the promise that `this._refresh` returns.
   // So we know we are refreshing when this promise
-  // is still pending, and we are done when it&#x27;s either
+  // is still pending, and we are done when it's either
   // resolved or rejected.
   this._refreshing = Promise.resolve()
 
@@ -1467,7 +1460,7 @@
   // This function is throttled to the value of `batchInterval`
   // to avoid spamming the listener.
   function emit () {
-    self._emitter.emit(&#x27;file_list_modified&#x27;, self.files)
+    self._emitter.emit('file_list_modified', self.files)
   }
   var throttledEmit = _.throttle(emit, self._batchInterval, {leading: false})
   self._emitModified = function (immediate) {
@@ -1492,7 +1485,7 @@
   var self = this
 
   var getBrowserById = function (id) {
-    for (var i = 0; i &#x3c; self._browsers.length; i++) {
+    for (var i = 0; i &lt; self._browsers.length; i++) {
       if (self._browsers[i].id === id) {
         return self._browsers[i]
       }
@@ -1510,35 +1503,35 @@
         port = upstreamProxy.port
         urlRoot = upstreamProxy.path + urlRoot.substr(1)
       }
-      var url = protocol + &#x27;//&#x27; + hostname + &#x27;:&#x27; + port + urlRoot
+      var url = protocol + '//' + hostname + ':' + port + urlRoot
 
       var locals = {
-        id: [&#x27;value&#x27;, Launcher.generateId()],
-        name: [&#x27;value&#x27;, name],
-        processKillTimeout: [&#x27;value&#x27;, processKillTimeout],
-        baseLauncherDecorator: [&#x27;factory&#x27;, baseDecorator],
-        captureTimeoutLauncherDecorator: [&#x27;factory&#x27;, captureTimeoutDecorator],
-        retryLauncherDecorator: [&#x27;factory&#x27;, retryDecorator],
-        processLauncherDecorator: [&#x27;factory&#x27;, processDecorator],
-        baseBrowserDecorator: [&#x27;factory&#x27;, baseBrowserDecoratorFactory]
+        id: ['value', Launcher.generateId()],
+        name: ['value', name],
+        processKillTimeout: ['value', processKillTimeout],
+        baseLauncherDecorator: ['factory', baseDecorator],
+        captureTimeoutLauncherDecorator: ['factory', captureTimeoutDecorator],
+        retryLauncherDecorator: ['factory', retryDecorator],
+        processLauncherDecorator: ['factory', processDecorator],
+        baseBrowserDecorator: ['factory', baseBrowserDecoratorFactory]
       }
 
       // TODO(vojta): determine script from name
-      if (name.indexOf(&#x27;/&#x27;) !== -1) {
-        name = &#x27;Script&#x27;
+      if (name.indexOf('/') !== -1) {
+        name = 'Script'
       }
 
       try {
-        var browser = injector.createChild([locals], [&#x27;launcher:&#x27; + name]).get(&#x27;launcher:&#x27; + name)
+        var browser = injector.createChild([locals], ['launcher:' + name]).get('launcher:' + name)
       } catch (e) {
-        if (e.message.indexOf(&#x27;No provider for &#x22;launcher:&#x27; + name + &#x27;&#x22;&#x27;) !== -1) {
-          log.error(&#x27;Cannot load browser &#x22;%s&#x22;: it is not registered! &#x27; +
-            &#x27;Perhaps you are missing some plugin?&#x27;, name)
+        if (e.message.indexOf('No provider for "launcher:' + name + '"') !== -1) {
+          log.error('Cannot load browser "%s": it is not registered! ' +
+            'Perhaps you are missing some plugin?', name)
         } else {
-          log.error(&#x27;Cannot load browser &#x22;%s&#x22;!\n  &#x27; + e.stack, name)
+          log.error('Cannot load browser "%s"!\n  ' + e.stack, name)
         }
 
-        emitter.emit(&#x27;load_error&#x27;, &#x27;launcher&#x27;, name)
+        emitter.emit('load_error', 'launcher', name)
         return
       }
 
@@ -1560,13 +1553,13 @@
       }
 
       self.jobs.add(function (args, done) {
-        log.info(&#x27;Starting browser %s&#x27;, helper.isDefined(browser.displayName) ? browser.displayName : browser.name)
+        log.info('Starting browser %s', helper.isDefined(browser.displayName) ? browser.displayName : browser.name)
 
-        browser.on(&#x27;browser_process_failure&#x27;, function () {
+        browser.on('browser_process_failure', function () {
           done(browser.error)
         })
 
-        browser.on(&#x27;done&#x27;, function () {
+        browser.on('done', function () {
           // We are not done if there was an error as first the retry takes
           // place which we catch with `browser_process_failure` if it fails
           if (browser.error || browser.state === browser.STATE_RESTARTING) return
@@ -1584,10 +1577,10 @@
 
   this.launch = function (names, concurrency) {
     log.info(
-      &#x27;Launching browser%s %s with %s&#x27;,
-      names.length &#x3e; 1 ? &#x27;s&#x27; : &#x27;&#x27;,
-      names.join(&#x27;, &#x27;),
-      concurrency === Infinity ? &#x27;unlimited concurrency&#x27; : &#x27;concurrency &#x27; + concurrency
+      'Launching browser%s %s with %s',
+      names.length &gt; 1 ? 's' : '',
+      names.join(', '),
+      concurrency === Infinity ? 'unlimited concurrency' : 'concurrency ' + concurrency
     )
     this.jobs = new Jobs({maxConcurrency: concurrency})
 
@@ -1605,8 +1598,8 @@
       }, [])
     }
 
-    this.jobs.on(&#x27;end&#x27;, function (err) {
-      log.debug(&#x27;Finished all browsers&#x27;)
+    this.jobs.on('end', function (err) {
+      log.debug('Finished all browsers')
 
       if (err) {
         log.error(err)
@@ -1619,18 +1612,18 @@
   }
 
   this.launch.$inject = [
-    &#x27;config.browsers&#x27;,
-    &#x27;config.concurrency&#x27;,
-    &#x27;config.processKillTimeout&#x27;
+    'config.browsers',
+    'config.concurrency',
+    'config.processKillTimeout'
   ]
 
   this.launchSingle.$inject = [
-    &#x27;config.protocol&#x27;,
-    &#x27;config.hostname&#x27;,
-    &#x27;config.port&#x27;,
-    &#x27;config.urlRoot&#x27;,
-    &#x27;config.upstreamProxy&#x27;,
-    &#x27;config.proces ...</pre></li>
+    'config.protocol',
+    'config.hostname',
+    'config.port',
+    'config.urlRoot',
+    'config.upstreamProxy',
+    'config.proces ...</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
@@ -1724,26 +1717,26 @@
   var config = cfg.parseConfig(cliOptions.configFile, cliOptions)
 
   var modules = [{
-    helper: [&#x27;value&#x27;, helper],
-    logger: [&#x27;value&#x27;, logger],
-    done: [&#x27;value&#x27;, done || process.exit],
-    emitter: [&#x27;value&#x27;, this],
-    server: [&#x27;value&#x27;, this],
-    launcher: [&#x27;type&#x27;, Launcher],
-    config: [&#x27;value&#x27;, config],
-    preprocess: [&#x27;factory&#x27;, preprocessor.createPreprocessor],
-    fileList: [&#x27;type&#x27;, FileList],
-    webServer: [&#x27;factory&#x27;, ws.create],
-    socketServer: [&#x27;factory&#x27;, createSocketIoServer],
-    executor: [&#x27;type&#x27;, Executor],
+    helper: ['value', helper],
+    logger: ['value', logger],
+    done: ['value', done || process.exit],
+    emitter: ['value', this],
+    server: ['value', this],
+    launcher: ['type', Launcher],
+    config: ['value', config],
+    preprocess: ['factory', preprocessor.createPreprocessor],
+    fileList: ['type', FileList],
+    webServer: ['factory', ws.create],
+    socketServer: ['factory', createSocketIoServer],
+    executor: ['type', Executor],
     // TODO(vojta): remove
-    customFileHandlers: [&#x27;value&#x27;, []],
+    customFileHandlers: ['value', []],
     // TODO(vojta): remove, once karma-dart does not rely on it
-    customScriptTypes: [&#x27;value&#x27;, []],
-    reporter: [&#x27;factory&#x27;, reporter.createReporters],
-    capturedBrowsers: [&#x27;type&#x27;, BrowserCollection],
-    args: [&#x27;value&#x27;, {}],
-    timer: [&#x27;value&#x27;, {
+    customScriptTypes: ['value', []],
+    reporter: ['factory', reporter.createReporters],
+    capturedBrowsers: ['type', BrowserCollection],
+    args: ['value', {}],
+    timer: ['value', {
       setTimeout: function () {
         return setTimeout.apply(root, arguments)
       },
@@ -1777,11 +1770,11 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 var UNIMPLEMENTED_START = function () {
-  this.error(&#x27;You need to include some adapter that implements __karma__.start method!&#x27;)
+  this.error('You need to include some adapter that implements __karma__.start method!')
 }
-// all files loaded, let&#x27;s start the execution
+// all files loaded, let's start the execution
 this.loaded = function () {
-  // has error -&#x3e; cancel
+  // has error -&gt; cancel
   if (!hasError) {
     this.<span class="apidocCodeKeywordSpan">start</span>(this.config)
   }
@@ -1846,20 +1839,20 @@ this.loaded = function () {
     <li>description and source-code<pre class="apidocCodePre">_detach = function (config, done) {
   var log = this.log
   var tmpFile = tmp.fileSync({keep: true})
-  log.info(&#x27;Starting karma detached&#x27;)
-  log.info(&#x27;Run &#x22;karma stop&#x22; to stop the server.&#x27;)
-  log.debug(&#x27;Writing config to tmp-file %s&#x27;, tmpFile.name)
+  log.info('Starting karma detached')
+  log.info('Run "karma stop" to stop the server.')
+  log.debug('Writing config to tmp-file %s', tmpFile.name)
   config.detached = false
   try {
-    fs.writeFileSync(tmpFile.name, JSON.stringify(config), &#x27;utf8&#x27;)
+    fs.writeFileSync(tmpFile.name, JSON.stringify(config), 'utf8')
   } catch (e) {
-    log.error(&#x22;Couldn&#x27;t write temporary configuration file&#x22;)
+    log.error("Couldn't write temporary configuration file")
     done(1)
     return
   }
-  var child = spawn(process.argv[0], [path.resolve(__dirname, &#x27;../lib/detached.js&#x27;), tmpFile.name], {
+  var child = spawn(process.argv[0], [path.resolve(__dirname, '../lib/detached.js'), tmpFile.name], {
     detached: true,
-    stdio: &#x27;ignore&#x27;
+    stdio: 'ignore'
   })
   child.unref()
 }</pre></li>
@@ -1877,8 +1870,8 @@ this.loaded = function () {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">_setUpLoadErrorListener = function () {
   var self = this
-  self.on(&#x27;load_error&#x27;, function (type, name) {
-    self.log.debug(&#x27;Registered a load error of type %s with name %s&#x27;, type, name)
+  self.on('load_error', function (type, name) {
+    self.log.debug('Registered a load error of type %s with name %s', type, name)
     self.loadErrors.push([type, name])
   })
 }</pre></li>
@@ -1904,25 +1897,25 @@ this.loaded = function () {
   self._fileList = fileList
 
   config.frameworks.forEach(function (framework) {
-    self._injector.get(&#x27;framework:&#x27; + framework)
+    self._injector.get('framework:' + framework)
   })
 
-  var webServer = self._injector.get(&#x27;webServer&#x27;)
-  var socketServer = self._injector.get(&#x27;socketServer&#x27;)
+  var webServer = self._injector.get('webServer')
+  var socketServer = self._injector.get('socketServer')
 
   // A map of launched browsers.
   var singleRunDoneBrowsers = Object.create(null)
 
   // Passing fake event emitter, so that it does not emit on the global,
-  // we don&#x27;t care about these changes.
+  // we don't care about these changes.
   var singleRunBrowsers = new BrowserCollection(new EventEmitter())
 
   // Some browsers did not get captured.
   var singleRunBrowserNotCaptured = false
 
-  webServer.on(&#x27;error&#x27;, function (e) {
-    if (e.code === &#x27;EADDRINUSE&#x27;) {
-      self.log.warn(&#x27;Port %d in use&#x27;, config.port)
+  webServer.on('error', function (e) {
+    if (e.code === 'EADDRINUSE') {
+      self.log.warn('Port %d in use', config.port)
       config.port++
       webServer.listen(config.port, config.listenAddress)
     } else {
@@ -1936,38 +1929,38 @@ this.loaded = function () {
     }
 
     webServer.listen(config.port, config.listenAddress, function () {
-      self.log.info(&#x27;Karma v%s server started at %s//%s:%s%s&#x27;, constant.VERSION,
+      self.log.info('Karma v%s server started at %s//%s:%s%s', constant.VERSION,
         config.protocol, config.listenAddress, config.port, config.urlRoot)
 
-      self.emit(&#x27;listening&#x27;, config.port)
-      if (config.browsers &#x26;&#x26; config.browsers.length) {
+      self.emit('listening', config.port)
+      if (config.browsers &amp;&amp; config.browsers.length) {
         self._injector.invoke(launcher.launch, launcher).forEach(function (browserLauncher) {
           singleRunDoneBrowsers[browserLauncher.id] = false
         })
       }
       var noLoadErrors = self.loadErrors.length
-      if (noLoadErrors &#x3e; 0) {
-        self.log.error(&#x27;Found %d load error%s&#x27;, noLoadErrors, noLoadErrors === 1 ? &#x27;&#x27; : &#x27;s&#x27;)
+      if (noLoadErrors &gt; 0) {
+        self.log.error('Found %d load error%s', noLoadErrors, noLoadErrors === 1 ? '' : 's')
         process.exitCode = 1
-        process.kill(process.pid, &#x27;SIGINT&#x27;)
+        process.kill(process.pid, 'SIGINT')
       }
     })
   }
 
   fileList.refresh().then(afterPreprocess, afterPreprocess)
 
-  self.on(&#x27;browsers_change&#x27;, function () {
+  self.on('browsers_change', function () {
     // TODO(vojta): send only to interested browsers
-    socketServer.sockets.emit(&#x27;info&#x27;, capturedBrowsers.serialize())
+    socketServer.sockets.emit('info', capturedBrowsers.serialize())
   })
 
-  self.on(&#x27;browser_register&#x27;, function (browser) {
+  self.on('browser_register', function (browser) {
     launcher.markCaptured(browser.id)
 
     // TODO(vojta): This is lame, browser can get captured and then
     // crash (before other browsers get captured).
     if (launcher.areAllCaptured()) {
-      self.emit(&#x27;browsers_ready&#x27;)
+      self.emit('browsers_ready')
 
       if (config.autoWatch) {
         executor.schedule()
@@ -1975,38 +1968,38 @@ this.loaded = function () {
     }
   })
 
-  if (config.browserConsoleLogOptions &#x26;&#x26; config.browserConsoleLogOptions.path) {
-    var configLevel = config.browserConsoleLogOptions.level || &#x27;debug&#x27;
-    var configFormat = config.browserConsoleLogOptions.format || &#x27;%b %T: %m&#x27;
+  if (config.browserConsoleLogOptions &amp;&amp; config.browserConsoleLogOptions.path) {
+    var configLevel = config.browserConsoleLogOptions.level || 'debug'
+    var configFormat = config.browserConsoleLogOptions.format || '%b %T: %m'
     var configPath = config.browserConsoleLogOptions.path
-    self.log.info(&#x27;Writing browser console to file: %s&#x27;, configPath)
-    var browserLogFile = fs.openSync(configPath, &#x27;w+&#x27;)
-    var levels = [&#x27;log&#x27;, &#x27;error&#x27;, &#x27;warn&#x27;, &#x27;info&#x27;, &#x27;debug&#x27;]
-    self.on(&#x27;browser_log&#x27;, function (browser, message, level) {
-      if (levels.indexOf(level.toLowerCase()) &#x3e; levels.indexOf(configLevel)) return
+    self.log.info('Writing browser console to file: %s', configPath)
+    var browserLogFile = fs.openSync(configPath, 'w+')
+    var levels = ['log', 'error', 'warn', 'info', 'debug']
+    self.on('browser_log', function (browser, message, level) {
+      if (levels.indexOf(level.toLowerCase()) &gt; levels.indexOf(configLevel)) return
       if (!helper.isString(message)) {
         message = util.inspect(message, {showHidden: false, colors: false})
       }
-      var logMap = {&#x27;%m&#x27;: message, &#x27;%t&#x27;: level.toLowerCase(), &#x27;%T&#x27;: level.toUpperCase(), &#x27;%b&#x27;: browser}
+      var logMap = {'%m': message, '%t': level.toLowerCase(), '%T': level.toUpperCase(), '%b': browser}
       var logString = configFormat.replace(/%[mtTb]/g, function (m) {
         return logMap[m]
       })
-      self.log.debug(&#x27;Writing browser console line: %s&#x27;, logString)
-      fs.write(browserLogFile, logString + &#x27;\n&#x27;)
+      self.log.debug('Writing browser console line: %s', logString)
+      fs.write(browserLogFile, logString + '\n')
     })
   }
 
-  var EVENTS_TO_REPLY = [&#x27;start&#x27;, &#x27;info&#x27;, &#x27;karma_error&#x27;, &#x27;result&#x27;, &#x27;complete&#x27;]
-  socketServer.sockets.on(&#x27;connection&#x27;, function (socket) {
-    self.log.debug(&#x27;A browser has connected on socket &#x27; + socket.id)
+  var EVENTS_TO_REPLY = ['start', 'info', 'karma_error', 'result', 'complete']
+  socketServer.sockets.on('connection', function (socket) {
+    self.log.debug('A browser has connected on socket ' + socket.id)
 
     var replySocketEvents = events.bufferEvents(socket, EVENTS_TO_REPLY)
 
-    socket.on(&#x27;complete&#x27;, function (data, ack) {
+    socket.on('complete', function (data, ack) {
       ack()
     })
 
-    socket.on(&#x27;register&#x27;, function (info) {
+    socket.on('register', function (info) {
       var newBrowser
       var isRestart
 
@@ -2029,14 +2022,14 @@ this.loaded = function () {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 
-  var token = type + &#x27;:&#x27; + definition.base
+  var token = type + ':' + definition.base
   var locals = {
-    args: [&#x27;value&#x27;, definition]
+    args: ['value', definition]
   }
 
-  module[type + &#x27;:&#x27; + name] = [&#x27;factory&#x27;, function (injector) {
+  module[type + ':' + name] = ['factory', function (injector) {
     var plugin = injector.createChild([locals], [token]).<span class="apidocCodeKeywordSpan">get</span>(token)
-    if (type === &#x27;launcher&#x27; &#x26;&#x26; helper.isDefined(definition.displayName)) {
+    if (type === 'launcher' &amp;&amp; helper.isDefined(definition.displayName)) {
       plugin.displayName = definition.displayName
     }
     return plugin
@@ -2077,11 +2070,11 @@ this.loaded = function () {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 var UNIMPLEMENTED_START = function () {
-  this.error(&#x27;You need to include some adapter that implements __karma__.start method!&#x27;)
+  this.error('You need to include some adapter that implements __karma__.start method!')
 }
-// all files loaded, let&#x27;s start the execution
+// all files loaded, let's start the execution
 this.loaded = function () {
-  // has error -&#x3e; cancel
+  // has error -&gt; cancel
   if (!hasError) {
     this.<span class="apidocCodeKeywordSpan">start</span>(this.config)
   }
@@ -2129,30 +2122,30 @@ this.loaded = function () {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">completion = function () {
-  if (process.argv[3] === &#x27;--&#x27;) {
+  if (process.argv[3] === '--') {
     return complete(parseEnv(process.argv, process.env))
   }
 
   // just print out the karma-completion.sh
-  var fs = require(&#x27;graceful-fs&#x27;)
-  var path = require(&#x27;path&#x27;)
+  var fs = require('graceful-fs')
+  var path = require('path')
 
-  fs.readFile(path.resolve(__dirname, &#x27;../scripts/karma-completion.sh&#x27;), &#x27;utf8&#x27;, function (err, data) {
+  fs.readFile(path.resolve(__dirname, '../scripts/karma-completion.sh'), 'utf8', function (err, data) {
     if (err) return console.error(err)
 
     process.stdout.write(data)
-    process.stdout.on(&#x27;error&#x27;, function (error) {
+    process.stdout.on('error', function (error) {
       // Darwin is a real dick sometimes.
       //
-      // This is necessary because the &#x22;source&#x22; or &#x22;.&#x22; program in
+      // This is necessary because the "source" or "." program in
       // bash on OS X closes its file argument before reading
       // from it, meaning that you get exactly 1 write, which will
       // work most of the time, and will always raise an EPIPE.
       //
       // Really, one should not be tossing away EPIPE errors, or any
-      // errors, so casually.  But, without this, `. &#x3c;(karma completion)`
+      // errors, so casually.  But, without this, `. &lt;(karma completion)`
       // can never ever work on OS X.
-      if (error.errno === &#x27;EPIPE&#x27;) {
+      if (error.errno === 'EPIPE') {
         error = null
       }
     })
@@ -2172,14 +2165,14 @@ this.loaded = function () {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">complete = function (env) {
   if (env.count === 1) {
-    if (env.words[0].charAt(0) === &#x27;-&#x27;) {
-      return sendCompletion([&#x27;--help&#x27;, &#x27;--version&#x27;], env)
+    if (env.words[0].charAt(0) === '-') {
+      return sendCompletion(['--help', '--version'], env)
     }
 
     return sendCompletion(Object.keys(options), env)
   }
 
-  if (env.count === 2 &#x26;&#x26; env.words[1].charAt(0) !== &#x27;-&#x27;) {
+  if (env.count === 2 &amp;&amp; env.words[1].charAt(0) !== '-') {
     // complete files (probably karma.conf.js)
     return sendCompletionFiles(env)
   }
@@ -2192,7 +2185,7 @@ this.loaded = function () {
     return sendCompletionNoOptions()
   }
 
-  if (previousOption === CUSTOM &#x26;&#x26; env.last) {
+  if (previousOption === CUSTOM &amp;&amp; env.last) {
     // custom value with already filled something
     return sendCompletionConfirmLast(env)
   }
@@ -2217,11 +2210,11 @@ this.loaded = function () {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">opositeWord = function (word) {
-  if (word.charAt(0) !== &#x27;-&#x27;) {
+  if (word.charAt(0) !== '-') {
     return null
   }
 
-  return word.substr(0, 5) === &#x27;--no-&#x27; ? &#x27;--&#x27; + word.substr(5) : &#x27;--no-&#x27; + word.substr(2)
+  return word.substr(0, 5) === '--no-' ? '--' + word.substr(5) : '--no-' + word.substr(2)
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2236,9 +2229,9 @@ this.loaded = function () {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">sendCompletion = function (possibleWords, env) {
-  var regexp = new RegExp(&#x27;^&#x27; + env.last)
+  var regexp = new RegExp('^' + env.last)
   var filteredWords = possibleWords.filter(function (word) {
-    return regexp.test(word) &#x26;&#x26; env.words.indexOf(word) === -1 &#x26;&#x26;
+    return regexp.test(word) &amp;&amp; env.words.indexOf(word) === -1 &amp;&amp;
       env.words.indexOf(opositeWord(word)) === -1
   })
 
@@ -2270,39 +2263,39 @@ this.loaded = function () {
     <li>description and source-code<pre class="apidocCodePre">parseConfig = function (configFilePath, cliOptions) {
   var configModule
   if (configFilePath) {
-    log.debug(&#x27;Loading config %s&#x27;, configFilePath)
+    log.debug('Loading config %s', configFilePath)
 
     try {
       configModule = require(configFilePath)
-      if (typeof configModule === &#x27;object&#x27; &#x26;&#x26; typeof configModule.default !== &#x27;undefined&#x27;) {
+      if (typeof configModule === 'object' &amp;&amp; typeof configModule.default !== 'undefined') {
         configModule = configModule.default
       }
     } catch (e) {
-      if (e.code === &#x27;MODULE_NOT_FOUND&#x27; &#x26;&#x26; e.message.indexOf(configFilePath) !== -1) {
-        log.error(&#x27;File %s does not exist!&#x27;, configFilePath)
+      if (e.code === 'MODULE_NOT_FOUND' &amp;&amp; e.message.indexOf(configFilePath) !== -1) {
+        log.error('File %s does not exist!', configFilePath)
       } else {
-        log.error(&#x27;Invalid config file!\n  &#x27; + e.stack)
+        log.error('Invalid config file!\n  ' + e.stack)
 
         var extension = path.extname(configFilePath)
-        if (extension === &#x27;.coffee&#x27; &#x26;&#x26; !COFFEE_SCRIPT_AVAILABLE) {
-          log.error(&#x27;You need to install CoffeeScript.\n&#x27; +
-            &#x27;  npm install coffee-script --save-dev&#x27;)
-        } else if (extension === &#x27;.ls&#x27; &#x26;&#x26; !LIVE_SCRIPT_AVAILABLE) {
-          log.error(&#x27;You need to install LiveScript.\n&#x27; +
-            &#x27;  npm install LiveScript --save-dev&#x27;)
-        } else if (extension === &#x27;.ts&#x27; &#x26;&#x26; !TYPE_SCRIPT_AVAILABLE) {
-          log.error(&#x27;You need to install TypeScript.\n&#x27; +
-            &#x27;  npm install typescript ts-node --save-dev&#x27;)
+        if (extension === '.coffee' &amp;&amp; !COFFEE_SCRIPT_AVAILABLE) {
+          log.error('You need to install CoffeeScript.\n' +
+            '  npm install coffee-script --save-dev')
+        } else if (extension === '.ls' &amp;&amp; !LIVE_SCRIPT_AVAILABLE) {
+          log.error('You need to install LiveScript.\n' +
+            '  npm install LiveScript --save-dev')
+        } else if (extension === '.ts' &amp;&amp; !TYPE_SCRIPT_AVAILABLE) {
+          log.error('You need to install TypeScript.\n' +
+            '  npm install typescript ts-node --save-dev')
         }
       }
       return process.exit(1)
     }
     if (!helper.isFunction(configModule)) {
-      log.error(&#x27;Config file must export a function!\n&#x27; + CONFIG_SYNTAX_HELP)
+      log.error('Config file must export a function!\n' + CONFIG_SYNTAX_HELP)
       return process.exit(1)
     }
   } else {
-    log.debug(&#x27;No config file specified.&#x27;)
+    log.debug('No config file specified.')
     // if no config file path is passed, we define a dummy config module.
     configModule = function () {}
   }
@@ -2316,26 +2309,26 @@ this.loaded = function () {
   var defaultListenAddress = config.listenAddress
   config.listenAddress = null
 
-  // add the user&#x27;s configuration in
+  // add the user's configuration in
   config.set(cliOptions)
 
   try {
     configModule(config)
   } catch (e) {
-    log.error(&#x27;Error in config file!\n&#x27;, e)
+    log.error('Error in config file!\n', e)
     return process.exit(1)
   }
 
   // merge the config from config file and cliOptions (precedence)
   config.set(cliOptions)
 
-  // if the user changed listenAddress, but didn&#x27;t set a hostname, warn them
-  if (config.hostname === null &#x26;&#x26; config.listenAddress !== null) {
-    log.warn(&#x27;ListenAddress was set to %s but hostname was left as the default: &#x27; +
-      &#x27;%s. If your browsers fail to connect, consider changing the hostname option.&#x27;,
+  // if the user changed listenAddress, but didn't set a hostname, warn them
+  if (config.hostname === null &amp;&amp; config.listenAddress !== null) {
+    log.warn('ListenAddress was set to %s but hostname was left as the default: ' +
+      '%s. If your browsers fail to connect, consider changing the hostname option.',
       config.listenAddress, defaultHostname)
   }
-  // restore values that weren&#x27;t overwritten by the user
+  // restore values that weren't overwritten by the user
   if (config.hostname === null) {
     config.hostname = defaultHostname
   }
@@ -2436,17 +2429,17 @@ this.listeners[event].push(listener)
   return this
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-  var fs = require(&#x27;graceful-fs&#x27;)
-  var path = require(&#x27;path&#x27;)
+  var fs = require('graceful-fs')
+  var path = require('path')
 
-  fs.readFile(path.resolve(__dirname, &#x27;../scripts/karma-completion.sh&#x27;), &#x27;utf8&#x27;, function (err, data) {
+  fs.readFile(path.resolve(__dirname, '../scripts/karma-completion.sh'), 'utf8', function (err, data) {
 if (err) return console.error(err)
 
 process.stdout.write(data)
-process.stdout.<span class="apidocCodeKeywordSpan">on</span>(&#x27;error&#x27;, function (error) {
+process.stdout.<span class="apidocCodeKeywordSpan">on</span>('error', function (error) {
   // Darwin is a real dick sometimes.
   //
-  // This is necessary because the &#x22;source&#x22; or &#x22;.&#x22; program in
+  // This is necessary because the "source" or "." program in
   // bash on OS X closes its file argument before reading
   // from it, meaning that you get exactly 1 write, which will
   // work most of the time, and will always raise an EPIPE.
@@ -2539,7 +2532,7 @@ process.stdout.<span class="apidocCodeKeywordSpan">on</span>(&#x27;error&#x27;, 
   }
 
   for (var method in object) {
-    if (helper.isFunction(object[method]) &#x26;&#x26; method.substr(0, 2) === &#x27;on&#x27;) {
+    if (helper.isFunction(object[method]) &amp;&amp; method.substr(0, 2) === 'on') {
       bindMethod(method)
     }
   }
@@ -2554,12 +2547,12 @@ collection.add(this)
 
 events.<span class="apidocCodeKeywordSpan">bindAll</span>(this, socket)
 
-log.info(&#x27;Connected on socket %s with id %s&#x27;, socket.id, id)
+log.info('Connected on socket %s with id %s', socket.id, id)
 
 // TODO(vojta): move to collection
-emitter.emit(&#x27;browsers_change&#x27;, collection)
+emitter.emit('browsers_change', collection)
 
-emitter.emit(&#x27;browser_register&#x27;, this)
+emitter.emit('browser_register', this)
 ...</pre></li>
     </ul>
 
@@ -2622,7 +2615,7 @@ emitter.emit(&#x27;browser_register&#x27;, this)
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">file = function (path, mtime, doNotCache) {
-  // used for serving (processed path, eg some/file.coffee -&#x3e; some/file.coffee.js)
+  // used for serving (processed path, eg some/file.coffee -&gt; some/file.coffee.js)
   this.path = path
 
   // original absolute path, id of the file
@@ -2659,19 +2652,19 @@ emitter.emit(&#x27;browser_register&#x27;, this)
     <li>example usage<pre class="apidocCodePre">...
 
   switch (typeof obj) {
-case &#x27;string&#x27;:
-  return &#x22;&#x27;&#x22; + obj + &#x22;&#x27;&#x22;
-case &#x27;undefined&#x27;:
-  return &#x27;undefined&#x27;
-case &#x27;function&#x27;:
-  return obj.<span class="apidocCodeKeywordSpan">toString</span>().replace(/\{[\s\S]*\}/, &#x27;{ ... }&#x27;)
-case &#x27;boolean&#x27;:
-  return obj ? &#x27;true&#x27; : &#x27;false&#x27;
-case &#x27;object&#x27;:
+case 'string':
+  return "'" + obj + "'"
+case 'undefined':
+  return 'undefined'
+case 'function':
+  return obj.<span class="apidocCodeKeywordSpan">toString</span>().replace(/\{[\s\S]*\}/, '{ ... }')
+case 'boolean':
+  return obj ? 'true' : 'false'
+case 'object':
   var strs = []
-  if (instanceOf(obj, &#x27;Array&#x27;)) {
-    strs.push(&#x27;[&#x27;)
-    for (var i = 0, ii = obj.length; i &#x3c; ii; i++) {
+  if (instanceOf(obj, 'Array')) {
+    strs.push('[')
+    for (var i = 0, ii = obj.length; i &lt; ii; i++) {
 ...</pre></li>
     </ul>
 
@@ -2704,7 +2697,7 @@ case &#x27;object&#x27;:
   // When a refresh is triggered this gets set
   // to the promise that `this._refresh` returns.
   // So we know we are refreshing when this promise
-  // is still pending, and we are done when it&#x27;s either
+  // is still pending, and we are done when it's either
   // resolved or rejected.
   this._refreshing = Promise.resolve()
 
@@ -2714,7 +2707,7 @@ case &#x27;object&#x27;:
   // This function is throttled to the value of `batchInterval`
   // to avoid spamming the listener.
   function emit () {
-    self._emitter.emit(&#x27;file_list_modified&#x27;, self.files)
+    self._emitter.emit('file_list_modified', self.files)
   }
   var throttledEmit = _.throttle(emit, self._batchInterval, {leading: false})
   self._emitModified = function (immediate) {
@@ -2753,12 +2746,12 @@ case &#x27;object&#x27;:
 var pattern = this._isIncluded(path)
 
 if (!pattern) {
-  log.debug(&#x27;Add file &#x22;%s&#x22; ignored. Does not match any pattern.&#x27;, path)
+  log.debug('Add file "%s" ignored. Does not match any pattern.', path)
   return Promise.resolve(this.files)
 }
 
 if (this.<span class="apidocCodeKeywordSpan">_exists</span>(path)) {
-  log.debug(&#x27;Add file &#x22;%s&#x22; ignored. Already in the list.&#x27;, path)
+  log.debug('Add file "%s" ignored. Already in the list.', path)
   return Promise.resolve(this.files)
 }
 
@@ -2820,13 +2813,13 @@ List.prototype._isRefreshing = function () {
     <li>example usage<pre class="apidocCodePre">...
 
     if (_.isEmpty(files)) {
-log.warn(&#x27;Pattern &#x22;%s&#x22; does not match any file.&#x27;, pattern)
+log.warn('Pattern "%s" does not match any file.', pattern)
 return
     }
 
     return Promise.map(files, function (path) {
 if (self.<span class="apidocCodeKeywordSpan">_isExcluded</span>(path)) {
-  log.debug(&#x27;Excluded file &#x22;%s&#x22;&#x27;, path)
+  log.debug('Excluded file "%s"', path)
   return Promise.resolve()
 }
 
@@ -2853,7 +2846,7 @@ var file = new File(path, mtime, doNotCache)
     <li>example usage<pre class="apidocCodePre">...
 var excluded = this._isExcluded(path)
 if (excluded) {
-  log.debug(&#x27;Add file &#x22;%s&#x22; ignored. Excluded by &#x22;%s&#x22;.&#x27;, path, excluded)
+  log.debug('Add file "%s" ignored. Excluded by "%s".', path, excluded)
 
   return Promise.resolve(this.files)
 }
@@ -2861,7 +2854,7 @@ if (excluded) {
 var pattern = this.<span class="apidocCodeKeywordSpan">_isIncluded</span>(path)
 
 if (!pattern) {
-  log.debug(&#x27;Add file &#x22;%s&#x22; ignored. Does not match any pattern.&#x27;, path)
+  log.debug('Add file "%s" ignored. Does not match any pattern.', path)
   return Promise.resolve(this.files)
 }
 
@@ -2910,13 +2903,13 @@ if (this._exists(path)) {
     buckets.set(pattern, new Set())
 
     if (_.isEmpty(files)) {
-      log.warn(&#x27;Pattern &#x22;%s&#x22; does not match any file.&#x27;, pattern)
+      log.warn('Pattern "%s" does not match any file.', pattern)
       return
     }
 
     return Promise.map(files, function (path) {
       if (self._isExcluded(path)) {
-        log.debug(&#x27;Excluded file &#x22;%s&#x22;&#x27;, path)
+        log.debug('Excluded file "%s"', path)
         return Promise.resolve()
       }
 
@@ -2925,7 +2918,7 @@ if (this._exists(path)) {
       var file = new File(path, mtime, doNotCache)
 
       if (file.doNotCache) {
-        log.debug(&#x27;Not preprocessing &#x22;%s&#x22; due to nocache&#x27;)
+        log.debug('Not preprocessing "%s" due to nocache')
         return Promise.resolve(file)
       }
 
@@ -2937,7 +2930,7 @@ if (this._exists(path)) {
       files = _.compact(files)
 
       if (_.isEmpty(files)) {
-        log.warn(&#x27;All files matched by &#x22;%s&#x22; were excluded.&#x27;, pattern)
+        log.warn('All files matched by "%s" were excluded.', pattern)
       } else {
         buckets.set(pattern, new Set(files))
       }
@@ -2988,7 +2981,7 @@ List.prototype.refresh = function () {
   // Ensure we are not adding a file that should be excluded
   var excluded = this._isExcluded(path)
   if (excluded) {
-    log.debug(&#x27;Add file &#x22;%s&#x22; ignored. Excluded by &#x22;%s&#x22;.&#x27;, path, excluded)
+    log.debug('Add file "%s" ignored. Excluded by "%s".', path, excluded)
 
     return Promise.resolve(this.files)
   }
@@ -2996,12 +2989,12 @@ List.prototype.refresh = function () {
   var pattern = this._isIncluded(path)
 
   if (!pattern) {
-    log.debug(&#x27;Add file &#x22;%s&#x22; ignored. Does not match any pattern.&#x27;, path)
+    log.debug('Add file "%s" ignored. Does not match any pattern.', path)
     return Promise.resolve(this.files)
   }
 
   if (this._exists(path)) {
-    log.debug(&#x27;Add file &#x22;%s&#x22; ignored. Already in the list.&#x27;, path)
+    log.debug('Add file "%s" ignored. Already in the list.', path)
     return Promise.resolve(this.files)
   }
 
@@ -3016,7 +3009,7 @@ List.prototype.refresh = function () {
     return self._preprocess(file)
   })
   .then(function () {
-    log.info(&#x27;Added file &#x22;%s&#x22;.&#x27;, path)
+    log.info('Added file "%s".', path)
     self._emitModified()
     return self.files
   })
@@ -3040,7 +3033,7 @@ List.prototype.refresh = function () {
   var file = this._findFile(path, pattern)
 
   if (!pattern || !file) {
-    log.debug(&#x27;Changed file &#x22;%s&#x22; ignored. Does not match any file in the list.&#x27;, path)
+    log.debug('Changed file "%s" ignored. Does not match any file in the list.', path)
     return Promise.resolve(this.files)
   }
 
@@ -3048,13 +3041,13 @@ List.prototype.refresh = function () {
     fs.statAsync(path),
     this._refreshing
   ]).spread(function (stat) {
-    if (stat.mtime &#x3c;= file.mtime) throw new Promise.CancellationError()
+    if (stat.mtime &lt;= file.mtime) throw new Promise.CancellationError()
 
     file.mtime = stat.mtime
     return self._preprocess(file)
   })
   .then(function () {
-    log.info(&#x27;Changed file &#x22;%s&#x22;.&#x27;, path)
+    log.info('Changed file "%s".', path)
     self._emitModified()
     return self.files
   })
@@ -3134,13 +3127,13 @@ List.prototype.reload = function (patterns, excludes) {
     var file = self._findFile(path, pattern)
 
     if (!pattern || !file) {
-      log.debug(&#x27;Removed file &#x22;%s&#x22; ignored. Does not match any file in the list.&#x27;, path)
+      log.debug('Removed file "%s" ignored. Does not match any file in the list.', path)
       return self.files
     }
 
     self.buckets.get(pattern.pattern).delete(file)
 
-    log.info(&#x27;Removed file &#x22;%s&#x22;.&#x27;, path)
+    log.info('Removed file "%s".', path)
     self._emitModified()
     return self.files
   })
@@ -3186,8 +3179,8 @@ List.prototype.reload = function (patterns, excludes) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">browserFullNameToShort = function (fullName) {
   var agent = useragent.parse(fullName)
-  var isKnown = agent.family !== &#x27;Other&#x27; &#x26;&#x26; agent.os.family !== &#x27;Other&#x27;
-  return isKnown ? agent.toAgent() + &#x27; (&#x27; + agent.os + &#x27;)&#x27; : fullName
+  var isKnown = agent.family !== 'Other' &amp;&amp; agent.os.family !== 'Other'
+  return isKnown ? agent.toAgent() + ' (' + agent.os + ')' : fullName
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 
@@ -3203,7 +3196,7 @@ var activeSockets = [socket]
 var activeSocketsIds = function () {
   return activeSockets.map(function (s) {
     return s.id
-  }).join(&#x27;, &#x27;)
+  }).join(', ')
 }
 ...</pre></li>
     </ul>
@@ -3219,12 +3212,12 @@ var activeSocketsIds = function () {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">camelToSnake = function (camelCase) {
   return camelCase.replace(/[A-Z]/g, function (match, pos) {
-    return (pos &#x3e; 0 ? &#x27;_&#x27; : &#x27;&#x27;) + match.toLowerCase()
+    return (pos &gt; 0 ? '_' : '') + match.toLowerCase()
   })
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 
-var helper = require(&#x27;./helper&#x27;)
+var helper = require('./helper')
 
 var bindAllEvents = function (object, context) {
 context = context || this
@@ -3251,8 +3244,8 @@ for (var method in object) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">dashToCamel = function (dash) {
-  var words = dash.split(&#x27;-&#x27;)
-  return words.shift() + words.map(exports.ucFirst).join(&#x27;&#x27;)
+  var words = dash.split('-')
+  return words.shift() + words.map(exports.ucFirst).join('')
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -3311,10 +3304,10 @@ this.emit(name, done)
     <li>description and source-code<pre class="apidocCodePre">formatTimeInterval = function (time) {
   var mins = Math.floor(time / 60000)
   var secs = (time - mins * 60000) / 1000
-  var str = secs + (secs === 1 ? &#x27; sec&#x27; : &#x27; secs&#x27;)
+  var str = secs + (secs === 1 ? ' sec' : ' secs')
 
   if (mins) {
-    str = mins + (mins === 1 ? &#x27; min &#x27; : &#x27; mins &#x27;) + str
+    str = mins + (mins === 1 ? ' min ' : ' mins ') + str
   }
 
   return str
@@ -3337,16 +3330,16 @@ this.emit(name, done)
 }
 
 if (helper.isString(config.reporters)) {
-  config.reporters = config.reporters.split(&#x27;,&#x27;)
+  config.reporters = config.reporters.split(',')
 }
 
-if (config.client &#x26;&#x26; config.client.args &#x26;&#x26; !Array.<span class="apidocCodeKeywordSpan">isArray</span>(config.
+if (config.client &amp;&amp; config.client.args &amp;&amp; !Array.<span class="apidocCodeKeywordSpan">isArray</span>(config.
 client.args)) {
-  throw new Error(&#x27;Invalid configuration: client.args must be an array of strings&#x27;)
+  throw new Error('Invalid configuration: client.args must be an array of strings')
 }
 
-if (config.browsers &#x26;&#x26; Array.isArray(config.browsers) === false) {
-  throw new TypeError(&#x27;Invalid configuration: browsers option must be an array&#x27;)
+if (config.browsers &amp;&amp; Array.isArray(config.browsers) === false) {
+  throw new TypeError('Invalid configuration: browsers option must be an array')
 }
 ...</pre></li>
     </ul>
@@ -3372,11 +3365,11 @@ if (this.isReady()) {
 
 // TODO(vojta): remove
 if (helper.<span class="apidocCodeKeywordSpan">isDefined</span>(info.dump)) {
-  emitter.emit(&#x27;browser_log&#x27;, this, info.dump, &#x27;dump&#x27;)
+  emitter.emit('browser_log', this, info.dump, 'dump')
 }
 
 if (helper.isDefined(info.log)) {
-  emitter.emit(&#x27;browser_log&#x27;, this, info.log, info.type)
+  emitter.emit('browser_log', this, info.log, info.type)
 }
 ...</pre></li>
     </ul>
@@ -3392,24 +3385,24 @@ if (helper.isDefined(info.log)) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function isFunction(value) {
   // The use of `Object#toString` avoids issues with the `typeof` operator
-  // in older versions of Chrome and Safari which return &#x27;function&#x27; for regexes
-  // and Safari 8 equivalents which return &#x27;object&#x27; for typed array constructors.
-  return isObject(value) &#x26;&#x26; objToString.call(value) == funcTag;
+  // in older versions of Chrome and Safari which return 'function' for regexes
+  // and Safari 8 equivalents which return 'object' for typed array constructors.
+  return isObject(value) &amp;&amp; objToString.call(value) == funcTag;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-  throw new Error(&#x27;Invalid configuration: client.args must be an array of strings&#x27;)
+  throw new Error('Invalid configuration: client.args must be an array of strings')
 }
 
-if (config.browsers &#x26;&#x26; Array.isArray(config.browsers) === false) {
-  throw new TypeError(&#x27;Invalid configuration: browsers option must be an array&#x27;)
+if (config.browsers &amp;&amp; Array.isArray(config.browsers) === false) {
+  throw new TypeError('Invalid configuration: browsers option must be an array')
 }
 
-if (config.formatError &#x26;&#x26; !helper.<span class="apidocCodeKeywordSpan">isFunction</span>(config.formatError)) {
-  throw new TypeError(&#x27;Invalid configuration: formatError option must be a function.&#x27;)
+if (config.formatError &amp;&amp; !helper.<span class="apidocCodeKeywordSpan">isFunction</span>(config.formatError)) {
+  throw new TypeError('Invalid configuration: formatError option must be a function.')
 }
 
-if (config.processKillTimeout &#x26;&#x26; !helper.isNumber(config.processKillTimeout)) {
-  throw new TypeError(&#x27;Invalid configuration: processKillTimeout option must be a number.&#x27;)
+if (config.processKillTimeout &amp;&amp; !helper.isNumber(config.processKillTimeout)) {
+  throw new TypeError('Invalid configuration: processKillTimeout option must be a number.')
 }
 ...</pre></li>
     </ul>
@@ -3424,19 +3417,19 @@ if (config.processKillTimeout &#x26;&#x26; !helper.isNumber(config.processKillTi
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function isNumber(value) {
-  return typeof value == &#x27;number&#x27; || (isObjectLike(value) &#x26;&#x26; objToString.call(value) == numberTag);
+  return typeof value == 'number' || (isObjectLike(value) &amp;&amp; objToString.call(value) == numberTag);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-  throw new TypeError(&#x27;Invalid configuration: browsers option must be an array&#x27;)
+  throw new TypeError('Invalid configuration: browsers option must be an array')
 }
 
-if (config.formatError &#x26;&#x26; !helper.isFunction(config.formatError)) {
-  throw new TypeError(&#x27;Invalid configuration: formatError option must be a function.&#x27;)
+if (config.formatError &amp;&amp; !helper.isFunction(config.formatError)) {
+  throw new TypeError('Invalid configuration: formatError option must be a function.')
 }
 
-if (config.processKillTimeout &#x26;&#x26; !helper.<span class="apidocCodeKeywordSpan">isNumber</span>(config.processKillTimeout
+if (config.processKillTimeout &amp;&amp; !helper.<span class="apidocCodeKeywordSpan">isNumber</span>(config.processKillTimeout
 )) {
-  throw new TypeError(&#x27;Invalid configuration: processKillTimeout option must be a number.&#x27;)
+  throw new TypeError('Invalid configuration: processKillTimeout option must be a number.')
 }
 
 var defaultClient = config.defaultClient || {}
@@ -3459,18 +3452,18 @@ Object.keys(defaultClient).forEach(function (key) {
   // Avoid a V8 JIT bug in Chrome 19-20.
   // See https://code.google.com/p/v8/issues/detail?id=2291 for more details.
   var type = typeof value;
-  return !!value &#x26;&#x26; (type == &#x27;object&#x27; || type == &#x27;function&#x27;);
+  return !!value &amp;&amp; (type == 'object' || type == 'function');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 }
 
 var createPatternObject = function (pattern) {
-if (pattern &#x26;&#x26; helper.isString(pattern)) {
+if (pattern &amp;&amp; helper.isString(pattern)) {
   return helper.isUrlAbsolute(pattern) ? new UrlPattern(pattern) : new Pattern(pattern)
 }
 
 if (helper.<span class="apidocCodeKeywordSpan">isObject</span>(pattern)) {
-  if (pattern.pattern &#x26;&#x26; helper.isString(pattern.pattern)) {
+  if (pattern.pattern &amp;&amp; helper.isString(pattern.pattern)) {
     return helper.isUrlAbsolute(pattern.pattern)
       ? new UrlPattern(pattern.pattern)
       : new Pattern(
@@ -3490,7 +3483,7 @@ if (helper.<span class="apidocCodeKeywordSpan">isObject</span>(pattern)) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function isString(value) {
-  return typeof value == &#x27;string&#x27; || (isObjectLike(value) &#x26;&#x26; objToString.call(value) == stringTag);
+  return typeof value == 'string' || (isObjectLike(value) &amp;&amp; objToString.call(value) == stringTag);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 }
@@ -3500,12 +3493,12 @@ Pattern.call(this, url, false, true, false, false)
 }
 
 var createPatternObject = function (pattern) {
-if (pattern &#x26;&#x26; helper.<span class="apidocCodeKeywordSpan">isString</span>(pattern)) {
+if (pattern &amp;&amp; helper.<span class="apidocCodeKeywordSpan">isString</span>(pattern)) {
   return helper.isUrlAbsolute(pattern) ? new UrlPattern(pattern) : new Pattern(pattern)
 }
 
 if (helper.isObject(pattern)) {
-  if (pattern.pattern &#x26;&#x26; helper.isString(pattern.pattern)) {
+  if (pattern.pattern &amp;&amp; helper.isString(pattern.pattern)) {
     return helper.isUrlAbsolute(pattern.pattern)
       ? new UrlPattern(pattern.pattern)
 ...</pre></li>
@@ -3530,13 +3523,13 @@ Pattern.call(this, url, false, true, false, false)
 }
 
 var createPatternObject = function (pattern) {
-if (pattern &#x26;&#x26; helper.isString(pattern)) {
+if (pattern &amp;&amp; helper.isString(pattern)) {
   return helper.<span class="apidocCodeKeywordSpan">isUrlAbsolute</span>(pattern) ? new UrlPattern(pattern) : new Pattern(pattern
 )
 }
 
 if (helper.isObject(pattern)) {
-  if (pattern.pattern &#x26;&#x26; helper.isString(pattern.pattern)) {
+  if (pattern.pattern &amp;&amp; helper.isString(pattern.pattern)) {
     return helper.isUrlAbsolute(pattern.pattern)
       ? new UrlPattern(pattern.pattern)
       : new Pattern(
@@ -3585,10 +3578,10 @@ this.set = function (newConfig) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function mkdir(directory, done) {
-  // TODO(vojta): handle if it&#x27;s a file
+  // TODO(vojta): handle if it's a file
 <span class="apidocCodeCommentSpan">  /* eslint-disable handle-callback-err */
 </span>  fs.stat(directory, function (err, stat) {
-    if (stat &#x26;&#x26; stat.isDirectory()) {
+    if (stat &amp;&amp; stat.isDirectory()) {
       done()
     } else {
       mkdir(path.dirname(directory), function () {
@@ -3616,7 +3609,7 @@ this.set = function (newConfig) {
   n2 = weight2[0]
   diff = n1 - n2
   if (diff !== 0) return diff / Math.abs(diff)
-  return weight1.length &#x3e; 1 ? exports.mmComparePatternWeights(weight1.slice(1), weight2.slice(1)) : 0
+  return weight1.length &gt; 1 ? exports.mmComparePatternWeights(weight1.slice(1), weight2.slice(1)) : 0
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
   this.included = helper.isDefined(included) ? included : true
@@ -3654,7 +3647,7 @@ var createPatternObject = function (pattern) {
       return gsParser(p, prev)
     }, {glob_star: 0, ext_glob: 0, word: 0, star: 0, optional: 0, range: 0})
     if (prev === undefined) return r
-    return compareWeightObject(r, prev) &#x3e; 0 ? r : prev
+    return compareWeightObject(r, prev) &gt; 0 ? r : prev
   }, undefined)
   result.glob_sets = m.set.length
   return [result.glob_sets, result.glob_star, result.star, result.ext_glob, result.range, result.optional]
@@ -3693,9 +3686,9 @@ var UrlPattern = function (url) {
     <li>example usage<pre class="apidocCodePre">...
 config.files = config.files.map(createPatternObject).map(createPatternMapper(basePathResolve))
 config.exclude = config.exclude.map(basePathResolve)
-config.customContextFile = config.customContextFile &#x26;&#x26; basePathResolve(config.customContextFile)
-config.customDebugFile = config.customDebugFile &#x26;&#x26; basePathResolve(config.customDebugFile)
-config.customClientContextFile = config.customClientContextFile &#x26;&#x26; basePathResolve(config.customClientContextFile)
+config.customContextFile = config.customContextFile &amp;&amp; basePathResolve(config.customContextFile)
+config.customDebugFile = config.customDebugFile &amp;&amp; basePathResolve(config.customDebugFile)
+config.customClientContextFile = config.customClientContextFile &amp;&amp; basePathResolve(config.customClientContextFile)
 
 // normalize paths on windows
 config.basePath = helper.<span class="apidocCodeKeywordSpan">normalizeWinPath</span>(config.basePath)
@@ -3726,17 +3719,17 @@ config.customClientContextFile = helper.normalizeWinPath(config.customClientCont
   // define custom launchers/preprocessors/reporters - create an inlined plugin
   var module = Object.create(null)
   var hasSomeInlinedPlugin = false
-  var types = [&#x27;launcher&#x27;, &#x27;preprocessor&#x27;, &#x27;reporter&#x27;]
+  var types = ['launcher', 'preprocessor', 'reporter']
 
   types.forEach(function (type) {
-    var definitions = config[&#x27;custom&#x27; + helper.<span class="apidocCodeKeywordSpan">ucFirst</span>(type) + &#x27;s&#x27
+    var definitions = config['custom' + helper.<span class="apidocCodeKeywordSpan">ucFirst</span>(type) + 's'
 ;] || {}
 
     Object.keys(definitions).forEach(function (name) {
 var definition = definitions[name]
 
 if (!helper.isObject(definition)) {
-  return log.warn(&#x27;Can not define %s %s. Definition has to be an object.&#x27;, type, name)
+  return log.warn('Can not define %s %s. Definition has to be an object.', type, name)
 }
 ...</pre></li>
     </ul>
@@ -3764,46 +3757,46 @@ if (!helper.isObject(definition)) {
     colorScheme = config.colors ? COLOR_SCHEME.ON : COLOR_SCHEME.OFF
   }
   // need to be registered before creating readlineInterface
-  process.stdin.on(&#x27;keypress&#x27;, function (s, key) {
+  process.stdin.on('keypress', function (s, key) {
     sm.onKeypress(key)
   })
 
   var rli = readline.createInterface(process.stdin, process.stdout)
   var sm = new StateMachine(rli, colorScheme)
 
-  rli.on(&#x27;line&#x27;, sm.onLine.bind(sm))
+  rli.on('line', sm.onLine.bind(sm))
 
   // clean colors
-  rli.on(&#x27;SIGINT&#x27;, function () {
+  rli.on('SIGINT', function () {
     sm.kill()
     process.exit(0)
   })
 
-  sm.on(&#x27;next_question&#x27;, printLogQueue)
+  sm.on('next_question', printLogQueue)
 
   sm.process(questions, function (answers) {
     var cwd = process.cwd()
-    var configFile = config.configFile || &#x27;karma.conf.js&#x27;
-    var isCoffee = path.extname(configFile) === &#x27;.coffee&#x27;
-    var testMainFile = isCoffee ? &#x27;test-main.coffee&#x27; : &#x27;test-main.js&#x27;
+    var configFile = config.configFile || 'karma.conf.js'
+    var isCoffee = path.extname(configFile) === '.coffee'
+    var testMainFile = isCoffee ? 'test-main.coffee' : 'test-main.js'
     var formatter = formatters.createForPath(configFile)
     var processedAnswers = processAnswers(answers, getBasePath(configFile, cwd), testMainFile)
     var configFilePath = path.resolve(cwd, configFile)
     var testMainFilePath = path.resolve(cwd, testMainFile)
 
     if (isCoffee) {
-      installPackage(&#x27;coffee-script&#x27;)
+      installPackage('coffee-script')
     }
 
     if (processedAnswers.generateTestMain) {
       formatter.writeRequirejsConfigFile(testMainFilePath)
       console.log(colorScheme.success(
-        &#x27;RequireJS bootstrap file generated at &#x22;&#x27; + testMainFilePath + &#x27;&#x22;.\n&#x27;
+        'RequireJS bootstrap file generated at "' + testMainFilePath + '".\n'
       ))
     }
 
     formatter.writeConfigFile(configFilePath, processedAnswers)
-    console.log(colorScheme.success(&#x27;Config file generated at &#x22;&#x27; + configFilePath + &#x27;&#x22;.\n&#x27;))
+    console.log(colorScheme.success('Config file generated at "' + configFilePath + '".\n'))
   })
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -3833,11 +3826,11 @@ if (!helper.isObject(definition)) {
   this.log = function (type, args) {
     var values = []
 
-    for (var i = 0; i &#x3c; args.length; i++) {
+    for (var i = 0; i &lt; args.length; i++) {
       values.push(this.stringify(args[i], 3))
     }
 
-    this.info({log: values.join(&#x27;, &#x27;), type: type})
+    this.info({log: values.join(', '), type: type})
   }
 
   this.stringify = stringify
@@ -3846,17 +3839,17 @@ if (!helper.isObject(definition)) {
   // DEV: We require one in our context to track `hasError`
   this.error = function () {
     hasError = true
-    callParentKarmaMethod(&#x27;error&#x27;, [].slice.call(arguments))
+    callParentKarmaMethod('error', [].slice.call(arguments))
     return false
   }
 
   // Define our start handler
   var UNIMPLEMENTED_START = function () {
-    this.error(&#x27;You need to include some adapter that implements __karma__.start method!&#x27;)
+    this.error('You need to include some adapter that implements __karma__.start method!')
   }
-  // all files loaded, let&#x27;s start the execution
+  // all files loaded, let's start the execution
   this.loaded = function () {
-    // has error -&#x3e; cancel
+    // has error -&gt; cancel
     if (!hasError) {
       this.start(this.config)
     }
@@ -3870,8 +3863,8 @@ if (!helper.isObject(definition)) {
 
   // Define proxy methods
   // DEV: This is a closured `for` loop (same as a `forEach`) for IE support
-  var proxyMethods = [&#x27;complete&#x27;, &#x27;info&#x27;, &#x27;result&#x27;]
-  for (var i = 0; i &#x3c; proxyMethods.length; i++) {
+  var proxyMethods = ['complete', 'info', 'result']
+  for (var i = 0; i &lt; proxyMethods.length; i++) {
     (function bindProxyMethod (methodName) {
       self[methodName] = function boundProxyMethod () {
         callParentKarmaMethod(methodName, [].slice.call(arguments))
@@ -3883,7 +3876,7 @@ if (!helper.isObject(definition)) {
   this.setupContext = function (contextWindow) {
     // If we clear the context after every run and we already had an error
     //   then stop now. Otherwise, carry on.
-    if (self.config.clearContext &#x26;&#x26; hasError) {
+    if (self.config.clearContext &amp;&amp; hasError) {
       return
     }
 
@@ -3892,29 +3885,29 @@ if (!helper.isObject(definition)) {
     contextWindow.onerror = function () {
       return self.error.apply(self, arguments)
     }
-    // DEV: We must defined a function since we don&#x27;t want to pass the event object
+    // DEV: We must defined a function since we don't want to pass the event object
     contextWindow.onbeforeunload = function (e, b) {
-      callParentKarmaMethod(&#x27;onbeforeunload&#x27;, [])
+      callParentKarmaMethod('onbeforeunload', [])
     }
 
     contextWindow.dump = function () {
-      self.log(&#x27;dump&#x27;, arguments)
+      self.log('dump', arguments)
     }
 
     var _confirm = contextWindow.confirm
     var _prompt = contextWindow.prompt
 
     contextWindow.alert = function (msg) {
-      self.log(&#x27;alert&#x27;, [msg])
+      self.log('alert', [msg])
     }
 
     contextWindow.confirm = function (msg) {
-      self.log(&#x27;confirm&#x27;, [msg])
+      self.log('confirm', [msg])
       _confirm(msg)
     }
 
     contextWindow.prompt = function (msg, defaultVal) {
-      self.log(&#x27;prompt&#x27;, [msg, defaultVal])
+      self.log('prompt', [msg, defaultVal])
       _prompt(msg, defaultVal)
     }
 
@@ -3931,7 +3924,7 @@ if (!helper.isObject(definition)) {
     if (self.config.captureConsole) {
       // patch the console
       var localConsole = contextWindow.console = getConsole(contextWindow)
-      var logMethods = [&#x27;log&#x27;, &#x27;info&#x27;, &#x27;warn&#x27;, &#x27;error&#x27;, &#x27;debug&#x27;]
+      var logMethods = ['log', 'info', 'warn', 'error', 'debug']
       var patchConsoleMethod = function (method) {
         var orig = localConsole[method]
         if (!orig) {
@@ -3942,7 +3935,7 @@ if (!helper.isObject(definition)) {
           return Function.prototype.apply.call(orig, localConsole, arguments)
         }
       }
-      for (var i = 0; i &#x3c; logMethods.length; i++) {
+      for (var i = 0; i &lt; logMethods.length; i++) {
         patchConsoleMethod(logMethods[i])
       }
     }
@@ -3962,9 +3955,9 @@ if (!helper.isObject(definition)) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getDirectCallParentKarmaMethod = function (parentWindow) {
   return function directCallParentKarmaMethod (method, args) {
-    // If the method doesn&#x27;t exist, then error out
+    // If the method doesn't exist, then error out
     if (!parentWindow.karma[method]) {
-      parentWindow.karma.error(&#x27;Expected Karma method &#x22;&#x27; + method + &#x27;&#x22; to exist but it doesn\&#x27;t&#x27;)
+      parentWindow.karma.error('Expected Karma method "' + method + '" to exist but it doesn\'t')
       return
     }
 
@@ -4012,7 +4005,7 @@ if (!helper.isObject(definition)) {
   var self = this
 
   var getBrowserById = function (id) {
-    for (var i = 0; i &#x3c; self._browsers.length; i++) {
+    for (var i = 0; i &lt; self._browsers.length; i++) {
       if (self._browsers[i].id === id) {
         return self._browsers[i]
       }
@@ -4030,35 +4023,35 @@ if (!helper.isObject(definition)) {
         port = upstreamProxy.port
         urlRoot = upstreamProxy.path + urlRoot.substr(1)
       }
-      var url = protocol + &#x27;//&#x27; + hostname + &#x27;:&#x27; + port + urlRoot
+      var url = protocol + '//' + hostname + ':' + port + urlRoot
 
       var locals = {
-        id: [&#x27;value&#x27;, Launcher.generateId()],
-        name: [&#x27;value&#x27;, name],
-        processKillTimeout: [&#x27;value&#x27;, processKillTimeout],
-        baseLauncherDecorator: [&#x27;factory&#x27;, baseDecorator],
-        captureTimeoutLauncherDecorator: [&#x27;factory&#x27;, captureTimeoutDecorator],
-        retryLauncherDecorator: [&#x27;factory&#x27;, retryDecorator],
-        processLauncherDecorator: [&#x27;factory&#x27;, processDecorator],
-        baseBrowserDecorator: [&#x27;factory&#x27;, baseBrowserDecoratorFactory]
+        id: ['value', Launcher.generateId()],
+        name: ['value', name],
+        processKillTimeout: ['value', processKillTimeout],
+        baseLauncherDecorator: ['factory', baseDecorator],
+        captureTimeoutLauncherDecorator: ['factory', captureTimeoutDecorator],
+        retryLauncherDecorator: ['factory', retryDecorator],
+        processLauncherDecorator: ['factory', processDecorator],
+        baseBrowserDecorator: ['factory', baseBrowserDecoratorFactory]
       }
 
       // TODO(vojta): determine script from name
-      if (name.indexOf(&#x27;/&#x27;) !== -1) {
-        name = &#x27;Script&#x27;
+      if (name.indexOf('/') !== -1) {
+        name = 'Script'
       }
 
       try {
-        var browser = injector.createChild([locals], [&#x27;launcher:&#x27; + name]).get(&#x27;launcher:&#x27; + name)
+        var browser = injector.createChild([locals], ['launcher:' + name]).get('launcher:' + name)
       } catch (e) {
-        if (e.message.indexOf(&#x27;No provider for &#x22;launcher:&#x27; + name + &#x27;&#x22;&#x27;) !== -1) {
-          log.error(&#x27;Cannot load browser &#x22;%s&#x22;: it is not registered! &#x27; +
-            &#x27;Perhaps you are missing some plugin?&#x27;, name)
+        if (e.message.indexOf('No provider for "launcher:' + name + '"') !== -1) {
+          log.error('Cannot load browser "%s": it is not registered! ' +
+            'Perhaps you are missing some plugin?', name)
         } else {
-          log.error(&#x27;Cannot load browser &#x22;%s&#x22;!\n  &#x27; + e.stack, name)
+          log.error('Cannot load browser "%s"!\n  ' + e.stack, name)
         }
 
-        emitter.emit(&#x27;load_error&#x27;, &#x27;launcher&#x27;, name)
+        emitter.emit('load_error', 'launcher', name)
         return
       }
 
@@ -4080,13 +4073,13 @@ if (!helper.isObject(definition)) {
       }
 
       self.jobs.add(function (args, done) {
-        log.info(&#x27;Starting browser %s&#x27;, helper.isDefined(browser.displayName) ? browser.displayName : browser.name)
+        log.info('Starting browser %s', helper.isDefined(browser.displayName) ? browser.displayName : browser.name)
 
-        browser.on(&#x27;browser_process_failure&#x27;, function () {
+        browser.on('browser_process_failure', function () {
           done(browser.error)
         })
 
-        browser.on(&#x27;done&#x27;, function () {
+        browser.on('done', function () {
           // We are not done if there was an error as first the retry takes
           // place which we catch with `browser_process_failure` if it fails
           if (browser.error || browser.state === browser.STATE_RESTARTING) return
@@ -4104,10 +4097,10 @@ if (!helper.isObject(definition)) {
 
   this.launch = function (names, concurrency) {
     log.info(
-      &#x27;Launching browser%s %s with %s&#x27;,
-      names.length &#x3e; 1 ? &#x27;s&#x27; : &#x27;&#x27;,
-      names.join(&#x27;, &#x27;),
-      concurrency === Infinity ? &#x27;unlimited concurrency&#x27; : &#x27;concurrency &#x27; + concurrency
+      'Launching browser%s %s with %s',
+      names.length &gt; 1 ? 's' : '',
+      names.join(', '),
+      concurrency === Infinity ? 'unlimited concurrency' : 'concurrency ' + concurrency
     )
     this.jobs = new Jobs({maxConcurrency: concurrency})
 
@@ -4125,8 +4118,8 @@ if (!helper.isObject(definition)) {
       }, [])
     }
 
-    this.jobs.on(&#x27;end&#x27;, function (err) {
-      log.debug(&#x27;Finished all browsers&#x27;)
+    this.jobs.on('end', function (err) {
+      log.debug('Finished all browsers')
 
       if (err) {
         log.error(err)
@@ -4139,18 +4132,18 @@ if (!helper.isObject(definition)) {
   }
 
   this.launch.$inject = [
-    &#x27;config.browsers&#x27;,
-    &#x27;config.concurrency&#x27;,
-    &#x27;config.processKillTimeout&#x27;
+    'config.browsers',
+    'config.concurrency',
+    'config.processKillTimeout'
   ]
 
   this.launchSingle.$inject = [
-    &#x27;config.protocol&#x27;,
-    &#x27;config.hostname&#x27;,
-    &#x27;config.port&#x27;,
-    &#x27;config.urlRoot&#x27;,
-    &#x27;config.upstreamProxy&#x27;,
-    &#x27;config.proces ...</pre></li>
+    'config.protocol',
+    'config.hostname',
+    'config.port',
+    'config.urlRoot',
+    'config.upstreamProxy',
+    'config.proces ...</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
@@ -4174,7 +4167,7 @@ if (!helper.isObject(definition)) {
   var self = this
 
   var getBrowserById = function (id) {
-    for (var i = 0; i &#x3c; self._browsers.length; i++) {
+    for (var i = 0; i &lt; self._browsers.length; i++) {
       if (self._browsers[i].id === id) {
         return self._browsers[i]
       }
@@ -4192,35 +4185,35 @@ if (!helper.isObject(definition)) {
         port = upstreamProxy.port
         urlRoot = upstreamProxy.path + urlRoot.substr(1)
       }
-      var url = protocol + &#x27;//&#x27; + hostname + &#x27;:&#x27; + port + urlRoot
+      var url = protocol + '//' + hostname + ':' + port + urlRoot
 
       var locals = {
-        id: [&#x27;value&#x27;, Launcher.generateId()],
-        name: [&#x27;value&#x27;, name],
-        processKillTimeout: [&#x27;value&#x27;, processKillTimeout],
-        baseLauncherDecorator: [&#x27;factory&#x27;, baseDecorator],
-        captureTimeoutLauncherDecorator: [&#x27;factory&#x27;, captureTimeoutDecorator],
-        retryLauncherDecorator: [&#x27;factory&#x27;, retryDecorator],
-        processLauncherDecorator: [&#x27;factory&#x27;, processDecorator],
-        baseBrowserDecorator: [&#x27;factory&#x27;, baseBrowserDecoratorFactory]
+        id: ['value', Launcher.generateId()],
+        name: ['value', name],
+        processKillTimeout: ['value', processKillTimeout],
+        baseLauncherDecorator: ['factory', baseDecorator],
+        captureTimeoutLauncherDecorator: ['factory', captureTimeoutDecorator],
+        retryLauncherDecorator: ['factory', retryDecorator],
+        processLauncherDecorator: ['factory', processDecorator],
+        baseBrowserDecorator: ['factory', baseBrowserDecoratorFactory]
       }
 
       // TODO(vojta): determine script from name
-      if (name.indexOf(&#x27;/&#x27;) !== -1) {
-        name = &#x27;Script&#x27;
+      if (name.indexOf('/') !== -1) {
+        name = 'Script'
       }
 
       try {
-        var browser = injector.createChild([locals], [&#x27;launcher:&#x27; + name]).get(&#x27;launcher:&#x27; + name)
+        var browser = injector.createChild([locals], ['launcher:' + name]).get('launcher:' + name)
       } catch (e) {
-        if (e.message.indexOf(&#x27;No provider for &#x22;launcher:&#x27; + name + &#x27;&#x22;&#x27;) !== -1) {
-          log.error(&#x27;Cannot load browser &#x22;%s&#x22;: it is not registered! &#x27; +
-            &#x27;Perhaps you are missing some plugin?&#x27;, name)
+        if (e.message.indexOf('No provider for "launcher:' + name + '"') !== -1) {
+          log.error('Cannot load browser "%s": it is not registered! ' +
+            'Perhaps you are missing some plugin?', name)
         } else {
-          log.error(&#x27;Cannot load browser &#x22;%s&#x22;!\n  &#x27; + e.stack, name)
+          log.error('Cannot load browser "%s"!\n  ' + e.stack, name)
         }
 
-        emitter.emit(&#x27;load_error&#x27;, &#x27;launcher&#x27;, name)
+        emitter.emit('load_error', 'launcher', name)
         return
       }
 
@@ -4242,13 +4235,13 @@ if (!helper.isObject(definition)) {
       }
 
       self.jobs.add(function (args, done) {
-        log.info(&#x27;Starting browser %s&#x27;, helper.isDefined(browser.displayName) ? browser.displayName : browser.name)
+        log.info('Starting browser %s', helper.isDefined(browser.displayName) ? browser.displayName : browser.name)
 
-        browser.on(&#x27;browser_process_failure&#x27;, function () {
+        browser.on('browser_process_failure', function () {
           done(browser.error)
         })
 
-        browser.on(&#x27;done&#x27;, function () {
+        browser.on('done', function () {
           // We are not done if there was an error as first the retry takes
           // place which we catch with `browser_process_failure` if it fails
           if (browser.error || browser.state === browser.STATE_RESTARTING) return
@@ -4266,10 +4259,10 @@ if (!helper.isObject(definition)) {
 
   this.launch = function (names, concurrency) {
     log.info(
-      &#x27;Launching browser%s %s with %s&#x27;,
-      names.length &#x3e; 1 ? &#x27;s&#x27; : &#x27;&#x27;,
-      names.join(&#x27;, &#x27;),
-      concurrency === Infinity ? &#x27;unlimited concurrency&#x27; : &#x27;concurrency &#x27; + concurrency
+      'Launching browser%s %s with %s',
+      names.length &gt; 1 ? 's' : '',
+      names.join(', '),
+      concurrency === Infinity ? 'unlimited concurrency' : 'concurrency ' + concurrency
     )
     this.jobs = new Jobs({maxConcurrency: concurrency})
 
@@ -4287,8 +4280,8 @@ if (!helper.isObject(definition)) {
       }, [])
     }
 
-    this.jobs.on(&#x27;end&#x27;, function (err) {
-      log.debug(&#x27;Finished all browsers&#x27;)
+    this.jobs.on('end', function (err) {
+      log.debug('Finished all browsers')
 
       if (err) {
         log.error(err)
@@ -4301,18 +4294,18 @@ if (!helper.isObject(definition)) {
   }
 
   this.launch.$inject = [
-    &#x27;config.browsers&#x27;,
-    &#x27;config.concurrency&#x27;,
-    &#x27;config.processKillTimeout&#x27;
+    'config.browsers',
+    'config.concurrency',
+    'config.processKillTimeout'
   ]
 
   this.launchSingle.$inject = [
-    &#x27;config.protocol&#x27;,
-    &#x27;config.hostname&#x27;,
-    &#x27;config.port&#x27;,
-    &#x27;config.urlRoot&#x27;,
-    &#x27;config.upstreamProxy&#x27;,
-    &#x27;config.proces ...</pre></li>
+    'config.protocol',
+    'config.hostname',
+    'config.port',
+    'config.urlRoot',
+    'config.upstreamProxy',
+    'config.proces ...</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
@@ -4326,7 +4319,7 @@ if (!helper.isObject(definition)) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">generateId = function () {
-  return &#x27;&#x27; + Math.floor(Math.random() * 100000000)
+  return '' + Math.floor(Math.random() * 100000000)
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -4346,7 +4339,7 @@ if (!helper.isObject(definition)) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">create = function (name, level) {
-  var logger = log4js.getLogger(name || &#x27;karma&#x27;)
+  var logger = log4js.getLogger(name || 'karma')
   if (helper.isDefined(level)) {
     logger.setLevel(level)
   }
@@ -4365,7 +4358,7 @@ var activeSockets = [socket]
 var activeSocketsIds = function () {
   return activeSockets.map(function (s) {
     return s.id
-  }).join(&#x27;, &#x27;)
+  }).join(', ')
 }
 ...</pre></li>
     </ul>
@@ -4387,8 +4380,8 @@ var activeSocketsIds = function () {
   appenders = helper.isDefined(appenders) ? appenders : [constant.CONSOLE_APPENDER]
 
   appenders = appenders.map(function (appender) {
-    if (appender.type === &#x27;console&#x27;) {
-      if (helper.isDefined(appender.layout) &#x26;&#x26; appender.layout.type === &#x27;pattern&#x27;) {
+    if (appender.type === 'console') {
+      if (helper.isDefined(appender.layout) &amp;&amp; appender.layout.type === 'pattern') {
         appender.layout.pattern = pattern
       }
     }
@@ -4443,7 +4436,7 @@ exports.Pattern = Pattern
   setup(logLevel, useColors, appenders)
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-  processedAnswers.preprocessors[&#x27;**/*.coffee&#x27;] = [&#x27;coffee&#x27;]
+  processedAnswers.preprocessors['**/*.coffee'] = ['coffee']
 }
 
 return processedAnswers
@@ -4479,44 +4472,44 @@ if (helper.isDefined(config.colors)) {
   var modules = []
 
   var requirePlugin = function (name) {
-    log.debug(&#x27;Loading plugin %s.&#x27;, name)
+    log.debug('Loading plugin %s.', name)
     try {
       modules.push(require(name))
     } catch (e) {
-      if (e.code === &#x27;MODULE_NOT_FOUND&#x27; &#x26;&#x26; e.message.indexOf(name) !== -1) {
-        log.error(&#x27;Cannot find plugin &#x22;%s&#x22;.\n  Did you forget to install it?\n&#x27; +
-          &#x27;  npm install %s --save-dev&#x27;, name, name)
+      if (e.code === 'MODULE_NOT_FOUND' &amp;&amp; e.message.indexOf(name) !== -1) {
+        log.error('Cannot find plugin "%s".\n  Did you forget to install it?\n' +
+          '  npm install %s --save-dev', name, name)
       } else {
-        log.error(&#x27;Error during loading &#x22;%s&#x22; plugin:\n  %s&#x27;, name, e.message)
+        log.error('Error during loading "%s" plugin:\n  %s', name, e.message)
       }
-      emitter.emit(&#x27;load_error&#x27;, &#x27;plug_in&#x27;, name)
+      emitter.emit('load_error', 'plug_in', name)
     }
   }
 
   plugins.forEach(function (plugin) {
     if (helper.isString(plugin)) {
-      if (plugin.indexOf(&#x27;*&#x27;) === -1) {
+      if (plugin.indexOf('*') === -1) {
         requirePlugin(plugin)
         return
       }
-      var pluginDirectory = path.normalize(path.join(__dirname, &#x27;/../..&#x27;))
-      var regexp = new RegExp(&#x27;^&#x27; + plugin.replace(&#x27;*&#x27;, &#x27;.*&#x27;))
+      var pluginDirectory = path.normalize(path.join(__dirname, '/../..'))
+      var regexp = new RegExp('^' + plugin.replace('*', '.*'))
 
-      log.debug(&#x27;Loading %s from %s&#x27;, plugin, pluginDirectory)
+      log.debug('Loading %s from %s', plugin, pluginDirectory)
       fs.readdirSync(pluginDirectory).filter(function (pluginName) {
-        return IGNORED_PACKAGES.indexOf(pluginName) === -1 &#x26;&#x26; regexp.test(pluginName)
+        return IGNORED_PACKAGES.indexOf(pluginName) === -1 &amp;&amp; regexp.test(pluginName)
       }).forEach(function (pluginName) {
-        requirePlugin(pluginDirectory + &#x27;/&#x27; + pluginName)
+        requirePlugin(pluginDirectory + '/' + pluginName)
       })
       return
     }
     if (helper.isObject(plugin)) {
-      log.debug(&#x27;Loading inlined plugin (defining %s).&#x27;, Object.keys(plugin).join(&#x27;, &#x27;))
+      log.debug('Loading inlined plugin (defining %s).', Object.keys(plugin).join(', '))
       modules.push(plugin)
       return
     }
-    log.error(&#x27;Invalid plugin %s&#x27;, plugin)
-    emitter.emit(&#x27;load_error&#x27;, &#x27;plug_in&#x27;, plugin)
+    log.error('Invalid plugin %s', plugin)
+    emitter.emit('load_error', 'plug_in', plugin)
   })
 
   return modules
@@ -4526,18 +4519,18 @@ return complete(parseEnv(process.argv, process.env))
   }
 
   // just print out the karma-completion.sh
-  var fs = require(&#x27;graceful-fs&#x27;)
-  var path = require(&#x27;path&#x27;)
+  var fs = require('graceful-fs')
+  var path = require('path')
 
-  fs.readFile(path.<span class="apidocCodeKeywordSpan">resolve</span>(__dirname, &#x27;../scripts/karma-completion.sh&#x27;), &#
-x27;utf8&#x27;, function (err, data) {
+  fs.readFile(path.<span class="apidocCodeKeywordSpan">resolve</span>(__dirname, '../scripts/karma-completion.sh'), &amp;#
+x27;utf8', function (err, data) {
 if (err) return console.error(err)
 
 process.stdout.write(data)
-process.stdout.on(&#x27;error&#x27;, function (error) {
+process.stdout.on('error', function (error) {
   // Darwin is a real dick sometimes.
   //
-  // This is necessary because the &#x22;source&#x22; or &#x22;.&#x22; program in
+  // This is necessary because the "source" or "." program in
 ...</pre></li>
     </ul>
 
@@ -4560,7 +4553,7 @@ process.stdout.on(&#x27;error&#x27;, function (error) {
   var instances = {}
   var patterns = Object.keys(config)
 
-  var emitter = injector.get(&#x27;emitter&#x27;)
+  var emitter = injector.get('emitter')
 
   var instantiatePreprocessor = function (name) {
     if (alreadyDisplayedErrors[name]) {
@@ -4570,16 +4563,16 @@ process.stdout.on(&#x27;error&#x27;, function (error) {
     var p
 
     try {
-      p = injector.get(&#x27;preprocessor:&#x27; + name)
+      p = injector.get('preprocessor:' + name)
     } catch (e) {
-      if (e.message.indexOf(&#x27;No provider for &#x22;preprocessor:&#x27; + name + &#x27;&#x22;&#x27;) !== -1) {
-        log.error(&#x27;Can not load &#x22;%s&#x22;, it is not registered!\n  &#x27; +
-          &#x27;Perhaps you are missing some plugin?&#x27;, name)
+      if (e.message.indexOf('No provider for "preprocessor:' + name + '"') !== -1) {
+        log.error('Can not load "%s", it is not registered!\n  ' +
+          'Perhaps you are missing some plugin?', name)
       } else {
-        log.error(&#x27;Can not load &#x22;%s&#x22;!\n  &#x27; + e.stack, name)
+        log.error('Can not load "%s"!\n  ' + e.stack, name)
       }
       alreadyDisplayedErrors[name] = true
-      emitter.emit(&#x27;load_error&#x27;, &#x27;preprocessor&#x27;, name)
+      emitter.emit('load_error', 'preprocessor', name)
     }
 
     return p
@@ -4605,11 +4598,11 @@ process.stdout.on(&#x27;error&#x27;, function (error) {
         }
 
         var preprocessorNames = []
-        for (var i = 0; i &#x3c; patterns.length; i++) {
+        for (var i = 0; i &lt; patterns.length; i++) {
           if (mm(file.originalPath, patterns[i], {dot: true})) {
             if (thisFileIsBinary) {
-              log.warn(&#x27;Ignoring preprocessing (%s) %s because it is a binary file.&#x27;,
-                config[patterns[i]].join(&#x27;, &#x27;), file.originalPath)
+              log.warn('Ignoring preprocessing (%s) %s because it is a binary file.',
+                config[patterns[i]].join(', '), file.originalPath)
             } else {
               preprocessorNames = combineLists(preprocessorNames, config[patterns[i]])
             }
@@ -4627,8 +4620,8 @@ process.stdout.on(&#x27;error&#x27;, function (error) {
           if (p == null) {
             if (!alreadyDisplayedErrors[name]) {
               alreadyDisplayedErrors[name] = true
-              log.error(&#x27;Failed to instantiate preprocessor %s&#x27;, name)
-              emitter.emit(&#x27;load_error&#x27;, &#x27;preprocessor&#x27;, name)
+              log.error('Failed to instantiate preprocessor %s', name)
+              emitter.emit('load_error', 'preprocessor', name)
             }
             return
           }
@@ -4665,41 +4658,41 @@ process.stdout.on(&#x27;error&#x27;, function (error) {
 
   // TODO(vojta): instantiate all reporters through DI
   names.forEach(function (name) {
-    if ([&#x27;dots&#x27;, &#x27;progress&#x27;].indexOf(name) !== -1) {
-      var Cls = require(&#x27;./reporters/&#x27; + name)
-      var ClsColor = require(&#x27;./reporters/&#x27; + name + &#x27;_color&#x27;)
+    if (['dots', 'progress'].indexOf(name) !== -1) {
+      var Cls = require('./reporters/' + name)
+      var ClsColor = require('./reporters/' + name + '_color')
       reporters.push(new Cls(errorFormatter, config.reportSlowerThan, config.colors, config.browserConsoleLogOptions))
       return reporters.push(new ClsColor(errorFormatter, config.reportSlowerThan, config.colors, config.browserConsoleLogOptions
 ))
     }
 
     var locals = {
-      baseReporterDecorator: [&#x27;factory&#x27;, baseReporterDecoratorFactory],
-      formatError: [&#x27;value&#x27;, errorFormatter]
+      baseReporterDecorator: ['factory', baseReporterDecoratorFactory],
+      formatError: ['value', errorFormatter]
     }
 
     try {
-      log.debug(&#x27;Trying to load reporter: %s&#x27;, name)
-      reporters.push(injector.createChild([locals], [&#x27;reporter:&#x27; + name]).get(&#x27;reporter:&#x27; + name))
+      log.debug('Trying to load reporter: %s', name)
+      reporters.push(injector.createChild([locals], ['reporter:' + name]).get('reporter:' + name))
     } catch (e) {
-      if (e.message.indexOf(&#x27;No provider for &#x22;reporter:&#x27; + name + &#x27;&#x22;&#x27;) !== -1) {
-        log.error(&#x27;Can not load reporter &#x22;%s&#x22;, it is not registered!\n  &#x27; +
-          &#x27;Perhaps you are missing some plugin?&#x27;, name)
+      if (e.message.indexOf('No provider for "reporter:' + name + '"') !== -1) {
+        log.error('Can not load reporter "%s", it is not registered!\n  ' +
+          'Perhaps you are missing some plugin?', name)
       } else {
-        log.error(&#x27;Can not load &#x22;%s&#x22;!\n  &#x27; + e.stack, name)
+        log.error('Can not load "%s"!\n  ' + e.stack, name)
       }
-      emitter.emit(&#x27;load_error&#x27;, &#x27;reporter&#x27;, name)
+      emitter.emit('load_error', 'reporter', name)
       return
     }
-    var colorName = name + &#x27;_color&#x27;
+    var colorName = name + '_color'
     if (names.indexOf(colorName) !== -1) {
       return
     }
     try {
-      log.debug(&#x27;Trying to load color-version of reporter: %s (%s)&#x27;, name, colorName)
-      reporters.push(injector.createChild([locals], [&#x27;reporter:&#x27; + name + &#x27;_color&#x27;]).get(&#x27;reporter:&#x27; + name))
+      log.debug('Trying to load color-version of reporter: %s (%s)', name, colorName)
+      reporters.push(injector.createChild([locals], ['reporter:' + name + '_color']).get('reporter:' + name))
     } catch (e) {
-      log.debug(&#x27;Couldn\&#x27;t load color-version.&#x27;)
+      log.debug('Couldn\'t load color-version.')
     }
   })
 
@@ -4738,29 +4731,29 @@ process.stdout.on(&#x27;error&#x27;, function (error) {
   var exitCode = 1
   var options = {
     hostname: config.hostname,
-    path: config.urlRoot + &#x27;run&#x27;,
+    path: config.urlRoot + 'run',
     port: config.port,
-    method: &#x27;POST&#x27;,
+    method: 'POST',
     headers: {
-      &#x27;Content-Type&#x27;: &#x27;application/json&#x27;
+      'Content-Type': 'application/json'
     }
   }
 
   var request = http.request(options, function (response) {
-    response.on(&#x27;data&#x27;, function (buffer) {
+    response.on('data', function (buffer) {
       var parsedResult = parseExitCode(buffer, exitCode, config.failOnEmptyTestSuite)
       exitCode = parsedResult.exitCode
       process.stdout.write(parsedResult.buffer)
     })
 
-    response.on(&#x27;end&#x27;, function () {
+    response.on('end', function () {
       done(exitCode)
     })
   })
 
-  request.on(&#x27;error&#x27;, function (e) {
-    if (e.code === &#x27;ECONNREFUSED&#x27;) {
-      log.error(&#x27;There is no server listening on port %d&#x27;, options.port)
+  request.on('error', function (e) {
+    if (e.code === 'ECONNREFUSED') {
+      log.error('There is no server listening on port %d', options.port)
       done(1, e.code)
     } else {
       throw e
@@ -4777,21 +4770,21 @@ process.stdout.on(&#x27;error&#x27;, function (error) {
   }))
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-require(&#x27;load-grunt-tasks&#x27;)(grunt)
+require('load-grunt-tasks')(grunt)
 
-grunt.registerTask(&#x27;build&#x27;, [&#x27;browserify:client&#x27;])
-grunt.registerTask(&#x27;default&#x27;, [&#x27;build&#x27;, &#x27;test&#x27;, &#x27;lint&#x27;])
-grunt.registerTask(&#x27;test-appveyor&#x27;, [&#x27;test:unit&#x27;, &#x27;test:client&#x27;])
+grunt.registerTask('build', ['browserify:client'])
+grunt.registerTask('default', ['build', 'test', 'lint'])
+grunt.registerTask('test-appveyor', ['test:unit', 'test:client'])
 
-grunt.registerTask(&#x27;release&#x27;, &#x27;Build, bump and publish to NPM.&#x27;, function (type) {
+grunt.registerTask('release', 'Build, bump and publish to NPM.', function (type) {
   grunt.task.<span class="apidocCodeKeywordSpan">run</span>([
-    &#x27;npm-contributors&#x27;,
-    &#x27;bump:&#x27; + (type || &#x27;patch&#x27;) + &#x27;:bump-only&#x27;,
-    &#x27;build&#x27;,
-    &#x27;conventionalChangelog&#x27;,
-    &#x27;bump-commit&#x27;,
-    &#x27;conventionalGithubReleaser&#x27;,
-    &#x27;npm-publish&#x27;
+    'npm-contributors',
+    'bump:' + (type || 'patch') + ':bump-only',
+    'build',
+    'conventionalChangelog',
+    'bump-commit',
+    'conventionalGithubReleaser',
+    'npm-publish'
 ...</pre></li>
     </ul>
 
@@ -4810,20 +4803,20 @@ grunt.registerTask(&#x27;release&#x27;, &#x27;Build, bump and publish to NPM.&#x
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">start = function (cliOptions, done) {
-  console.error(&#x27;WARN `start` method is deprecated since 0.13. It will be removed in 0.14. Please use \n&#x27; +
-    &#x27;  server = new Server(config, [done])\n&#x27; +
-    &#x27;  server.start()\n&#x27; +
-    &#x27;instead.&#x27;)
+  console.error('WARN `start` method is deprecated since 0.13. It will be removed in 0.14. Please use \n' +
+    '  server = new Server(config, [done])\n' +
+    '  server.start()\n' +
+    'instead.')
   var server = new Server(cliOptions, done)
   server.start()
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 var UNIMPLEMENTED_START = function () {
-  this.error(&#x27;You need to include some adapter that implements __karma__.start method!&#x27;)
+  this.error('You need to include some adapter that implements __karma__.start method!')
 }
-// all files loaded, let&#x27;s start the execution
+// all files loaded, let's start the execution
 this.loaded = function () {
-  // has error -&#x3e; cancel
+  // has error -&gt; cancel
   if (!hasError) {
     this.<span class="apidocCodeKeywordSpan">start</span>(this.config)
   }
@@ -4854,32 +4847,32 @@ this.loaded = function () {
   config = config || {}
   logger.setupFromConfig(config)
   done = helper.isFunction(done) ? done : process.exit
-  var log = logger.create(&#x27;stopper&#x27;)
+  var log = logger.create('stopper')
   config = cfg.parseConfig(config.configFile, config)
 
   var options = {
     hostname: config.hostname,
-    path: config.urlRoot + &#x27;stop&#x27;,
+    path: config.urlRoot + 'stop',
     port: config.port,
-    method: &#x27;GET&#x27;
+    method: 'GET'
   }
 
   var request = http.request(options)
 
-  request.on(&#x27;response&#x27;, function (response) {
+  request.on('response', function (response) {
     if (response.statusCode !== 200) {
-      log.error(&#x27;Server returned status code: &#x27; + response.statusCode)
+      log.error('Server returned status code: ' + response.statusCode)
       done(1)
       return
     }
 
-    log.info(&#x27;Server stopped.&#x27;)
+    log.info('Server stopped.')
     done(0)
   })
 
-  request.on(&#x27;error&#x27;, function (e) {
-    if (e.code === &#x27;ECONNREFUSED&#x27;) {
-      log.error(&#x27;There is no server listening on port %d&#x27;, options.port)
+  request.on('error', function (e) {
+    if (e.code === 'ECONNREFUSED') {
+      log.error('There is no server listening on port %d', options.port)
       done(1, e.code)
     } else {
       throw e
@@ -4905,12 +4898,12 @@ this.loaded = function () {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">create = function (path) {
-  log.debug(&#x27;Creating temp dir at %s&#x27;, path)
+  log.debug('Creating temp dir at %s', path)
 
   try {
     fs.mkdirSync(path)
   } catch (e) {
-    log.warn(&#x27;Failed to create a temp dir at %s&#x27;, path)
+    log.warn('Failed to create a temp dir at %s', path)
   }
 
   return path
@@ -4928,7 +4921,7 @@ var activeSockets = [socket]
 var activeSocketsIds = function () {
   return activeSockets.map(function (s) {
     return s.id
-  }).join(&#x27;, &#x27;)
+  }).join(', ')
 }
 ...</pre></li>
     </ul>
@@ -4958,7 +4951,7 @@ var activeSocketsIds = function () {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">remove = function (path, done) {
-  log.debug(&#x27;Cleaning temp dir %s&#x27;, path)
+  log.debug('Cleaning temp dir %s', path)
   rimraf(path, done)
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
@@ -4967,8 +4960,8 @@ var pendingDisconnect
 var disconnect = function (reason) {
   self.state = DISCONNECTED
   self.disconnectsCount++
-  log.warn(&#x27;Disconnected (%d times)&#x27; + (reason || &#x27;&#x27;), self.disconnectsCount)
-  emitter.emit(&#x27;browser_error&#x27;, self, &#x27;Disconnected&#x27; + reason)
+  log.warn('Disconnected (%d times)' + (reason || ''), self.disconnectsCount)
+  emitter.emit('browser_error', self, 'Disconnected' + reason)
   collection.<span class="apidocCodeKeywordSpan">remove</span>(self)
 }
 
@@ -5021,19 +5014,19 @@ var refreshNoActivityTimeout = noActivityTimeout ? function () {
     <li>example usage<pre class="apidocCodePre">...
 
   switch (typeof obj) {
-case &#x27;string&#x27;:
-  return &#x22;&#x27;&#x22; + obj + &#x22;&#x27;&#x22;
-case &#x27;undefined&#x27;:
-  return &#x27;undefined&#x27;
-case &#x27;function&#x27;:
-  return obj.<span class="apidocCodeKeywordSpan">toString</span>().replace(/\{[\s\S]*\}/, &#x27;{ ... }&#x27;)
-case &#x27;boolean&#x27;:
-  return obj ? &#x27;true&#x27; : &#x27;false&#x27;
-case &#x27;object&#x27;:
+case 'string':
+  return "'" + obj + "'"
+case 'undefined':
+  return 'undefined'
+case 'function':
+  return obj.<span class="apidocCodeKeywordSpan">toString</span>().replace(/\{[\s\S]*\}/, '{ ... }')
+case 'boolean':
+  return obj ? 'true' : 'false'
+case 'object':
   var strs = []
-  if (instanceOf(obj, &#x27;Array&#x27;)) {
-    strs.push(&#x27;[&#x27;)
-    for (var i = 0, ii = obj.length; i &#x3c; ii; i++) {
+  if (instanceOf(obj, 'Array')) {
+    strs.push('[')
+    for (var i = 0, ii = obj.length; i &lt; ii; i++) {
 ...</pre></li>
     </ul>
 
@@ -5082,7 +5075,7 @@ case &#x27;object&#x27;:
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">instanceOf = function (value, constructorName) {
-  return Object.prototype.toString.apply(value) === &#x27;[object &#x27; + constructorName + &#x27;]&#x27;
+  return Object.prototype.toString.apply(value) === '[object ' + constructorName + ']'
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -5108,11 +5101,11 @@ if (this.isReady()) {
 
 // TODO(vojta): remove
 if (helper.<span class="apidocCodeKeywordSpan">isDefined</span>(info.dump)) {
-  emitter.emit(&#x27;browser_log&#x27;, this, info.dump, &#x27;dump&#x27;)
+  emitter.emit('browser_log', this, info.dump, 'dump')
 }
 
 if (helper.isDefined(info.log)) {
-  emitter.emit(&#x27;browser_log&#x27;, this, info.log, info.type)
+  emitter.emit('browser_log', this, info.log, info.type)
 }
 ...</pre></li>
     </ul>
@@ -5127,13 +5120,13 @@ if (helper.isDefined(info.log)) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">isUndefined = function (value) {
-  return typeof value === &#x27;undefined&#x27;
+  return typeof value === 'undefined'
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 }
 
 exports.isUndefined = function (value) {
-return typeof value === &#x27;undefined&#x27;
+return typeof value === 'undefined'
 }
 
 exports.isDefined = function (value) {
@@ -5142,7 +5135,7 @@ return !exports.<span class="apidocCodeKeywordSpan">isUndefined</span>(value)
 
 exports.parseQueryParams = function (locationSearch) {
 var params = {}
-var pairs = locationSearch.substr(1).split(&#x27;&#x26;&#x27;)
+var pairs = locationSearch.substr(1).split('&amp;')
 var keyValue
 ...</pre></li>
     </ul>
@@ -5158,11 +5151,11 @@ var keyValue
     <ul>
     <li>description and source-code<pre class="apidocCodePre">parseQueryParams = function (locationSearch) {
   var params = {}
-  var pairs = locationSearch.substr(1).split(&#x27;&#x26;&#x27;)
+  var pairs = locationSearch.substr(1).split('&amp;')
   var keyValue
 
-  for (var i = 0; i &#x3c; pairs.length; i++) {
-    keyValue = pairs[i].split(&#x27;=&#x27;)
+  for (var i = 0; i &lt; pairs.length; i++) {
+    keyValue = pairs[i].split('=')
     params[decodeURIComponent(keyValue[0])] = decodeURIComponent(keyValue[1])
   }
 
@@ -5204,16 +5197,16 @@ var keyValue
   }
 
   // register events
-  chokidarWatcher.on(&#x27;add&#x27;, bind(fileList.addFile))
-    .on(&#x27;change&#x27;, bind(fileList.changeFile))
-    .on(&#x27;unlink&#x27;, bind(fileList.removeFile))
-    // If we don&#x27;t subscribe; unhandled errors from Chokidar will bring Karma down
+  chokidarWatcher.on('add', bind(fileList.addFile))
+    .on('change', bind(fileList.changeFile))
+    .on('unlink', bind(fileList.removeFile))
+    // If we don't subscribe; unhandled errors from Chokidar will bring Karma down
     // (see GH Issue #959)
-    .on(&#x27;error&#x27;, function (e) {
+    .on('error', function (e) {
       log.debug(e)
     })
 
-  emitter.on(&#x27;exit&#x27;, function (done) {
+  emitter.on('exit', function (done) {
     chokidarWatcher.close()
     done()
   })
@@ -5238,9 +5231,9 @@ var keyValue
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">create = function (injector, emitter, fileList) {
-  var config = injector.get(&#x27;config&#x27;)
+  var config = injector.get('config')
   common.initializeMimeTypes(config)
-  var serveStaticFile = common.createServeFile(fs, path.normalize(path.join(__dirname, &#x27;/../static&#x27;)), config)
+  var serveStaticFile = common.createServeFile(fs, path.normalize(path.join(__dirname, '/../static')), config)
   var serveFile = common.createServeFile(fs, null, config)
   var filesPromise = new common.PromiseContainer()
 
@@ -5248,26 +5241,26 @@ var keyValue
   // file_list_modified not having been emitted yet
   filesPromise.set(Promise.resolve(fileList.files))
 
-  emitter.on(&#x27;file_list_modified&#x27;, function (files) {
+  emitter.on('file_list_modified', function (files) {
     filesPromise.set(Promise.resolve(files))
   })
 
   // locals for webserver module
   // NOTE(vojta): figure out how to do this with DI
   injector = injector.createChild([{
-    serveFile: [&#x27;value&#x27;, serveFile],
-    serveStaticFile: [&#x27;value&#x27;, serveStaticFile],
-    filesPromise: [&#x27;value&#x27;, filesPromise]
+    serveFile: ['value', serveFile],
+    serveStaticFile: ['value', serveStaticFile],
+    filesPromise: ['value', filesPromise]
   }])
 
   var proxyMiddlewareInstance = injector.invoke(proxyMiddleware.create)
 
-  log.debug(&#x27;Instantiating middleware&#x27;)
+  log.debug('Instantiating middleware')
   var handler = connect()
 
   if (config.beforeMiddleware) {
     config.beforeMiddleware.forEach(function (middleware) {
-      handler.use(injector.get(&#x27;middleware:&#x27; + middleware))
+      handler.use(injector.get('middleware:' + middleware))
     })
   }
 
@@ -5284,7 +5277,7 @@ var keyValue
 
   if (config.middleware) {
     config.middleware.forEach(function (middleware) {
-      handler.use(injector.get(&#x27;middleware:&#x27; + middleware))
+      handler.use(injector.get('middleware:' + middleware))
     })
   }
 
@@ -5295,7 +5288,7 @@ var keyValue
   var serverClass = http
   var serverArguments = [handler]
 
-  if (config.protocol === &#x27;https:&#x27;) {
+  if (config.protocol === 'https:') {
     serverClass = https
     serverArguments.unshift(config.httpsServerOptions || {})
   }
@@ -5306,8 +5299,8 @@ var keyValue
 
   var server = serverClass.createServer.apply(null, serverArguments)
 
-  server.on(&#x27;upgrade&#x27;, function (req, socket, head) {
-    log.debug(&#x27;upgrade %s&#x27;, req.url)
+  server.on('upgrade', function (req, socket, head) {
+    log.debug('upgrade %s', req.url)
     proxyMiddlewareInstance.upgrade(req, socket, head)
   })
 
@@ -5326,7 +5319,7 @@ var activeSockets = [socket]
 var activeSocketsIds = function () {
   return activeSockets.map(function (s) {
     return s.id
-  }).join(&#x27;, &#x27;)
+  }).join(', ')
 }
 ...</pre></li>
     </ul>
@@ -5340,3 +5333,4 @@ var activeSocketsIds = function () {
     ]
 </div>
 </div>
+</body></html>
