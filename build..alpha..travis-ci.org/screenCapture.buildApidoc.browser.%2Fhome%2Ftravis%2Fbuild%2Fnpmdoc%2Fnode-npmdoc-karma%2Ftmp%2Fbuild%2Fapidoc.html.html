@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="http://karma-runner.github.io/"
-
-    >karma (v1.6.0)</a>
+    <a href="http://karma-runner.github.io/">karma (v1.6.0)</a>
 </h1>
 <h4>Spectacular Test Runner for JavaScript.</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.karma">module karma</a><ol>
 
@@ -352,26 +345,26 @@
   var config = cfg.parseConfig(cliOptions.configFile, cliOptions)
 
   var modules = [{
-    helper: [&#x27;value&#x27;, helper],
-    logger: [&#x27;value&#x27;, logger],
-    done: [&#x27;value&#x27;, done || process.exit],
-    emitter: [&#x27;value&#x27;, this],
-    server: [&#x27;value&#x27;, this],
-    launcher: [&#x27;type&#x27;, Launcher],
-    config: [&#x27;value&#x27;, config],
-    preprocess: [&#x27;factory&#x27;, preprocessor.createPreprocessor],
-    fileList: [&#x27;type&#x27;, FileList],
-    webServer: [&#x27;factory&#x27;, ws.create],
-    socketServer: [&#x27;factory&#x27;, createSocketIoServer],
-    executor: [&#x27;type&#x27;, Executor],
+    helper: ['value', helper],
+    logger: ['value', logger],
+    done: ['value', done || process.exit],
+    emitter: ['value', this],
+    server: ['value', this],
+    launcher: ['type', Launcher],
+    config: ['value', config],
+    preprocess: ['factory', preprocessor.createPreprocessor],
+    fileList: ['type', FileList],
+    webServer: ['factory', ws.create],
+    socketServer: ['factory', createSocketIoServer],
+    executor: ['type', Executor],
     // TODO(vojta): remove
-    customFileHandlers: [&#x27;value&#x27;, []],
+    customFileHandlers: ['value', []],
     // TODO(vojta): remove, once karma-dart does not rely on it
-    customScriptTypes: [&#x27;value&#x27;, []],
-    reporter: [&#x27;factory&#x27;, reporter.createReporters],
-    capturedBrowsers: [&#x27;type&#x27;, BrowserCollection],
-    args: [&#x27;value&#x27;, {}],
-    timer: [&#x27;value&#x27;, {
+    customScriptTypes: ['value', []],
+    reporter: ['factory', reporter.createReporters],
+    capturedBrowsers: ['type', BrowserCollection],
+    args: ['value', {}],
+    timer: ['value', {
       setTimeout: function () {
         return setTimeout.apply(root, arguments)
       },
@@ -440,7 +433,7 @@
   var self = this
 
   var getBrowserById = function (id) {
-    for (var i = 0; i &#x3c; self._browsers.length; i++) {
+    for (var i = 0; i &lt; self._browsers.length; i++) {
       if (self._browsers[i].id === id) {
         return self._browsers[i]
       }
@@ -458,35 +451,35 @@
         port = upstreamProxy.port
         urlRoot = upstreamProxy.path + urlRoot.substr(1)
       }
-      var url = protocol + &#x27;//&#x27; + hostname + &#x27;:&#x27; + port + urlRoot
+      var url = protocol + '//' + hostname + ':' + port + urlRoot
 
       var locals = {
-        id: [&#x27;value&#x27;, Launcher.generateId()],
-        name: [&#x27;value&#x27;, name],
-        processKillTimeout: [&#x27;value&#x27;, processKillTimeout],
-        baseLauncherDecorator: [&#x27;factory&#x27;, baseDecorator],
-        captureTimeoutLauncherDecorator: [&#x27;factory&#x27;, captureTimeoutDecorator],
-        retryLauncherDecorator: [&#x27;factory&#x27;, retryDecorator],
-        processLauncherDecorator: [&#x27;factory&#x27;, processDecorator],
-        baseBrowserDecorator: [&#x27;factory&#x27;, baseBrowserDecoratorFactory]
+        id: ['value', Launcher.generateId()],
+        name: ['value', name],
+        processKillTimeout: ['value', processKillTimeout],
+        baseLauncherDecorator: ['factory', baseDecorator],
+        captureTimeoutLauncherDecorator: ['factory', captureTimeoutDecorator],
+        retryLauncherDecorator: ['factory', retryDecorator],
+        processLauncherDecorator: ['factory', processDecorator],
+        baseBrowserDecorator: ['factory', baseBrowserDecoratorFactory]
       }
 
       // TODO(vojta): determine script from name
-      if (name.indexOf(&#x27;/&#x27;) !== -1) {
-        name = &#x27;Script&#x27;
+      if (name.indexOf('/') !== -1) {
+        name = 'Script'
       }
 
       try {
-        var browser = injector.createChild([locals], [&#x27;launcher:&#x27; + name]).get(&#x27;launcher:&#x27; + name)
+        var browser = injector.createChild([locals], ['launcher:' + name]).get('launcher:' + name)
       } catch (e) {
-        if (e.message.indexOf(&#x27;No provider for &#x22;launcher:&#x27; + name + &#x27;&#x22;&#x27;) !== -1) {
-          log.error(&#x27;Cannot load browser &#x22;%s&#x22;: it is not registered! &#x27; +
-            &#x27;Perhaps you are missing some plugin?&#x27;, name)
+        if (e.message.indexOf('No provider for "launcher:' + name + '"') !== -1) {
+          log.error('Cannot load browser "%s": it is not registered! ' +
+            'Perhaps you are missing some plugin?', name)
         } else {
-          log.error(&#x27;Cannot load browser &#x22;%s&#x22;!\n  &#x27; + e.stack, name)
+          log.error('Cannot load browser "%s"!\n  ' + e.stack, name)
         }
 
-        emitter.emit(&#x27;load_error&#x27;, &#x27;launcher&#x27;, name)
+        emitter.emit('load_error', 'launcher', name)
         return
       }
 
@@ -508,13 +501,13 @@
       }
 
       self.jobs.add(function (args, done) {
-        log.info(&#x27;Starting browser %s&#x27;, helper.isDefined(browser.displayName) ? browser.displayName : browser.name)
+        log.info('Starting browser %s', helper.isDefined(browser.displayName) ? browser.displayName : browser.name)
 
-        browser.on(&#x27;browser_process_failure&#x27;, function () {
+        browser.on('browser_process_failure', function () {
           done(browser.error)
         })
 
-        browser.on(&#x27;done&#x27;, function () {
+        browser.on('done', function () {
           // We are not done if there was an error as first the retry takes
           // place which we catch with `browser_process_failure` if it fails
           if (browser.error || browser.state === browser.STATE_RESTARTING) return
@@ -532,10 +525,10 @@
 
   this.launch = function (names, concurrency) {
     log.info(
-      &#x27;Launching browser%s %s with %s&#x27;,
-      names.length &#x3e; 1 ? &#x27;s&#x27; : &#x27;&#x27;,
-      names.join(&#x27;, &#x27;),
-      concurrency === Infinity ? &#x27;unlimited concurrency&#x27; : &#x27;concurrency &#x27; + concurrency
+      'Launching browser%s %s with %s',
+      names.length &gt; 1 ? 's' : '',
+      names.join(', '),
+      concurrency === Infinity ? 'unlimited concurrency' : 'concurrency ' + concurrency
     )
     this.jobs = new Jobs({maxConcurrency: concurrency})
 
@@ -553,8 +546,8 @@
       }, [])
     }
 
-    this.jobs.on(&#x27;end&#x27;, function (err) {
-      log.debug(&#x27;Finished all browsers&#x27;)
+    this.jobs.on('end', function (err) {
+      log.debug('Finished all browsers')
 
       if (err) {
         log.error(err)
@@ -567,18 +560,18 @@
   }
 
   this.launch.$inject = [
-    &#x27;config.browsers&#x27;,
-    &#x27;config.concurrency&#x27;,
-    &#x27;config.processKillTimeout&#x27;
+    'config.browsers',
+    'config.concurrency',
+    'config.processKillTimeout'
   ]
 
   this.launchSingle.$inject = [
-    &#x27;config.protocol&#x27;,
-    &#x27;config.hostname&#x27;,
-    &#x27;config.port&#x27;,
-    &#x27;config.urlRoot&#x27;,
-    &#x27;config.upstreamProxy&#x27;,
-    &#x27;config.proces ...</pre></li>
+    'config.protocol',
+    'config.hostname',
+    'config.port',
+    'config.urlRoot',
+    'config.upstreamProxy',
+    'config.proces ...</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
@@ -624,26 +617,26 @@
   var config = cfg.parseConfig(cliOptions.configFile, cliOptions)
 
   var modules = [{
-    helper: [&#x27;value&#x27;, helper],
-    logger: [&#x27;value&#x27;, logger],
-    done: [&#x27;value&#x27;, done || process.exit],
-    emitter: [&#x27;value&#x27;, this],
-    server: [&#x27;value&#x27;, this],
-    launcher: [&#x27;type&#x27;, Launcher],
-    config: [&#x27;value&#x27;, config],
-    preprocess: [&#x27;factory&#x27;, preprocessor.createPreprocessor],
-    fileList: [&#x27;type&#x27;, FileList],
-    webServer: [&#x27;factory&#x27;, ws.create],
-    socketServer: [&#x27;factory&#x27;, createSocketIoServer],
-    executor: [&#x27;type&#x27;, Executor],
+    helper: ['value', helper],
+    logger: ['value', logger],
+    done: ['value', done || process.exit],
+    emitter: ['value', this],
+    server: ['value', this],
+    launcher: ['type', Launcher],
+    config: ['value', config],
+    preprocess: ['factory', preprocessor.createPreprocessor],
+    fileList: ['type', FileList],
+    webServer: ['factory', ws.create],
+    socketServer: ['factory', createSocketIoServer],
+    executor: ['type', Executor],
     // TODO(vojta): remove
-    customFileHandlers: [&#x27;value&#x27;, []],
+    customFileHandlers: ['value', []],
     // TODO(vojta): remove, once karma-dart does not rely on it
-    customScriptTypes: [&#x27;value&#x27;, []],
-    reporter: [&#x27;factory&#x27;, reporter.createReporters],
-    capturedBrowsers: [&#x27;type&#x27;, BrowserCollection],
-    args: [&#x27;value&#x27;, {}],
-    timer: [&#x27;value&#x27;, {
+    customScriptTypes: ['value', []],
+    reporter: ['factory', reporter.createReporters],
+    capturedBrowsers: ['type', BrowserCollection],
+    args: ['value', {}],
+    timer: ['value', {
       setTimeout: function () {
         return setTimeout.apply(root, arguments)
       },
@@ -730,20 +723,20 @@
     <li>description and source-code<pre class="apidocCodePre">_detach = function (config, done) {
   var log = this.log
   var tmpFile = tmp.fileSync({keep: true})
-  log.info(&#x27;Starting karma detached&#x27;)
-  log.info(&#x27;Run &#x22;karma stop&#x22; to stop the server.&#x27;)
-  log.debug(&#x27;Writing config to tmp-file %s&#x27;, tmpFile.name)
+  log.info('Starting karma detached')
+  log.info('Run "karma stop" to stop the server.')
+  log.debug('Writing config to tmp-file %s', tmpFile.name)
   config.detached = false
   try {
-    fs.writeFileSync(tmpFile.name, JSON.stringify(config), &#x27;utf8&#x27;)
+    fs.writeFileSync(tmpFile.name, JSON.stringify(config), 'utf8')
   } catch (e) {
-    log.error(&#x22;Couldn&#x27;t write temporary configuration file&#x22;)
+    log.error("Couldn't write temporary configuration file")
     done(1)
     return
   }
-  var child = spawn(process.argv[0], [path.resolve(__dirname, &#x27;../lib/detached.js&#x27;), tmpFile.name], {
+  var child = spawn(process.argv[0], [path.resolve(__dirname, '../lib/detached.js'), tmpFile.name], {
     detached: true,
-    stdio: &#x27;ignore&#x27;
+    stdio: 'ignore'
   })
   child.unref()
 }</pre></li>
@@ -761,8 +754,8 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">_setUpLoadErrorListener = function () {
   var self = this
-  self.on(&#x27;load_error&#x27;, function (type, name) {
-    self.log.debug(&#x27;Registered a load error of type %s with name %s&#x27;, type, name)
+  self.on('load_error', function (type, name) {
+    self.log.debug('Registered a load error of type %s with name %s', type, name)
     self.loadErrors.push([type, name])
   })
 }</pre></li>
@@ -788,25 +781,25 @@
   self._fileList = fileList
 
   config.frameworks.forEach(function (framework) {
-    self._injector.get(&#x27;framework:&#x27; + framework)
+    self._injector.get('framework:' + framework)
   })
 
-  var webServer = self._injector.get(&#x27;webServer&#x27;)
-  var socketServer = self._injector.get(&#x27;socketServer&#x27;)
+  var webServer = self._injector.get('webServer')
+  var socketServer = self._injector.get('socketServer')
 
   // A map of launched browsers.
   var singleRunDoneBrowsers = Object.create(null)
 
   // Passing fake event emitter, so that it does not emit on the global,
-  // we don&#x27;t care about these changes.
+  // we don't care about these changes.
   var singleRunBrowsers = new BrowserCollection(new EventEmitter())
 
   // Some browsers did not get captured.
   var singleRunBrowserNotCaptured = false
 
-  webServer.on(&#x27;error&#x27;, function (e) {
-    if (e.code === &#x27;EADDRINUSE&#x27;) {
-      self.log.warn(&#x27;Port %d in use&#x27;, config.port)
+  webServer.on('error', function (e) {
+    if (e.code === 'EADDRINUSE') {
+      self.log.warn('Port %d in use', config.port)
       config.port++
       webServer.listen(config.port, config.listenAddress)
     } else {
@@ -820,38 +813,38 @@
     }
 
     webServer.listen(config.port, config.listenAddress, function () {
-      self.log.info(&#x27;Karma v%s server started at %s//%s:%s%s&#x27;, constant.VERSION,
+      self.log.info('Karma v%s server started at %s//%s:%s%s', constant.VERSION,
         config.protocol, config.listenAddress, config.port, config.urlRoot)
 
-      self.emit(&#x27;listening&#x27;, config.port)
-      if (config.browsers &#x26;&#x26; config.browsers.length) {
+      self.emit('listening', config.port)
+      if (config.browsers &amp;&amp; config.browsers.length) {
         self._injector.invoke(launcher.launch, launcher).forEach(function (browserLauncher) {
           singleRunDoneBrowsers[browserLauncher.id] = false
         })
       }
       var noLoadErrors = self.loadErrors.length
-      if (noLoadErrors &#x3e; 0) {
-        self.log.error(&#x27;Found %d load error%s&#x27;, noLoadErrors, noLoadErrors === 1 ? &#x27;&#x27; : &#x27;s&#x27;)
+      if (noLoadErrors &gt; 0) {
+        self.log.error('Found %d load error%s', noLoadErrors, noLoadErrors === 1 ? '' : 's')
         process.exitCode = 1
-        process.kill(process.pid, &#x27;SIGINT&#x27;)
+        process.kill(process.pid, 'SIGINT')
       }
     })
   }
 
   fileList.refresh().then(afterPreprocess, afterPreprocess)
 
-  self.on(&#x27;browsers_change&#x27;, function () {
+  self.on('browsers_change', function () {
     // TODO(vojta): send only to interested browsers
-    socketServer.sockets.emit(&#x27;info&#x27;, capturedBrowsers.serialize())
+    socketServer.sockets.emit('info', capturedBrowsers.serialize())
   })
 
-  self.on(&#x27;browser_register&#x27;, function (browser) {
+  self.on('browser_register', function (browser) {
     launcher.markCaptured(browser.id)
 
     // TODO(vojta): This is lame, browser can get captured and then
     // crash (before other browsers get captured).
     if (launcher.areAllCaptured()) {
-      self.emit(&#x27;browsers_ready&#x27;)
+      self.emit('browsers_ready')
 
       if (config.autoWatch) {
         executor.schedule()
@@ -859,38 +852,38 @@
     }
   })
 
-  if (config.browserConsoleLogOptions &#x26;&#x26; config.browserConsoleLogOptions.path) {
-    var configLevel = config.browserConsoleLogOptions.level || &#x27;debug&#x27;
-    var configFormat = config.browserConsoleLogOptions.format || &#x27;%b %T: %m&#x27;
+  if (config.browserConsoleLogOptions &amp;&amp; config.browserConsoleLogOptions.path) {
+    var configLevel = config.browserConsoleLogOptions.level || 'debug'
+    var configFormat = config.browserConsoleLogOptions.format || '%b %T: %m'
     var configPath = config.browserConsoleLogOptions.path
-    self.log.info(&#x27;Writing browser console to file: %s&#x27;, configPath)
-    var browserLogFile = fs.openSync(configPath, &#x27;w+&#x27;)
-    var levels = [&#x27;log&#x27;, &#x27;error&#x27;, &#x27;warn&#x27;, &#x27;info&#x27;, &#x27;debug&#x27;]
-    self.on(&#x27;browser_log&#x27;, function (browser, message, level) {
-      if (levels.indexOf(level.toLowerCase()) &#x3e; levels.indexOf(configLevel)) return
+    self.log.info('Writing browser console to file: %s', configPath)
+    var browserLogFile = fs.openSync(configPath, 'w+')
+    var levels = ['log', 'error', 'warn', 'info', 'debug']
+    self.on('browser_log', function (browser, message, level) {
+      if (levels.indexOf(level.toLowerCase()) &gt; levels.indexOf(configLevel)) return
       if (!helper.isString(message)) {
         message = util.inspect(message, {showHidden: false, colors: false})
       }
-      var logMap = {&#x27;%m&#x27;: message, &#x27;%t&#x27;: level.toLowerCase(), &#x27;%T&#x27;: level.toUpperCase(), &#x27;%b&#x27;: browser}
+      var logMap = {'%m': message, '%t': level.toLowerCase(), '%T': level.toUpperCase(), '%b': browser}
       var logString = configFormat.replace(/%[mtTb]/g, function (m) {
         return logMap[m]
       })
-      self.log.debug(&#x27;Writing browser console line: %s&#x27;, logString)
-      fs.write(browserLogFile, logString + &#x27;\n&#x27;)
+      self.log.debug('Writing browser console line: %s', logString)
+      fs.write(browserLogFile, logString + '\n')
     })
   }
 
-  var EVENTS_TO_REPLY = [&#x27;start&#x27;, &#x27;info&#x27;, &#x27;karma_error&#x27;, &#x27;result&#x27;, &#x27;complete&#x27;]
-  socketServer.sockets.on(&#x27;connection&#x27;, function (socket) {
-    self.log.debug(&#x27;A browser has connected on socket &#x27; + socket.id)
+  var EVENTS_TO_REPLY = ['start', 'info', 'karma_error', 'result', 'complete']
+  socketServer.sockets.on('connection', function (socket) {
+    self.log.debug('A browser has connected on socket ' + socket.id)
 
     var replySocketEvents = events.bufferEvents(socket, EVENTS_TO_REPLY)
 
-    socket.on(&#x27;complete&#x27;, function (data, ack) {
+    socket.on('complete', function (data, ack) {
       ack()
     })
 
-    socket.on(&#x27;register&#x27;, function (info) {
+    socket.on('register', function (info) {
       var newBrowser
       var isRestart
 
@@ -983,39 +976,39 @@
     <li>description and source-code<pre class="apidocCodePre">parseConfig = function (configFilePath, cliOptions) {
   var configModule
   if (configFilePath) {
-    log.debug(&#x27;Loading config %s&#x27;, configFilePath)
+    log.debug('Loading config %s', configFilePath)
 
     try {
       configModule = require(configFilePath)
-      if (typeof configModule === &#x27;object&#x27; &#x26;&#x26; typeof configModule.default !== &#x27;undefined&#x27;) {
+      if (typeof configModule === 'object' &amp;&amp; typeof configModule.default !== 'undefined') {
         configModule = configModule.default
       }
     } catch (e) {
-      if (e.code === &#x27;MODULE_NOT_FOUND&#x27; &#x26;&#x26; e.message.indexOf(configFilePath) !== -1) {
-        log.error(&#x27;File %s does not exist!&#x27;, configFilePath)
+      if (e.code === 'MODULE_NOT_FOUND' &amp;&amp; e.message.indexOf(configFilePath) !== -1) {
+        log.error('File %s does not exist!', configFilePath)
       } else {
-        log.error(&#x27;Invalid config file!\n  &#x27; + e.stack)
+        log.error('Invalid config file!\n  ' + e.stack)
 
         var extension = path.extname(configFilePath)
-        if (extension === &#x27;.coffee&#x27; &#x26;&#x26; !COFFEE_SCRIPT_AVAILABLE) {
-          log.error(&#x27;You need to install CoffeeScript.\n&#x27; +
-            &#x27;  npm install coffee-script --save-dev&#x27;)
-        } else if (extension === &#x27;.ls&#x27; &#x26;&#x26; !LIVE_SCRIPT_AVAILABLE) {
-          log.error(&#x27;You need to install LiveScript.\n&#x27; +
-            &#x27;  npm install LiveScript --save-dev&#x27;)
-        } else if (extension === &#x27;.ts&#x27; &#x26;&#x26; !TYPE_SCRIPT_AVAILABLE) {
-          log.error(&#x27;You need to install TypeScript.\n&#x27; +
-            &#x27;  npm install typescript ts-node --save-dev&#x27;)
+        if (extension === '.coffee' &amp;&amp; !COFFEE_SCRIPT_AVAILABLE) {
+          log.error('You need to install CoffeeScript.\n' +
+            '  npm install coffee-script --save-dev')
+        } else if (extension === '.ls' &amp;&amp; !LIVE_SCRIPT_AVAILABLE) {
+          log.error('You need to install LiveScript.\n' +
+            '  npm install LiveScript --save-dev')
+        } else if (extension === '.ts' &amp;&amp; !TYPE_SCRIPT_AVAILABLE) {
+          log.error('You need to install TypeScript.\n' +
+            '  npm install typescript ts-node --save-dev')
         }
       }
       return process.exit(1)
     }
     if (!helper.isFunction(configModule)) {
-      log.error(&#x27;Config file must export a function!\n&#x27; + CONFIG_SYNTAX_HELP)
+      log.error('Config file must export a function!\n' + CONFIG_SYNTAX_HELP)
       return process.exit(1)
     }
   } else {
-    log.debug(&#x27;No config file specified.&#x27;)
+    log.debug('No config file specified.')
     // if no config file path is passed, we define a dummy config module.
     configModule = function () {}
   }
@@ -1029,26 +1022,26 @@
   var defaultListenAddress = config.listenAddress
   config.listenAddress = null
 
-  // add the user&#x27;s configuration in
+  // add the user's configuration in
   config.set(cliOptions)
 
   try {
     configModule(config)
   } catch (e) {
-    log.error(&#x27;Error in config file!\n&#x27;, e)
+    log.error('Error in config file!\n', e)
     return process.exit(1)
   }
 
   // merge the config from config file and cliOptions (precedence)
   config.set(cliOptions)
 
-  // if the user changed listenAddress, but didn&#x27;t set a hostname, warn them
-  if (config.hostname === null &#x26;&#x26; config.listenAddress !== null) {
-    log.warn(&#x27;ListenAddress was set to %s but hostname was left as the default: &#x27; +
-      &#x27;%s. If your browsers fail to connect, consider changing the hostname option.&#x27;,
+  // if the user changed listenAddress, but didn't set a hostname, warn them
+  if (config.hostname === null &amp;&amp; config.listenAddress !== null) {
+    log.warn('ListenAddress was set to %s but hostname was left as the default: ' +
+      '%s. If your browsers fail to connect, consider changing the hostname option.',
       config.listenAddress, defaultHostname)
   }
-  // restore values that weren&#x27;t overwritten by the user
+  // restore values that weren't overwritten by the user
   if (config.hostname === null) {
     config.hostname = defaultHostname
   }
@@ -1084,7 +1077,7 @@
   var self = this
 
   var getBrowserById = function (id) {
-    for (var i = 0; i &#x3c; self._browsers.length; i++) {
+    for (var i = 0; i &lt; self._browsers.length; i++) {
       if (self._browsers[i].id === id) {
         return self._browsers[i]
       }
@@ -1102,35 +1095,35 @@
         port = upstreamProxy.port
         urlRoot = upstreamProxy.path + urlRoot.substr(1)
       }
-      var url = protocol + &#x27;//&#x27; + hostname + &#x27;:&#x27; + port + urlRoot
+      var url = protocol + '//' + hostname + ':' + port + urlRoot
 
       var locals = {
-        id: [&#x27;value&#x27;, Launcher.generateId()],
-        name: [&#x27;value&#x27;, name],
-        processKillTimeout: [&#x27;value&#x27;, processKillTimeout],
-        baseLauncherDecorator: [&#x27;factory&#x27;, baseDecorator],
-        captureTimeoutLauncherDecorator: [&#x27;factory&#x27;, captureTimeoutDecorator],
-        retryLauncherDecorator: [&#x27;factory&#x27;, retryDecorator],
-        processLauncherDecorator: [&#x27;factory&#x27;, processDecorator],
-        baseBrowserDecorator: [&#x27;factory&#x27;, baseBrowserDecoratorFactory]
+        id: ['value', Launcher.generateId()],
+        name: ['value', name],
+        processKillTimeout: ['value', processKillTimeout],
+        baseLauncherDecorator: ['factory', baseDecorator],
+        captureTimeoutLauncherDecorator: ['factory', captureTimeoutDecorator],
+        retryLauncherDecorator: ['factory', retryDecorator],
+        processLauncherDecorator: ['factory', processDecorator],
+        baseBrowserDecorator: ['factory', baseBrowserDecoratorFactory]
       }
 
       // TODO(vojta): determine script from name
-      if (name.indexOf(&#x27;/&#x27;) !== -1) {
-        name = &#x27;Script&#x27;
+      if (name.indexOf('/') !== -1) {
+        name = 'Script'
       }
 
       try {
-        var browser = injector.createChild([locals], [&#x27;launcher:&#x27; + name]).get(&#x27;launcher:&#x27; + name)
+        var browser = injector.createChild([locals], ['launcher:' + name]).get('launcher:' + name)
       } catch (e) {
-        if (e.message.indexOf(&#x27;No provider for &#x22;launcher:&#x27; + name + &#x27;&#x22;&#x27;) !== -1) {
-          log.error(&#x27;Cannot load browser &#x22;%s&#x22;: it is not registered! &#x27; +
-            &#x27;Perhaps you are missing some plugin?&#x27;, name)
+        if (e.message.indexOf('No provider for "launcher:' + name + '"') !== -1) {
+          log.error('Cannot load browser "%s": it is not registered! ' +
+            'Perhaps you are missing some plugin?', name)
         } else {
-          log.error(&#x27;Cannot load browser &#x22;%s&#x22;!\n  &#x27; + e.stack, name)
+          log.error('Cannot load browser "%s"!\n  ' + e.stack, name)
         }
 
-        emitter.emit(&#x27;load_error&#x27;, &#x27;launcher&#x27;, name)
+        emitter.emit('load_error', 'launcher', name)
         return
       }
 
@@ -1152,13 +1145,13 @@
       }
 
       self.jobs.add(function (args, done) {
-        log.info(&#x27;Starting browser %s&#x27;, helper.isDefined(browser.displayName) ? browser.displayName : browser.name)
+        log.info('Starting browser %s', helper.isDefined(browser.displayName) ? browser.displayName : browser.name)
 
-        browser.on(&#x27;browser_process_failure&#x27;, function () {
+        browser.on('browser_process_failure', function () {
           done(browser.error)
         })
 
-        browser.on(&#x27;done&#x27;, function () {
+        browser.on('done', function () {
           // We are not done if there was an error as first the retry takes
           // place which we catch with `browser_process_failure` if it fails
           if (browser.error || browser.state === browser.STATE_RESTARTING) return
@@ -1176,10 +1169,10 @@
 
   this.launch = function (names, concurrency) {
     log.info(
-      &#x27;Launching browser%s %s with %s&#x27;,
-      names.length &#x3e; 1 ? &#x27;s&#x27; : &#x27;&#x27;,
-      names.join(&#x27;, &#x27;),
-      concurrency === Infinity ? &#x27;unlimited concurrency&#x27; : &#x27;concurrency &#x27; + concurrency
+      'Launching browser%s %s with %s',
+      names.length &gt; 1 ? 's' : '',
+      names.join(', '),
+      concurrency === Infinity ? 'unlimited concurrency' : 'concurrency ' + concurrency
     )
     this.jobs = new Jobs({maxConcurrency: concurrency})
 
@@ -1197,8 +1190,8 @@
       }, [])
     }
 
-    this.jobs.on(&#x27;end&#x27;, function (err) {
-      log.debug(&#x27;Finished all browsers&#x27;)
+    this.jobs.on('end', function (err) {
+      log.debug('Finished all browsers')
 
       if (err) {
         log.error(err)
@@ -1211,18 +1204,18 @@
   }
 
   this.launch.$inject = [
-    &#x27;config.browsers&#x27;,
-    &#x27;config.concurrency&#x27;,
-    &#x27;config.processKillTimeout&#x27;
+    'config.browsers',
+    'config.concurrency',
+    'config.processKillTimeout'
   ]
 
   this.launchSingle.$inject = [
-    &#x27;config.protocol&#x27;,
-    &#x27;config.hostname&#x27;,
-    &#x27;config.port&#x27;,
-    &#x27;config.urlRoot&#x27;,
-    &#x27;config.upstreamProxy&#x27;,
-    &#x27;config.proces ...</pre></li>
+    'config.protocol',
+    'config.hostname',
+    'config.port',
+    'config.urlRoot',
+    'config.upstreamProxy',
+    'config.proces ...</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
@@ -1246,7 +1239,7 @@
   var self = this
 
   var getBrowserById = function (id) {
-    for (var i = 0; i &#x3c; self._browsers.length; i++) {
+    for (var i = 0; i &lt; self._browsers.length; i++) {
       if (self._browsers[i].id === id) {
         return self._browsers[i]
       }
@@ -1264,35 +1257,35 @@
         port = upstreamProxy.port
         urlRoot = upstreamProxy.path + urlRoot.substr(1)
       }
-      var url = protocol + &#x27;//&#x27; + hostname + &#x27;:&#x27; + port + urlRoot
+      var url = protocol + '//' + hostname + ':' + port + urlRoot
 
       var locals = {
-        id: [&#x27;value&#x27;, Launcher.generateId()],
-        name: [&#x27;value&#x27;, name],
-        processKillTimeout: [&#x27;value&#x27;, processKillTimeout],
-        baseLauncherDecorator: [&#x27;factory&#x27;, baseDecorator],
-        captureTimeoutLauncherDecorator: [&#x27;factory&#x27;, captureTimeoutDecorator],
-        retryLauncherDecorator: [&#x27;factory&#x27;, retryDecorator],
-        processLauncherDecorator: [&#x27;factory&#x27;, processDecorator],
-        baseBrowserDecorator: [&#x27;factory&#x27;, baseBrowserDecoratorFactory]
+        id: ['value', Launcher.generateId()],
+        name: ['value', name],
+        processKillTimeout: ['value', processKillTimeout],
+        baseLauncherDecorator: ['factory', baseDecorator],
+        captureTimeoutLauncherDecorator: ['factory', captureTimeoutDecorator],
+        retryLauncherDecorator: ['factory', retryDecorator],
+        processLauncherDecorator: ['factory', processDecorator],
+        baseBrowserDecorator: ['factory', baseBrowserDecoratorFactory]
       }
 
       // TODO(vojta): determine script from name
-      if (name.indexOf(&#x27;/&#x27;) !== -1) {
-        name = &#x27;Script&#x27;
+      if (name.indexOf('/') !== -1) {
+        name = 'Script'
       }
 
       try {
-        var browser = injector.createChild([locals], [&#x27;launcher:&#x27; + name]).get(&#x27;launcher:&#x27; + name)
+        var browser = injector.createChild([locals], ['launcher:' + name]).get('launcher:' + name)
       } catch (e) {
-        if (e.message.indexOf(&#x27;No provider for &#x22;launcher:&#x27; + name + &#x27;&#x22;&#x27;) !== -1) {
-          log.error(&#x27;Cannot load browser &#x22;%s&#x22;: it is not registered! &#x27; +
-            &#x27;Perhaps you are missing some plugin?&#x27;, name)
+        if (e.message.indexOf('No provider for "launcher:' + name + '"') !== -1) {
+          log.error('Cannot load browser "%s": it is not registered! ' +
+            'Perhaps you are missing some plugin?', name)
         } else {
-          log.error(&#x27;Cannot load browser &#x22;%s&#x22;!\n  &#x27; + e.stack, name)
+          log.error('Cannot load browser "%s"!\n  ' + e.stack, name)
         }
 
-        emitter.emit(&#x27;load_error&#x27;, &#x27;launcher&#x27;, name)
+        emitter.emit('load_error', 'launcher', name)
         return
       }
 
@@ -1314,13 +1307,13 @@
       }
 
       self.jobs.add(function (args, done) {
-        log.info(&#x27;Starting browser %s&#x27;, helper.isDefined(browser.displayName) ? browser.displayName : browser.name)
+        log.info('Starting browser %s', helper.isDefined(browser.displayName) ? browser.displayName : browser.name)
 
-        browser.on(&#x27;browser_process_failure&#x27;, function () {
+        browser.on('browser_process_failure', function () {
           done(browser.error)
         })
 
-        browser.on(&#x27;done&#x27;, function () {
+        browser.on('done', function () {
           // We are not done if there was an error as first the retry takes
           // place which we catch with `browser_process_failure` if it fails
           if (browser.error || browser.state === browser.STATE_RESTARTING) return
@@ -1338,10 +1331,10 @@
 
   this.launch = function (names, concurrency) {
     log.info(
-      &#x27;Launching browser%s %s with %s&#x27;,
-      names.length &#x3e; 1 ? &#x27;s&#x27; : &#x27;&#x27;,
-      names.join(&#x27;, &#x27;),
-      concurrency === Infinity ? &#x27;unlimited concurrency&#x27; : &#x27;concurrency &#x27; + concurrency
+      'Launching browser%s %s with %s',
+      names.length &gt; 1 ? 's' : '',
+      names.join(', '),
+      concurrency === Infinity ? 'unlimited concurrency' : 'concurrency ' + concurrency
     )
     this.jobs = new Jobs({maxConcurrency: concurrency})
 
@@ -1359,8 +1352,8 @@
       }, [])
     }
 
-    this.jobs.on(&#x27;end&#x27;, function (err) {
-      log.debug(&#x27;Finished all browsers&#x27;)
+    this.jobs.on('end', function (err) {
+      log.debug('Finished all browsers')
 
       if (err) {
         log.error(err)
@@ -1373,18 +1366,18 @@
   }
 
   this.launch.$inject = [
-    &#x27;config.browsers&#x27;,
-    &#x27;config.concurrency&#x27;,
-    &#x27;config.processKillTimeout&#x27;
+    'config.browsers',
+    'config.concurrency',
+    'config.processKillTimeout'
   ]
 
   this.launchSingle.$inject = [
-    &#x27;config.protocol&#x27;,
-    &#x27;config.hostname&#x27;,
-    &#x27;config.port&#x27;,
-    &#x27;config.urlRoot&#x27;,
-    &#x27;config.upstreamProxy&#x27;,
-    &#x27;config.proces ...</pre></li>
+    'config.protocol',
+    'config.hostname',
+    'config.port',
+    'config.urlRoot',
+    'config.upstreamProxy',
+    'config.proces ...</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
@@ -1398,7 +1391,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">generateId = function () {
-  return &#x27;&#x27; + Math.floor(Math.random() * 100000000)
+  return '' + Math.floor(Math.random() * 100000000)
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1428,29 +1421,29 @@
   var exitCode = 1
   var options = {
     hostname: config.hostname,
-    path: config.urlRoot + &#x27;run&#x27;,
+    path: config.urlRoot + 'run',
     port: config.port,
-    method: &#x27;POST&#x27;,
+    method: 'POST',
     headers: {
-      &#x27;Content-Type&#x27;: &#x27;application/json&#x27;
+      'Content-Type': 'application/json'
     }
   }
 
   var request = http.request(options, function (response) {
-    response.on(&#x27;data&#x27;, function (buffer) {
+    response.on('data', function (buffer) {
       var parsedResult = parseExitCode(buffer, exitCode, config.failOnEmptyTestSuite)
       exitCode = parsedResult.exitCode
       process.stdout.write(parsedResult.buffer)
     })
 
-    response.on(&#x27;end&#x27;, function () {
+    response.on('end', function () {
       done(exitCode)
     })
   })
 
-  request.on(&#x27;error&#x27;, function (e) {
-    if (e.code === &#x27;ECONNREFUSED&#x27;) {
-      log.error(&#x27;There is no server listening on port %d&#x27;, options.port)
+  request.on('error', function (e) {
+    if (e.code === 'ECONNREFUSED') {
+      log.error('There is no server listening on port %d', options.port)
       done(1, e.code)
     } else {
       throw e
@@ -1484,10 +1477,10 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">start = function (cliOptions, done) {
-  console.error(&#x27;WARN `start` method is deprecated since 0.13. It will be removed in 0.14. Please use \n&#x27; +
-    &#x27;  server = new Server(config, [done])\n&#x27; +
-    &#x27;  server.start()\n&#x27; +
-    &#x27;instead.&#x27;)
+  console.error('WARN `start` method is deprecated since 0.13. It will be removed in 0.14. Please use \n' +
+    '  server = new Server(config, [done])\n' +
+    '  server.start()\n' +
+    'instead.')
   var server = new Server(cliOptions, done)
   server.start()
 }</pre></li>
@@ -1512,32 +1505,32 @@
   config = config || {}
   logger.setupFromConfig(config)
   done = helper.isFunction(done) ? done : process.exit
-  var log = logger.create(&#x27;stopper&#x27;)
+  var log = logger.create('stopper')
   config = cfg.parseConfig(config.configFile, config)
 
   var options = {
     hostname: config.hostname,
-    path: config.urlRoot + &#x27;stop&#x27;,
+    path: config.urlRoot + 'stop',
     port: config.port,
-    method: &#x27;GET&#x27;
+    method: 'GET'
   }
 
   var request = http.request(options)
 
-  request.on(&#x27;response&#x27;, function (response) {
+  request.on('response', function (response) {
     if (response.statusCode !== 200) {
-      log.error(&#x27;Server returned status code: &#x27; + response.statusCode)
+      log.error('Server returned status code: ' + response.statusCode)
       done(1)
       return
     }
 
-    log.info(&#x27;Server stopped.&#x27;)
+    log.info('Server stopped.')
     done(0)
   })
 
-  request.on(&#x27;error&#x27;, function (e) {
-    if (e.code === &#x27;ECONNREFUSED&#x27;) {
-      log.error(&#x27;There is no server listening on port %d&#x27;, options.port)
+  request.on('error', function (e) {
+    if (e.code === 'ECONNREFUSED') {
+      log.error('There is no server listening on port %d', options.port)
       done(1, e.code)
     } else {
       throw e
@@ -1557,3 +1550,4 @@
     ]
 </div>
 </div>
+</body></html>
